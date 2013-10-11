@@ -1,7 +1,7 @@
 define(['app','underscore','css!global/styles.css'] , function (app, _) {
-	app.directive('storyPart', function () {
+	app.directive('chapter', function () {
     return {
-      restrict: 'A',
+      restrict: 'E',
       replace:true,
       scope: {
         url:'=',

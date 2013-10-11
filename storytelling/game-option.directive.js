@@ -6,7 +6,7 @@ define(['app'] , function (app) {
         page:'=',
       },
       link: function (scope, elem, attrs) {
-            var el = angular.element("<div story-part url='"+scope.page+"'></div>")
+            var el = angular.element("<chapter url='"+scope.page+"'></chapter>")
             $http({method: "GET", url: 'story/' +scope.page +'.html',})
             .error(function(data, status) {
              
