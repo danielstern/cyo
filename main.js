@@ -33,7 +33,7 @@ require.config({
 	],
 	map: {
   '*': {
-    'css': 'common/lib/require-css/css' // or whatever the path to require-css is
+    'css': 'lib/require-css/css' // or whatever the path to require-css is
   	}
 	}
 });
@@ -45,18 +45,12 @@ require([
 	"d3",
 	"bootstrap",
 
-	"GameCtrl",
-	"GameOptionCtrl",
-	"game-option.directive",
-	"storyPart",
-	"storyPartCtrl",
+	"storytelling/game-option.directive",
+	"storytelling/storyPart",
 
-	"storytellingService",
-	"analytics",
+	"global/analytics",
 
 	], function($, app, angular) {
-
-		console.log("Bootstrapping..")
 
    	angular.bootstrap(document , ['gameApp']);
 		

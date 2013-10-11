@@ -8,26 +8,19 @@
 	<script data-main="main" src="lib/require/require.js"></script>	
 	
 	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="styles.css"
+	<link rel="stylesheet" type="text/css" href="global/styles.css"
 	
 </head>
-<body class='container' ng-controller='GameCtrl'>
+<body class='container'>
 	<container  >
 		<div class='container ng-cloak mainBody'>
-			
 			<div class='row'>
-
 				<div class='col-md-6 pad-top-10'>
-				<h2>Your Story</h2>
-					
-				<div story-part url='001'>
-					
-				</div>
-				</div>
-
+				<h2>The Spooky House</h2>
+				<div story-part url='intro'></div>
 			</div>
-
 		</div>
+	</div>
 	</container>
 	<ng:view></ng:view>
 </body>
