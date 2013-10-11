@@ -6,7 +6,6 @@ define(['app'] , function (app) {
         page:'=',
       },
       template:function(a,b){
-        console.log("A,B?",a,b)
         return "<button class='btn btn-default'>"+a.html()+"</button>";
     },
       link: function (scope, elem, attrs) {

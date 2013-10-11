@@ -6,11 +6,11 @@ define(['app'] , function (app) {
         page:'=',
       },
       template:function(a,b){
-        console.log("A,B?",a,b)
-        return "!!";
+        return "<hidden-event-inspector/>";
     },
       link: function (scope, elem, attrs) {
-          console.log("its an event...", es)
+          var whatHappened = _.keys(attrs.$attr);
+      	  es.somethingHappened(whatHappened);
       },
     }
   }]);
