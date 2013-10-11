@@ -45,7 +45,14 @@ require([
 	"d3",
 	"bootstrap",
 
+	"GameCtrl",
+	"game-option.directive",
+	"storytellingService",
+	"analytics",
+
 	], function($, app, angular) {
+
+		console.log("Bootstrapping..")
 
    	angular.bootstrap(document , ['gameApp']);
 		
