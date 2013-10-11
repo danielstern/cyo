@@ -6,8 +6,11 @@ define(['app'] , function (app) {
       scope: {
         url:'=',
       },
-      //template:"<div ng-include='\"story/"+"001"+".html\"'></div>",
-      templateUrl:"story/001.html",
+      
+      templateUrl:function(elem, atts){
+        console.log("template...",elem,atts)
+        return "story/"+atts.url+".html";
+      },
       link: function (scope, elem, attrs) {
         console.log("Detected story part...", scope.url);
 
