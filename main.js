@@ -47,6 +47,8 @@ require([
 
 	"GameCtrl",
 	"game-option.directive",
+	"storyPart",
+
 	"storytellingService",
 	"analytics",
 

@@ -6,11 +6,11 @@ define(['app'] , function (app) {
         page:'=',
       },
       link: function (scope, elem, attrs) {
-        console.log("Detected game-option...", elem, scope.page);
-          elem.bind('click', function(){
-            console.log('Directive click!',scope.page);
+       // console.log("Detected game-option...", elem, scope.page);
+          elem.bind('click', function(e){
             var storyNextPart = ss.getPage(scope.page);
-            elem.after(storyNextPart.url);
+       //    var next = $compile("<div story-part></div")
+            elem.after(next);
           })
 
         },
