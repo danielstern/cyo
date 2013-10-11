@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"sto",
+				"storyNextPart"
+			],
+			[
+				"page",
+				"pageSlug"
+			],
+			[
 				"bor",
 				"border-radius"
 			],
@@ -506,51 +514,11 @@
 			[
 				"express",
 				"expression"
-			],
-			[
-				"expres",
-				"expression"
-			],
-			[
-				"expre",
-				"expression"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "index.html",
-			"settings":
-			{
-				"buffer_size": 1503,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "GameCtrl.js",
-			"settings":
-			{
-				"buffer_size": 147,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "main.js",
-			"settings":
-			{
-				"buffer_size": 964,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "app.js",
-			"settings":
-			{
-				"buffer_size": 102,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -584,19 +552,41 @@
 	},
 	"file_history":
 	[
+		"/C/wamp/www/mega-game/index.html",
+		"/C/wamp/www/mega-game/main.js",
+		"/C/wamp/www/mega-game/storytelling/storyPart.js",
+		"/C/wamp/www/mega-game/game-option.directive.js",
+		"/C/wamp/www/mega-game/storytelling/game-option.directive.js",
+		"/C/wamp/www/responsive-calculator/app.js",
+		"/C/wamp/www/mega-game/story/go-to-old-house.html",
+		"/C/wamp/www/mega-game/story/jake-talks.html",
+		"/C/wamp/www/mega-game/storyPart.js",
+		"/C/wamp/www/mega-game/story/intro.html",
+		"/C/wamp/www/mega-game/assets/last-guardian-sprites.zip",
+		"/C/wamp/www/mega-game/story/001.html",
+		"/C/wamp/www/mega-game/story/check-out-the-old-hospital.html",
+		"/C/wamp/www/mega-game/story/brad-talks-about-the-last-guys.html",
+		"/C/wamp/www/mega-game/story/brad-talks.html",
+		"/C/wamp/www/mega-game/story/listen-to-some-music.html",
+		"/C/wamp/www/mega-game/styles.css",
+		"/C/wamp/www/mega-game/GameOptionCtrl.js",
+		"/C/wamp/www/mega-game/GameCtrl.js",
+		"/C/wamp/www/mega-game/StoryPartCtrl.js",
+		"/C/wamp/www/mega-game/app.js",
+		"/C/wamp/www/mega-game/storytellingService.js",
+		"/C/wamp/www/responsive-calculator/charts/charts.html",
+		"/C/wamp/www/responsive-calculator/charts/chartService.js",
+		"/C/wamp/www/responsive-calculator/charts/rcChart.js",
+		"/C/wamp/www/mega-game/analytics.js",
 		"/C/wamp/www/responsive-calculator/interface/InterfaceCtrl.js",
 		"/C/wamp/www/responsive-calculator/index.html",
 		"/C/wamp/www/responsive-calculator/settings/settings.html",
-		"/C/wamp/www/responsive-calculator/charts/rcChart.js",
 		"/C/wamp/www/responsive-calculator/charts/ChartCtrl.js",
 		"/C/wamp/www/responsive-calculator/charts/Chartmaster.js",
 		"/C/wamp/www/responsive-calculator/common/styles/bootstrapcalculator.css",
 		"/C/wamp/www/responsive-calculator/common/defaults.js",
 		"/C/wamp/www/responsive-calculator/interface/interface.html",
-		"/C/wamp/www/responsive-calculator/charts/chartService.js",
-		"/C/wamp/www/responsive-calculator/charts/charts.html",
 		"/C/wamp/www/responsive-calculator/main.js",
-		"/C/wamp/www/responsive-calculator/app.js",
 		"/C/wamp/www/responsive-calculator/charts/chart.html",
 		"/C/wamp/www/responsive-calculator/calculator/calculationService.js",
 		"/C/wamp/www/responsive-calculator/calculator/Calculator.js",
@@ -689,29 +679,7 @@
 		"/C/wamp/www/lisa/README.md",
 		"/C/wamp/www/lisa/js/expresso/Expresso.js",
 		"/C/Users/New Owner/Documents/more notes",
-		"/C/wamp/www/lisa/js/expresso/Lexicator.js",
-		"/C/wamp/www/old/stories_rpg.js",
-		"/C/wamp/www/lisa/js/expresso/expressions/expressions.js",
-		"/C/Users/New Owner/Documents/BlueJays Way",
-		"/C/Users/New Owner/Documents/portfoliolinks",
-		"/C/wamp/www/lisa/js/expresso/expressions/moment.js",
-		"/C/wamp/www/lisa/js/logic/counterpose.js",
-		"/C/wamp/www/lisa/lang/lexicon.js",
-		"/C/wamp/www/lisa/lang/sayings.js",
-		"/C/Users/New Owner/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
-		"/C/wamp/www/lisa/lang/transliterate.js",
-		"/C/wamp/www/lisa/js/brain/Brain.js",
-		"/C/wamp/www/lisa/js/logic/ponder.js",
-		"/C/wamp/www/lisa/js/personality/Personality.js",
-		"/C/wamp/www/lisa/js/brain/Speech.js",
-		"/C/wamp/www/lisa/js/expresso/moment.js",
-		"/C/wamp/www/lisa/js/expresso/expressions.js",
-		"/C/wamp/www/lisa/story/stories_gatsby.js",
-		"/C/wamp/www/lisa/js/personality/Patterns.js",
-		"/C/wamp/www/lisa/js/stories.js",
-		"/C/wamp/www/lisa/js/expressions.js",
-		"/C/wamp/www/lisa/js/Expresso.js",
-		"/C/wamp/www/lisa/js/ponder.js"
+		"/C/wamp/www/lisa/js/expresso/Lexicator.js"
 	],
 	"find":
 	{
@@ -730,6 +698,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"...</",
+			"define",
 			"frame",
 			"thumb-b",
 			"pinned",
@@ -855,12 +825,10 @@
 			"s",
 			"express",
 			"prepositionObj",
-			"getPrep",
-			"synonymi",
-			"synonyi"
+			"getPrep"
 		],
 		"highlight": false,
-		"in_selection": true,
+		"in_selection": false,
 		"preserve_case": false,
 		"regex": false,
 		"replace_history":
@@ -874,7 +842,7 @@
 			":function",
 			""
 		],
-		"reverse": false,
+		"reverse": true,
 		"show_context": true,
 		"use_buffer2": true,
 		"whole_word": false,
@@ -883,113 +851,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "index.html",
-					"settings":
-					{
-						"buffer_size": 1503,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								566,
-								553
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "GameCtrl.js",
-					"settings":
-					{
-						"buffer_size": 147,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								32,
-								32
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "main.js",
-					"settings":
-					{
-						"buffer_size": 964,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								432,
-								432
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app.js",
-					"settings":
-					{
-						"buffer_size": 102,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								87,
-								87
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
