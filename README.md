@@ -16,7 +16,9 @@ Clone this repository, as it is set up with the optimal require.js / angular.js 
 
 In `index.html`...
 
-   <chapter url='intro'></chapter>
+```
+<chapter url='intro'></chapter>
+```
 
 This is unique markup for CYO using the directive `chapter`. The URL attr points to a file in `story/`
 
