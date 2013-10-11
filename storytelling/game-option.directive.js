@@ -17,6 +17,7 @@ define(['app'] , function (app) {
               var btn = elem.find('button');
               btn.attr('disabled',true)
               btn.addClass('btn-disabled')
+              btn.attr('title',"To be continued...")
           });
           elem.bind('click', function(e){
 
