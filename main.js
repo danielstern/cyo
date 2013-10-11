@@ -46,6 +46,7 @@ require([
 	"bootstrap",
 
 	"GameCtrl",
+	"GameOptionCtrl",
 	"game-option.directive",
 	"storyPart",
 	"storyPartCtrl",
