@@ -52,6 +52,7 @@ require([
 	"storytelling/event-remembering.service",
 
 	"global/analytics",
+	"global/utility",
 
 	], function($, app, angular) {
 
