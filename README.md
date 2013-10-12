@@ -49,8 +49,11 @@ In `story/bust-the-gate.html`
 
 The `event` tag lets you remember something for later using the `condition` tag.
 
-```
+```javascript
 <condition found-shiny-locket>
 	<p>As you walk through the room, the locket begins to glow. Suddenly, a new doorway appears in the wall.</p>
 	<choice page="'go-through-hidden-doorway'">Go through the doorway.</choice>
 </condition>
+```
+
+You can nest events in conditions, and conditions in conditions, to create a unique storytelling experience.
