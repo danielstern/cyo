@@ -48,6 +48,7 @@ require([
 	"storytelling/game-option.directive",
 	"storytelling/storyPart",
 	"storytelling/event.directive",
+	"storytelling/if.directive",
 	"storytelling/event-remembering.service",
 
 	"global/analytics",
