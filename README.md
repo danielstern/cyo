@@ -29,14 +29,13 @@ This is unique markup for CYO using the directive `chapter`. The URL attr points
 In `story/intro.html`
 
 ```
-<div>
+<chap> // story must be contained in  single tag.
 	<p>"Don't worry," says crazy Jake. "It's not so scary as all of that."</p>
 	<p>"Like bones it isn't," says Bradley, straightening his glasses. "I don't like that house."</p>
 	<choice page="'jake-talks'">Hear Jake out</choice>
 	<choice page="'brad-talks'">Hear Bradley out</choice>
-</div>
+</chap>
 ```
-
 
 Using a `choice` tag creates a button that lets the reader choose the next part of the adventure. The page points to URL in the stories folder. This allows you to write an endless series of stories while only coding HTML. *todo: add support for alternative templating engines in templates*
 
@@ -44,8 +43,14 @@ Using a `choice` tag creates a button that lets the reader choose the next part 
 In `story/bust-the-gate.html`
 
 ```
-<p>With a *crack*, the gate creaks open, and your knife breaks to pieces in your hand. <i>Hmm... better a cofferful of gold and diamonds than that old knife.</p></i>
-<event broke-knife></event>
+<p>You pick up a shiny locket.</p>
+<event found-shiny-locket></event>
 ```
 
-The `event` tag lets you remember something for later using the `if` tag *(todo)*.
+The `event` tag lets you remember something for later using the `condition` tag.
+
+```
+<condition found-shiny-locket>
+	<p>As you walk through the room, the locket begins to glow. Suddenly, a new doorway appears in the wall.</p>
+	<choice page="'go-through-hidden-doorway'">Go through the doorway.</choice>
+</condition>
