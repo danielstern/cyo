@@ -5,14 +5,18 @@ define(['app'] , function (app) {
       scope: {
         page:'=',
       },
-      template:function(a,b){
-        return "<hidden-event-inspector/>";
-    },
+     
       link: function (scope, elem, attrs) {
-          var whatHappened = _.keys(attrs.$attr);
-         // es.somethingHappened(whatHappened);
-         var isConditionTrue = es.didThisHappen(whatHappened);
-         console.log("IF found:",whatHappened,isConditionTrue);
+         var whatHappened = _.keys(attrs.$attr);
+         var itHappened = es.didThisHappen(whatHappened);
+
+         if(!itHappened) {
+          elem.addClass('hidden');
+          // todo- invalidate events
+          var events = elem.find('event');
+          console.log("events?",events);
+          events.addClass('cancelled');
+         }
       },
     }
   }]);

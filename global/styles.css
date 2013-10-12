@@ -16,3 +16,7 @@ body {
 	font-family: 'Optima';
 	font-size: 2rem;
 }
+
+.hidden {
+	display:none;
+}
