@@ -37,9 +37,6 @@ In `story/intro.html`
 </div>
 ```
 
-```
-<choice page="'brad-talks'">Hear Bradley out</choice>
-```
 
 Using a `choice` tag creates a button that lets the reader choose the next part of the adventure. The page points to URL in the stories folder. This allows you to write an endless series of stories while only coding HTML. *todo: add support for alternative templating engines in templates*
 
