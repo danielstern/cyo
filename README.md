@@ -29,18 +29,17 @@ This is unique markup for CYO using the directive `chapter`. The URL attr points
 In `story/intro.html`
 
 ```
-<chap> // story must be contained in  single tag.
+<page> // story must be contained in  single tag.
 	<p>"Don't worry," says crazy Jake. "It's not so scary as all of that."</p>
 	<p>"Like bones it isn't," says Bradley, straightening his glasses. "I don't like that house."</p>
 	<choice page="'jake-talks'">Hear Jake out</choice>
 	<choice page="'brad-talks'">Hear Bradley out</choice>
-</chap>
+</page>
 ```
 
 Using a `choice` tag creates a button that lets the reader choose the next part of the adventure. The page points to URL in the stories folder. This allows you to write an endless series of stories while only coding HTML. *todo: add support for alternative templating engines in templates*
 
 ### Events
-In `story/bust-the-gate.html`
 
 ```
 <p>You pick up a shiny locket.</p>
@@ -48,6 +47,8 @@ In `story/bust-the-gate.html`
 ```
 
 The `event` tag lets you remember something for later using the `condition` tag.
+
+### Conditions
 
 ```javascript
 <condition found-shiny-locket>
