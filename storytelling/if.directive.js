@@ -7,8 +7,14 @@ define(['app'] , function (app) {
       },
      
       link: function (scope, elem, attrs) {
+      	 var itHappened;
          var whatHappened = _.keys(attrs.$attr);
-         var itHappened = es.didThisHappen(whatHappened);
+         console.log("What happened...",whatHappened);
+         if (_.contains(whatHappened, 'not')) {
+         		itHappened = !es.didThisHappen(whatHappened);
+         } else {
+        	 itHappened = es.didThisHappen(whatHappened);
+       	}
 
          if(!itHappened) {
           elem.addClass('hidden');

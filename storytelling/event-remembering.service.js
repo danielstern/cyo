@@ -9,13 +9,17 @@ define(['app'] , function (app) {
 		}
 
 		this.didThisHappen = function(thing) {
-			if (_.isArray(thing)) thing = thing[0]
+			//if (_.isArray(thing)) thing = thing[0]
+			if (_.isArray(thing)) {
+				thing = _.first(_.without(thing, 'not'))
+			}
 			if (_.contains(this.allThingsPassed, thing)) return true;
+			return false;
 		}
 
 		this.itDidNotHappen = function(thing) {
 			console.log("Event cancelled...",thing);
-			if (_.isArray(thing)) thing = thing[0]
+
 			this.allThingsPassed = _.without(this.allThingsPassed, thing);
 		}
 	});
