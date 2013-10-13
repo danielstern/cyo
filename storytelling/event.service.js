@@ -13,8 +13,8 @@ define(['app'] , function (app) {
 			var conditionStatement;
 			var itHappened = false;
 
-			//if (_.isArray(condition)) conditionStatement = _.keysToKeyword(condition);
-			conditionStatement = _.compoundToObject(condition).target;
+			if (_.isArray(condition)) conditionStatement = _.keysToKeyword(condition);
+			//conditionStatement = _.compoundToObject(condition).target;
 			//conditionStatement = conditionStatement || condition;
 
 			if (_.beginsWithNumber(conditionStatement)) {
@@ -25,7 +25,7 @@ define(['app'] , function (app) {
 
 			if (_.contains(this.allThingsPassed, conditionStatement)) itHappened = true;
 
-	//		console.log("Conditiontovalidity...",conditionStatement,this.allThingsPassed);
+			console.log("Conditiontovalidity...",conditionStatement,this.allThingsPassed);
 
 			return (getNeg) ? !itHappened : itHappened;
 

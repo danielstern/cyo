@@ -3,10 +3,13 @@ define(['app'], function (app) {
     function (es, $compile, $http) {
       return {
         restrict: 'E',
+        transclude: true,
         controller : function($scope) {
           
           this.isCancelled = function() {
-           	return !$scope.itHappened;
+          	var cancelled = ($scope.itHappened) ? true : false;
+          	console.log("Did this happen?",$scope.itHappened)
+           	return cancelled;
           }
           
        
@@ -17,9 +20,9 @@ define(['app'], function (app) {
           var whatHappened = _.keys(attrs.$attr);
 
           if (_.contains(whatHappened, 'not')) {
-            scope.itHappened = !es.didThisHappen(whatHappened);
+            scope.itHappened = !es.conditionToValidity(whatHappened);
           } else {
-            scope.itHappened = es.didThisHappen(whatHappened);
+            scope.itHappened = es.conditionToValidity(whatHappened);
           }
 
           if (!scope.itHappened) elem.addClass('hidden');
