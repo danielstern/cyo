@@ -10,6 +10,8 @@ define(['app'] , function (app) {
 
 		this.didThisHappen = function(thing) {
 
+			console.log("Did this happen?",thing, this.allThingsPassed)
+
 			if (_.isArray(thing)) {
 				thing = _.first(_.without(thing, 'not', 'clear'))
 			}
