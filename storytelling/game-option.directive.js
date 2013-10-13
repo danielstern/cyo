@@ -9,8 +9,14 @@ define(['app'] , function (app) {
         return "<button class='btn btn-default'>"+a.html()+"</button>";
     },
       link: function (scope, elem, attrs) {
-            var el = angular.element("<chapter url='"+scope.page+"'></chapter>")
-            $http({method: "GET", url: 'story/' +scope.page +'.html',})
+      			var page;
+      			page = scope.page;
+      			if (!scope.page) {
+      				page = _.dasherize(_.first(_.keys(attrs.$attr)));
+      				console.log("Using alternate page...",page)
+      			}
+            var el = angular.element("<chapter url='"+page+"'></chapter>")
+            $http({method: "GET", url: 'story/' +page +'.html',})
             .error(function(data, status) {
              
               var btn = elem.find('button');
