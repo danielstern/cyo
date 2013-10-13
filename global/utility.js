@@ -10,7 +10,7 @@ define(['underscore'], function (_) {
       return totalNumber;
     },
     keysToKeyword: function (array) {
-    	return	_.first(_.without(array, 'not', 'clear'))
+    	return	_.first(_.without(array, 'not', 'clear','condition'))
     },
     beginsWithNumber: function (string) {
     	return _.isNumber(_.first(string));

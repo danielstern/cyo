@@ -8,6 +8,30 @@ define(['app'] , function (app) {
 			this.allThingsPassed = this.allThingsPassed.concat(thing);
 		}
 
+		this.conditionToValidity = function(condition) {
+
+			var conditionStatement;
+			var itHappened = false;
+
+			if (_.isArray(condition)) conditionStatement = _.keysToKeyword(condition);
+			conditionStatement = conditionStatement || condition;
+
+			if (_.beginsWithNumber(conditionStatement)) {
+				var data = _.compoundToObject(conditionStatement);
+				if (_.count(this.allThingsPassed, data.target) >= data.attribute) itHappened = true;
+			}
+
+
+			if (_.contains(this.allThingsPassed, conditionStatement)) itHappened = true;
+
+			if (_.contains(conditionStatement, 'not')) itHappened != itHappened;
+
+		//	console.log("Conditiontovalidity...",conditionStatement,this.allThingsPassed);
+
+			return itHappened;
+
+		}
+
 		this.didThisHappen = function(thing) {
 
 			if (_.isArray(thing)) thing = _.keysToKeyword(thing);
