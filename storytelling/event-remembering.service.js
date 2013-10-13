@@ -11,7 +11,7 @@ define(['app'] , function (app) {
 		this.didThisHappen = function(thing) {
 
 			if (_.isArray(thing)) {
-				thing = _.first(_.without(thing, 'not'))
+				thing = _.first(_.without(thing, 'not', 'clear'))
 			}
 
 			if (_.isNumber(_.first(thing))) {
