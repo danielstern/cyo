@@ -18,12 +18,11 @@ define(['app'] , function (app) {
 			}
 
 			if (_.contains(this.allThingsPassed, thing)) return true;
-			
+
 			return false;
 		}
 
 		this.itDidNotHappen = function(thing) {
-
 			this.allThingsPassed = _.without(this.allThingsPassed, thing);
 		}
 	});

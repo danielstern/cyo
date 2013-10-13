@@ -50,7 +50,7 @@ require([
 	"storytelling/event.directive",
 	"storytelling/ending.directive",
 	"storytelling/if.directive",
-	"storytelling/event-remembering.service",
+	"storytelling/event.service",
 
 	"global/analytics",
 	"global/utility",
