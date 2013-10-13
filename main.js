@@ -45,11 +45,11 @@ require([
 	"d3",
 	"bootstrap",
 
-	"storytelling/game-option.directive",
-	"storytelling/storyPart",
+	"storytelling/choice.directive",
+	"storytelling/chapter.directive",
 	"storytelling/event.directive",
 	"storytelling/ending.directive",
-	"storytelling/if.directive",
+	"storytelling/condition.directive",
 	"storytelling/event.service",
 
 	"global/analytics",
