@@ -7,11 +7,22 @@ define(['app'] , function (app) {
       },
       link: function (scope, elem, attrs) {
           var whatHappened = _.keys(attrs.$attr);
+          var cleared = false;
+         if (_.contains(whatHappened, 'clear')) {
+         		 es.itDidNotHappen(whatHappened);
+         		 cleared = true;
+         } else {
       	  es.somethingHappened(whatHappened);
+      	}
 
           scope.$watch(elem,function(){
           	if (elem.hasClass('cancelled')) {
-          		es.itDidNotHappen(whatHappened);
+          		if (!_.contains(whatHappened, 'clear')) {
+          			es.itDidNotHappen(whatHappened);
+          		}
+          		else  if (cleared) {
+          				es.somethingHappened(whatHappened);
+          		}
           	}
           })
       },
