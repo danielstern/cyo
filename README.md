@@ -66,3 +66,18 @@ You can nest events in conditions, and conditions in conditions, to create a uni
 	<choice go-back-to-the-hallway>Nothing here.</choice>
 </condition>
 ```
+
+### Shortcuts
+
+You can nest an event within a choice using the following shortform syntax:
+
+```javascript
+<choice use-the-wand condition="found-wand" />
+```
+
+You can reverse this condition by adding the attribute "unless"
+
+```javascript
+<choice use-the-wand unless condition="wand-was-stolen" />
+```
+
