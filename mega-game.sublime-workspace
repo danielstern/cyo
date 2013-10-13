@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"re",
+				"reqNum"
+			],
+			[
+				"thin",
+				"thingString"
+			],
+			[
+				"tota",
+				"totalNumber"
+			],
+			[
 				"sto",
 				"storyNextPart"
 			],
@@ -26,10 +38,6 @@
 			[
 				"fin",
 				"finalVal"
-			],
-			[
-				"re",
-				"recurringPayment"
 			],
 			[
 				"final",
@@ -506,51 +514,11 @@
 			[
 				"use",
 				"useAsync"
-			],
-			[
-				"in",
-				"invoked"
-			],
-			[
-				"express",
-				"expression"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "app.js",
-			"settings":
-			{
-				"buffer_size": 100,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "story/inspect-yard.html",
-			"settings":
-			{
-				"buffer_size": 563,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "story/take-a-flower.html",
-			"settings":
-			{
-				"buffer_size": 741,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "index.html",
-			"settings":
-			{
-				"buffer_size": 822,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -558,6 +526,10 @@
 		"height": 392.0,
 		"selected_items":
 		[
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
 			[
 				"",
 				"Package Control: Install Package"
@@ -571,7 +543,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 416.0
+		"width": 528.0
 	},
 	"console":
 	{
@@ -588,29 +560,40 @@
 	},
 	"file_history":
 	[
-		"/C/Users/Azureda/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/wamp/www/cyo/storytelling/event-remembering.service.js",
+		"/C/wamp/www/cyo/index.html",
+		"/C/wamp/www/cyo/story/go-with-brad.html",
+		"/C/wamp/www/cyo/story/go-left.html",
+		"/C/wamp/www/cyo/story/sit-with-man.html",
+		"/C/wamp/www/cyo/storytelling/if.directive.js",
+		"/C/wamp/www/cyo/global/utility.js",
+		"/C/wamp/www/cyo/main.js",
+		"/C/wamp/www/calculator/common/Utility.js",
+		"/C/wamp/www/cyo/story/enter-house.html",
+		"/C/wamp/www/cyo/story/check-out-the-old-hospital.html",
+		"/C/wamp/www/cyo/README.md",
 		"/C/Users/Azureda/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/wamp/www/cyo/global/styles.css",
+		"/C/wamp/www/cyo/storytelling/event.directive.js",
+		"/C/Users/Azureda/AppData/Roaming/Sublime Text 2/Packages/User/JSON.sublime-settings",
+		"/C/wamp/www/cyo/story/inspect-yard.html",
+		"/C/wamp/www/cyo/story/take-a-flower.html",
+		"/C/wamp/www/cyo/app.js",
+		"/C/Users/Azureda/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/C/wamp/www/cyo/mega-game.sublime-workspace",
 		"//STUDIO1555/Public/lisa/lisa-project.sublime-workspace",
-		"/C/wamp/www/cyo/app.js",
 		"/C/wamp/www/cyo/story/go-around.html",
 		"/C/wamp/www/cyo/story/go-over.html",
 		"/C/wamp/www/cyo/story/pick-up-the-necklace.html",
 		"/C/wamp/www/cyo/story/pick-up-the-necklace.htmk",
-		"/C/wamp/www/cyo/storytelling/event.directive.js",
 		"/C/wamp/www/cyo/storytelling/game-option.directive.js",
-		"/C/wamp/www/cyo/index.html",
 		"/C/wamp/www/cyo/story/intro.html",
-		"/C/wamp/www/cyo/README.md",
 		"/C/wamp/www/cyo/story/bust-the-gate.html",
-		"/C/wamp/www/cyo/storytelling/event-remembering.service.js",
-		"/C/wamp/www/cyo/main.js",
 		"/C/wamp/www/calculator/calculator/calculationService.js",
 		"/C/wamp/www/cyo/storytelling/storyPart.js",
 		"/C/wamp/www/cyo/story/go-to-old-house.html",
 		"/C/wamp/www/cyo/story/jake-talks.html",
 		"/C/wamp/www/cyo/story/listen-to-some-music.html",
-		"/C/wamp/www/cyo/story/check-out-the-old-hospital.html",
 		"/C/wamp/www/cyo/story/brad-talks-about-the-last-guys.html",
 		"/C/wamp/www/cyo/story/brad-talks.html",
 		"/C/wamp/www/mega-game/index.html",
@@ -704,18 +687,7 @@
 		"/C/wamp/www/lisa/js/speech/Momento.js",
 		"/C/wamp/www/lisa/js/story/stories_jack.js",
 		"/C/wamp/www/lisa/js/speech/Lexicator.js",
-		"/C/wamp/www/lisa/js/Brain.js",
-		"/C/wamp/www/lisa/js/lang/things.js",
-		"/C/wamp/www/lisa/js/lang/verbs.js",
-		"/C/wamp/www/lisa/js/logic/Emotionalizer.js",
-		"/C/wamp/www/lisa/js/Memory.js",
-		"/C/wamp/www/lisa/js/Lisa.js",
-		"/C/wamp/www/lisa/js/Utility.js",
-		"/C/Users/New Owner/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
-		"/C/wamp/www/lisa/js/logic/Counterposer.js",
-		"/C/wamp/www/lisa/js/story/stories.js",
-		"/C/wamp/www/lisa/js/logic/MomentObject.js",
-		"/C/wamp/www/lisa/js/lang/attributes.js"
+		"/C/wamp/www/lisa/js/Brain.js"
 	],
 	"find":
 	{
@@ -734,6 +706,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"elem",
 			"exclude",
 			"extension",
 			"sublime",
@@ -860,8 +833,7 @@
 			"going",
 			"console",
 			"feel",
-			"express",
-			"s"
+			"express"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -887,115 +859,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app.js",
-					"settings":
-					{
-						"buffer_size": 100,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								100
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "story/inspect-yard.html",
-					"settings":
-					{
-						"buffer_size": 563,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								563
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "story/take-a-flower.html",
-					"settings":
-					{
-						"buffer_size": 741,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								741,
-								741
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "index.html",
-					"settings":
-					{
-						"buffer_size": 822,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								743,
-								743
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
