@@ -21,8 +21,6 @@ define(['app'] , function (app) {
 
 			if (_.contains(this.allThingsPassed, condition)) r = true;
 
-			console.log("Did this happen?",condition,r)
-
 			if (neg) r = !r;
 
 			return r;

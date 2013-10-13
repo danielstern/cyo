@@ -3,11 +3,10 @@ define(['app'], function (app) {
     function (es, $compile, $http) {
       return {
         restrict: 'E',
-        transclude: true,
-        scope: true,
         require: '?^condition',
         link: function (scope, elem, attrs, condition) {
           if (condition) {
+
             if (!condition.happened()) return;
           }
 

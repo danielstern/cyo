@@ -10,7 +10,7 @@ define(['underscore'], function (_) {
       return totalNumber;
     },
     keysToKeyword: function (array) {
-    	console.log("Keys to keywords...",array)
+    	
     	if (_.isString(array)) return array;
     	return	_.first(_.without(array, 'not', 'clear','condition'))
     },

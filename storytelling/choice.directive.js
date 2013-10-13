@@ -27,7 +27,7 @@ define(['app'], function (app) {
         	 neg = true;
         	}
 
-        	var itHappened = es.conditionToValidity(condition, neg);
+        	var itHappened = es.didItHappen(condition, neg);
        // 	console.log("Valid?",itHappened);
         	if (!itHappened) elem.hide();
         }

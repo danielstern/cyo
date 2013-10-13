@@ -3,15 +3,22 @@ define(['app'], function (app) {
     function (es, $compile, $http) {
       return {
         restrict: 'E',
-        controller : function($scope) {
-          
-          this.happened = function() {
-          	return scope.itHappened;
+        controller: function ($scope, $attrs) {
+
+          this.happened = function () {
+
+            var keys = _.keys($attrs.$attr);
+            var req = _.keysToKeyword(keys);
+            var neg = _.contains(keys, 'not');
+            return es.didItHappen(req, neg);
           }
-          
-    		},
-        link: function (scope, elem, attrs) {
-         
+
+        },
+        template: function (a, b) {
+          return "<div>" + a.html() + "</div>"
+        },
+        link: function (scope, elem, attrs, ctrl) {
+
           scope.itHappened = false;
           var keys = _.keys(attrs.$attr);
           var req = _.keysToKeyword(keys);

@@ -8,8 +8,6 @@
 	<condition not door-on-right-disappears>
 	<choice page='"go-right"'>Go through the door at the end of the hall.</choice>
 	</condition>
-	<condition not examined-vase>
-	<choice page='"examine-vase"'>Examine the vase</choice>
-	</condition>
+	<choice examine-vase unless condition="examined-vase">Examine the vase</choice>
 	<choice go-back-downstairs>Go back downstairs</choice>
 </page>
