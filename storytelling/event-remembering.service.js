@@ -3,29 +3,22 @@ define(['app'] , function (app) {
 
 		this.allThingsPassed = [];
 		window.atp = this.allThingsPassed;
+
 		this.somethingHappened = function(thing) {
-			console.log("Event logged...",thing);
 			this.allThingsPassed = this.allThingsPassed.concat(thing);
 		}
 
 		this.didThisHappen = function(thing) {
 
-			console.log("Did this happen?",thing, this.allThingsPassed)
+			if (_.isArray(thing)) thing = _.keysToKeyword(thing);
 
-			if (_.isArray(thing)) {
-				thing = _.first(_.without(thing, 'not', 'clear'))
-			}
-
-			if (_.isNumber(_.first(thing))) {
-				var reqNum = thing.split('|')[0];
-				var thingString = thing.split('|')[1];
-				
-				if (_.count(this.allThingsPassed, thingString) >= reqNum) {
-					return true;
-				}
+			if (_.beginsWithNumber(thing)) {
+				var data = _.compoundToObject(thing);
+				if (_.count(this.allThingsPassed, data.target) >= data.attribute) return true;
 			}
 
 			if (_.contains(this.allThingsPassed, thing)) return true;
+			
 			return false;
 		}
 

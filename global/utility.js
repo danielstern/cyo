@@ -9,6 +9,19 @@ define(['underscore'], function (_) {
 
       return totalNumber;
     },
+    keysToKeyword: function (array) {
+    	return	_.first(_.without(array, 'not', 'clear'))
+    },
+    beginsWithNumber: function (string) {
+    	return _.isNumber(_.first(string));
+    },
+    compoundToObject: function (string) {
+    	var returnObj = {};
+    	returnObj.target = string.split('|')[1];
+			returnObj.attribute = string.split('|')[0];
+
+			return returnObj;
+    }
     
   })
 });
