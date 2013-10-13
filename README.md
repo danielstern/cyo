@@ -18,7 +18,7 @@ Clone this repository, as it is set up with the optimal require.js / angular.js 
 
 In `index.html`...
 
-```
+```html
 <chapter url='intro'></chapter>
 ```
 
@@ -28,7 +28,7 @@ This is unique markup for CYO using the directive `chapter`. The URL attr points
 ###Choices
 In `story/intro.html`
 
-```
+```html
 <page>
 	<p>"Don't worry," says crazy Jake. "It's not so scary as all of that."</p>
 	<p>"Like bones it isn't," says Bradley, straightening his glasses. "I don't like that house."</p>
@@ -51,7 +51,7 @@ The `event` tag lets you remember something for later using the `condition` tag.
 
 ### Conditions
 
-```javascript
+```html
 <condition found-shiny-locket>
 	<p>As you walk through the room, the locket begins to glow. Suddenly, a new doorway appears in the wall.</p>
 	<choice go-through-hidden-doorway>Go through the doorway.</choice>
@@ -60,7 +60,7 @@ The `event` tag lets you remember something for later using the `condition` tag.
 
 You can nest events in conditions, and conditions in conditions, to create a unique storytelling experience.
 
-```javascript
+```html
 <condition not found-shiny-locket>
 	<p>You walk into the room. Hmm... it's empty.</p>
 	<choice go-back-to-the-hallway>Nothing here.</choice>
@@ -71,19 +71,19 @@ You can nest events in conditions, and conditions in conditions, to create a uni
 
 You can nest an event within a choice using the following shortform syntax:
 
-```javascript
+```html
 <choice use-the-wand condition="found-wand" />
 ```
 
 You can reverse this condition by adding the attribute "unless"
 
-```javascript
+```html
 <choice use-the-wand unless condition="wand-was-stolen" />
 ```
 
 If you have a choice that the user has to make again and again, and you can create a shortcut with the `crossroads` directive.
 
-```javascript
+```html
 <crossroads get-to-the-woods />
 // story/get-to-the-woods.html
 	<snippet>
