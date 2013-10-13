@@ -8,13 +8,14 @@ define(['app'] , function (app) {
 			this.allThingsPassed = this.allThingsPassed.concat(thing);
 		}
 
-		this.conditionToValidity = function(condition) {
+		this.conditionToValidity = function(condition, getNeg) {
 
 			var conditionStatement;
 			var itHappened = false;
 
-			if (_.isArray(condition)) conditionStatement = _.keysToKeyword(condition);
-			conditionStatement = conditionStatement || condition;
+			//if (_.isArray(condition)) conditionStatement = _.keysToKeyword(condition);
+			conditionStatement = _.compoundToObject(condition).target;
+			//conditionStatement = conditionStatement || condition;
 
 			if (_.beginsWithNumber(conditionStatement)) {
 				var data = _.compoundToObject(conditionStatement);
@@ -24,11 +25,9 @@ define(['app'] , function (app) {
 
 			if (_.contains(this.allThingsPassed, conditionStatement)) itHappened = true;
 
-			if (_.contains(conditionStatement, 'not')) itHappened != itHappened;
+	//		console.log("Conditiontovalidity...",conditionStatement,this.allThingsPassed);
 
-		//	console.log("Conditiontovalidity...",conditionStatement,this.allThingsPassed);
-
-			return itHappened;
+			return (getNeg) ? !itHappened : itHappened;
 
 		}
 

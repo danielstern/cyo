@@ -20,9 +20,16 @@ define(['app'], function (app) {
         }
 
         if (condition) {
-        	console.log("this scope has a condition...", condition);
-        	var itHappened = es.conditionToValidity(condition);
-        	console.log("Did it happen?",itHappened);
+        //	console.log("this scope has a condition...", condition);
+        	var neg = false;
+        	if (_.has(attrs,'unless')) {
+       //		console.log("This is a negative condition.")
+        	 neg = true;
+        	}
+
+        	var itHappened = es.conditionToValidity(condition, neg);
+       // 	console.log("Valid?",itHappened);
+        	if (!itHappened) elem.hide();
         }
 
         var el = angular.element("<chapter url='" + page + "'></chapter>");

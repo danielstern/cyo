@@ -16,9 +16,13 @@ define(['underscore'], function (_) {
     	return _.isNumber(_.first(string));
     },
     compoundToObject: function (string) {
+
     	var returnObj = {};
+    	returnObj.isValid = true;
     	returnObj.target = string.split('|')[1];
 			returnObj.attribute = string.split('|')[0];
+
+			returnObj.target = returnObj.target || string;
 
 			return returnObj;
     }

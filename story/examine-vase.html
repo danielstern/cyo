@@ -1,13 +1,9 @@
 <page>
-	<p>You walk up to the table with the vase on it. <i>It's just a little vase with some water in it.</i> You notice that it is covered in much less dust than the other things at the table. It is blue and covered with little notches and grooves.</p>
-	<event looked-at-vase></event>
-	<choice put-flower-in-vase condition="got-flower">Put the flower in the vase</choice>
-	</condition>
-	<condition not door-on-left-disappears>
-		<choice go-left>Go through the door on the left</choice>
-	</condition>
-	<condition not door-on-right-disappears>
-		<choice go-right>Go through the door on the right</choice>
-	</condition>
-	<choice go-back-downstairs>Go back downstairs</choice>
+<p>You walk up to the table with the vase on it. <i>It's just a little vase with some water in it.</i> You notice that it is covered in much less dust than the other things at the table. It is blue and covered with little notches and grooves.</p>
+<event looked-at-vase></event>
+<choice put-flower-in-vase condition="got-flower">Put the flower in the vase</choice>
+<choice go-left unless condition="door-on-left-disappears">Go through the door on the left</choice>
+<choice go-right unless condition="door-on-right-disappears">Go through the door on the right</choice>
+
+<choice go-back-downstairs>Go back downstairs</choice>
 </page>
