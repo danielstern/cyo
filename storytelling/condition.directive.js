@@ -5,18 +5,14 @@ define(['app'], function (app) {
         restrict: 'E',
         controller : function($scope) {
           
-          this.getCurrentTabIndex = function() {
-            return '';
-          };
-
           this.isCancelled = function() {
-         // 	console.log("Is cancelled?", $scope)
-          	return !$scope.itHappened;
+           	return !$scope.itHappened;
           }
           
        
     		},
         link: function (scope, elem, attrs) {
+         
           scope.itHappened;
           var whatHappened = _.keys(attrs.$attr);
 
@@ -26,14 +22,7 @@ define(['app'], function (app) {
             scope.itHappened = es.didThisHappen(whatHappened);
           }
 
-
-
-          if (!scope.itHappened) {
-            elem.addClass('hidden');
-            
-            var events = elem.find('event');
-            events.addClass('cancelled');
-          }
+          if (!scope.itHappened) elem.addClass('hidden');
         },
       }
     }
