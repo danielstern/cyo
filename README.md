@@ -81,3 +81,14 @@ You can reverse this condition by adding the attribute "unless"
 <choice use-the-wand unless condition="wand-was-stolen" />
 ```
 
+If you have a choice that the user has to make again and again, and you can create a shortcut with the `crossroads` directive.
+
+```javascript
+<crossroads get-to-the-woods />
+// story/get-to-the-woods.html
+	<snippet>
+	  <choice go-left />
+	  <choice go-right />
+	  <choice use-flashlight condition="got-flashlight" />
+	</snippet>
+```
