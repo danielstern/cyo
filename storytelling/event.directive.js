@@ -6,17 +6,18 @@ define(['app'], function (app) {
         transclude: true,
         scope: true,
         require: '?^condition',
-        link: function (scope, elem, attrs, cond) {
-          if (cond) {
-            scope.cancelled = cond.isCancelled();
-            if (scope.cancelled) return;
+        link: function (scope, elem, attrs, condition) {
+          if (condition) {
+            if (!condition.happened()) return;
           }
 
-          var whatHappened = _.keys(attrs.$attr);
-          if (_.contains(whatHappened, 'clear')) {
-            es.itDidNotHappen(whatHappened);
+          var keys = _.keys(attrs.$attr);
+          var e = _.keysToKeyword(keys);
+
+          if (_.contains(keys, 'clear')) {
+            es.clearEvent(e);
           } else {
-            es.somethingHappened(whatHappened);
+            es.somethingHappened(e);
           }
         },
       }

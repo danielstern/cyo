@@ -3,27 +3,21 @@ define(['app'], function (app) {
     function (es, $compile, $http) {
       return {
         restrict: 'E',
-        transclude: true,
         controller : function($scope) {
           
-          this.isCancelled = function() {
-          	var cancelled = ($scope.itHappened) ? true : false;
-          	console.log("Did this happen?",$scope.itHappened)
-           	return cancelled;
+          this.happened = function() {
+          	return scope.itHappened;
           }
           
-       
     		},
         link: function (scope, elem, attrs) {
          
-          scope.itHappened;
-          var whatHappened = _.keys(attrs.$attr);
+          scope.itHappened = false;
+          var keys = _.keys(attrs.$attr);
+          var req = _.keysToKeyword(keys);
+          var neg = _.contains(keys, 'not');
 
-          if (_.contains(whatHappened, 'not')) {
-            scope.itHappened = !es.conditionToValidity(whatHappened);
-          } else {
-            scope.itHappened = es.conditionToValidity(whatHappened);
-          }
+          scope.itHappened = es.didItHappen(req, neg);
 
           if (!scope.itHappened) elem.addClass('hidden');
         },

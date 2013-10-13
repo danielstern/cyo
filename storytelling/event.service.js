@@ -8,44 +8,27 @@ define(['app'] , function (app) {
 			this.allThingsPassed = this.allThingsPassed.concat(thing);
 		}
 
-		this.conditionToValidity = function(condition, getNeg) {
+		this.didItHappen = function(condition, neg) {
 
-			var conditionStatement;
-			var itHappened = false;
+			var r = false;
 
-			if (_.isArray(condition)) conditionStatement = _.keysToKeyword(condition);
-			//conditionStatement = _.compoundToObject(condition).target;
-			//conditionStatement = conditionStatement || condition;
+			if (_.isArray(condition)) condition = _.keysToKeyword(condition);
 
-			if (_.beginsWithNumber(conditionStatement)) {
-				var data = _.compoundToObject(conditionStatement);
-				if (_.count(this.allThingsPassed, data.target) >= data.attribute) itHappened = true;
+			if (_.beginsWithNumber(condition)) {
+				var data = _.compoundToObject(condition);
+				if (_.count(this.allThingsPassed, data.target) >= data.attribute) r = true;
 			}
 
+			if (_.contains(this.allThingsPassed, condition)) r = true;
 
-			if (_.contains(this.allThingsPassed, conditionStatement)) itHappened = true;
+			console.log("Did this happen?",condition,r)
 
-			console.log("Conditiontovalidity...",conditionStatement,this.allThingsPassed);
+			if (neg) r = !r;
 
-			return (getNeg) ? !itHappened : itHappened;
-
+			return r;
 		}
 
-		this.didThisHappen = function(thing) {
-
-			if (_.isArray(thing)) thing = _.keysToKeyword(thing);
-
-			if (_.beginsWithNumber(thing)) {
-				var data = _.compoundToObject(thing);
-				if (_.count(this.allThingsPassed, data.target) >= data.attribute) return true;
-			}
-
-			if (_.contains(this.allThingsPassed, thing)) return true;
-
-			return false;
-		}
-
-		this.itDidNotHappen = function(thing) {
+		this.clearEvent = function(thing) {
 			this.allThingsPassed = _.without(this.allThingsPassed, thing);
 		}
 	});
