@@ -47,9 +47,10 @@ require([
 
 	"storytelling/choice.directive",
 	"storytelling/chapter.directive",
-	"storytelling/event.directive",
+	"storytelling/crossroads.directive",
 	"storytelling/ending.directive",
 	"storytelling/condition.directive",
+	"storytelling/event.directive",
 	"storytelling/event.service",
 
 	"global/analytics",
