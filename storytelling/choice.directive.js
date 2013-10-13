@@ -14,11 +14,13 @@ define(['app'], function (app) {
 
         var el = angular.element("<chapter url='" + page + "'></chapter>");
 
-        elem.bind('click', function (e) {
-          var cmpl = $compile(el)
+        scope.nextChapter = function() {
+        	var cmpl = $compile(el)
           elem.after(el);
           cmpl(scope);
-        })
+        }
+
+        elem.bind('click', scope.nextChapter)
 
         $http({
           method: "GET",
