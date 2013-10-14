@@ -1,43 +1,80 @@
 CYO
 ===
 
-The world most simple game engine.
+CYO (Choose Your Own) is an extremely simple, but powerful, storytelling engine built with Angular.js.
 
 Introduction
 ------------
-CYO lets someone with no code knowledge whatsoever write their own 21st century choose your own adventure story!
+CYO uses Angular directives to create rich storytelling experiences with an extremely easy-to-remember syntax.
 
-CYO (Choose-Yer-Own) uses Angular.js directives to create a choose your own adventure game making engine that, wait for it, you make *100% with HTML markup*.You do not write any jQuery, JavaScript, anything! (Perfect if you have no idea what these things are.)
 
 Implementation
 --------------
-Clone this repository, as it is set up with the optimal require.js / angular.js architecture for a CYO app.
+- Clone this repository
+- Delete every file in `story/` except `intro.html`
 
-##Elements
-###Chapters
 
+###Story
+You initialize your CYO with a simple `story` tag.
 
 ```html
-<chapter url='intro'></chapter>
+<story intro />
 ```
 
-This is unique markup for CYO using the directive `chapter`. The URL attr points to a file in `story/`
+Alternatively,
 
+```html
+<story url="intro" />
+```
 
-###Choices
-In `story/intro.html`
+This tag tells the program to find the first chapter of your story at `story/intro.html`. There's not a lot to the `story` tag.
+
+###Chapter
+You normally do not need to make `chapter` tags, as they are created automatically by `story`. However, they can be used anywhere just like a story tag.
+
+```html
+<chapter enter-the-spooky-house />
+```
+
+Chapter tags point to html files. Those files have the following basic makeup:
 
 ```html
 <page>
-	<p>"Don't worry," says crazy Jake. "It's not so scary as all of that."</p>
-	<p>"Like bones it isn't," says Bradley, straightening his glasses. "I don't like that house."</p>
-	<choice jake-talks>Hear Jake out</choice>
-	<choice brad-talks>Hear Bradley out</choice>
+	<p>
+		You see a grizzled old man tending a hearth.
+		<i>Something doesn't feel right here.</i>
+	</p>
 </page>
 ```
 
-In the above example, clicking on the "choice" tag would load the next "page," which would be an HTML file.
-Using a `choice` tag creates a button that lets the reader choose the next part of the adventure. The page points to URL in the stories folder. This allows you to write an endless series of stories while only coding HTML. The syntax is extremely easy to remember. It's designed to write on the fly.
+Thanks to [btford] and [showdown], chapters can be written in markdown (JOY!) by including the `<md>` tag.
+
+```html
+<page>
+	<md>
+		You see a grizzled old man tending a hearth.
+
+		*<i>Something doesn't feel right here.</i>*
+
+	</md>
+</page>
+```
+
+### Choice
+
+Choices make up the bread and butter of the interactive storytelling process. They are mercifully simple to execute.
+
+```html
+<page>
+	<md>
+		You see a fork in the path. 
+
+		*Hmm... should I go left or right?*
+
+	</md>
+	
+</page>
+```html
 
 ### Events
 
