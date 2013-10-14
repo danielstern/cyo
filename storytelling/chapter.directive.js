@@ -24,7 +24,7 @@ define(['app','underscore','css!global/styles.css'] , function (app, _) {
 
 					elem.addClass('pull-down-in');
 	        
-	        $('html, body').animate({scrollTop: elem.offset().top}, 800);
+
         },
 
       }
