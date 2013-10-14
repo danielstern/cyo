@@ -16,7 +16,16 @@ define(['app','underscore','css!global/styles.css'] , function (app, _) {
          $(scope.buttons).click(function(){
               $(scope.buttons).hide();
             })
+
+         var page = elem;
+          console.log("Page?", page)
+	        page.addClass('animate');
+	        page.addClass('zipped-up');
+	        _.defer(function(){
+	        	page.addClass('opened-up');
+	        })
         },
+
       }
   });
 })

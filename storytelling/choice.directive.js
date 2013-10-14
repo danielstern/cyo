@@ -40,7 +40,13 @@ define(['app'], function (app) {
           cmpl(scope);
         }
 
-        elem.bind('click', scope.nextChapter)
+        elem.bind('click', scope.nextChapter);
+
+         elem.addClass('animate-slow');
+	        elem.addClass('kate-moss');
+	        _.defer(function(){
+	        	elem.addClass('full-width');
+	        })
 
         $http({
           method: "GET",
