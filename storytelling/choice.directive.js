@@ -20,15 +20,12 @@ define(['app'], function (app) {
         }
 
         if (condition) {
-        //	console.log("this scope has a condition...", condition);
         	var neg = false;
         	if (_.has(attrs,'unless')) {
-       //		console.log("This is a negative condition.")
         	 neg = true;
         	}
 
         	var itHappened = es.didItHappen(condition, neg);
-       // 	console.log("Valid?",itHappened);
         	if (!itHappened) elem.hide();
         }
 
@@ -42,11 +39,14 @@ define(['app'], function (app) {
 
         elem.bind('click', scope.nextChapter);
 
-         elem.addClass('animate-slow');
+        /* elem.addClass('animate-slow');
 	        elem.addClass('kate-moss');
 	        _.defer(function(){
 	        	elem.addClass('full-width');
-	        })
+	        })*/
+
+				
+				elem.addClass('pull-right-in-slow');
 
         $http({
           method: "GET",
