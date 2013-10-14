@@ -13,17 +13,15 @@ define(['app','underscore','css!global/styles.css'] , function (app, _) {
         return "story/"+ url +".html";
 
       },
+      controller: function ($scope, $attrs, $element) {
+     		this.over = function() {
+     			var buttons = $element.find('button');
+     			buttons.hide();
+     		}      
+      },
       link: function (scope, elem, attrs) {
 
-         scope.buttons = elem.find('button');
-         $(scope.buttons).click(function(){
-
-              $(scope.buttons).hide();  // todo: fix
-
-            })
-
 					elem.addClass('pull-down-in');
-	        
 
         },
 

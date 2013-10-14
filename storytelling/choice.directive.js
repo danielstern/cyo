@@ -7,13 +7,16 @@ define(['app'], function (app) {
         page: '=',
         condition: '=',
       },
-      require:'^story',
+      require:['^story','^chapter'],
       template: function (a, b) {
         return "<button class='btn btn-default'>" + a.html() + "</button>";
       },
-      link: function (scope, elem, attrs, story) {
+      link: function (scope, elem, attrs, ctrls) {
         var page;
         var condition;
+        var story = ctrls [0];
+        var chapter = ctrls [1];
+
         page = scope.page || _.dasherize(_.keysToKeyword(attrs.$attr));
 
         if (_.has(attrs,'condition')) {
@@ -32,6 +35,7 @@ define(['app'], function (app) {
 
         elem.bind('click', handleButtonClick);
         function handleButtonClick() {
+        	chapter.over();
         	story.nextChapter(page);
         }
 				
