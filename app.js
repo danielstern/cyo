@@ -1,5 +1,5 @@
-define(['angular', 'jquery'], function (angular, $) {
+define(['angular', 'jquery',], function (angular, $) {
 
-  return angular.module('gameApp', [])
+  return angular.module('gameApp', ['btford.markdown']);
   
 });

@@ -6,6 +6,8 @@ require.config({
     angular: 'lib/angular/angular.min',
     bootstrap: 'lib/bootstrap/js/bootstrap.min',
     d3: 'lib/d3/d3.min',
+    showdown: 'lib/showdown/showdown',
+    markdown: 'lib/angular/angular-markdown/markdown',
   },
   shim: {
   	'underscore_string': {
@@ -26,6 +28,9 @@ require.config({
 	  'angular': {
 	      exports: 'angular'
 	  },
+	  'markdown': {
+	  	deps: ['angular'],
+	  }
 	},
 	urlArgs: "k=" + parseInt(Math.random() * 1000).toString(16),
 	priority: [
@@ -44,6 +49,8 @@ require([
 	"angular",
 	"d3",
 	"bootstrap",
+	"showdown",
+	"markdown",
 
 	"storytelling/choice.directive",
 	"storytelling/chapter.directive",

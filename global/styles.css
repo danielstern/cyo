@@ -1,4 +1,3 @@
-
 @font-face { 
 	font-family: Alagard;
 	src: url('../assets/alagard_by_pix3m-d6awiwp.ttf');
@@ -93,5 +92,5 @@ body {
 }
 
 .pull-right-in-slow {
-	-webkit-animation: fade-in 5s;
+	-webkit-animation: fade-in 3s;
 }
