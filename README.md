@@ -75,7 +75,7 @@ Choices make up the bread and butter of the interactive storytelling process. Th
 	<choice go-left>Guess I'll go left.</choice>
 	<choice go-left>Right, definately right.</choice>
 </page>
-```html
+```
 
 Choices look like buttons. When you click one, it automatically loads the chapter. `go-left` would load the file `story/go-left.html` and so-on. 
 
