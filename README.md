@@ -138,3 +138,12 @@ If you have a particular set of choices you are writing again, and again, you ca
 ```html
 <crossroads the-eight-sided-room />
 ```
+
+Making Your Own
+---------------
+
+Please use this tool to make your own adventures and share them with me. If you have any questions, or desperately need a new feature to complete your latest epic, post it up here. Better yet, add the feature yourself and make a pull request. 
+
+Happy adventuring!
+
+*CYO was created by Daniel Stern*
