@@ -81,3 +81,12 @@ body {
 .chapter-fade {
 	opacity: 0.5;
 }
+
+@-webkit-keyframes fade-in {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.pull-down-in {
+	-webkit-animation: fade-in 1s;
+}
