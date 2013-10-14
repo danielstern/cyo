@@ -29,6 +29,7 @@ page {
 	display:block;
 }
 
+
 body {
 /*	padding-top: 70px;*/
 	padding: 30px;
@@ -75,4 +76,8 @@ body {
 .full-width {
 	width: auto;
 	opacity: 1;
+}
+
+.chapter-fade {
+	opacity: 0.5;
 }

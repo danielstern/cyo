@@ -15,6 +15,7 @@ define(['app','underscore','css!global/styles.css'] , function (app, _) {
 
          $(scope.buttons).click(function(){
               $(scope.buttons).hide();
+
             })
 
 	        elem.addClass('animate');
