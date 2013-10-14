@@ -9,8 +9,6 @@ define(['app','underscore','css!global/styles.css'] , function (app, _) {
 
       },
       link: function (scope, elem, attrs) {
-      	console.log("Story directive...");
-
 
       }
     }
