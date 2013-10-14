@@ -79,7 +79,13 @@ body {
 
 .chapter-fade {
 	opacity: 0.5;
+	-webkit-transition: opacity 0.4s ease-in-out;  
 }
+
+.chapter-fade:hover {
+	opacity: 1
+}
+
 
 @-webkit-keyframes fade-in {
   0%   { opacity: 0; }

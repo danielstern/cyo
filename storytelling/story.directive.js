@@ -9,16 +9,15 @@ define(['app','underscore','css!global/styles.css'] , function (app, _) {
 
       },
      controller: function ($scope, $attrs, $element) {
-     		console.log("Story controller bootezd...");
 
      		this.nextChapter = function(page) {
-     			
+
      			var el = angular.element("<chapter url='" + page + "'></chapter>");
      			var cmpl = $compile(el)
           $element.append(el);
           cmpl($scope);
 
- //         $('html, body').animate({scrollTop: el.offset().top}, 2200);
+          $('html, body').animate({scrollTop: el.offset().top}, 2200);
      		}
       
       },

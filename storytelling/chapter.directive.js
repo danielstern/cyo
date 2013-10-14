@@ -17,6 +17,7 @@ define(['app','underscore','css!global/styles.css'] , function (app, _) {
      		this.over = function() {
      			var buttons = $element.find('button');
      			buttons.hide();
+     			$element.addClass('chapter-fade');
      		}      
       },
       link: function (scope, elem, attrs) {
