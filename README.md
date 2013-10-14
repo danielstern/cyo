@@ -54,7 +54,7 @@ Thanks to [btford] and [showdown], chapters can be written in markdown (JOY!) by
 	<md>
 		You see a grizzled old man tending a hearth.
 
-		*<i>Something doesn't feel right here.</i>*
+		*Something doesn't feel right here.*
 
 	</md>
 </page>
@@ -72,59 +72,69 @@ Choices make up the bread and butter of the interactive storytelling process. Th
 		*Hmm... should I go left or right?*
 
 	</md>
-	
+	<choice go-left>Guess I'll go left.</choice>
+	<choice go-left>Right, definately right.</choice>
 </page>
 ```html
 
-### Events
+Choices look like buttons. When you click one, it automatically loads the chapter. `go-left` would load the file `story/go-left.html` and so-on. 
 
-```
-<p>You pick up a shiny locket.</p>
-<event found-shiny-locket></event>
-```
+Note that you cannot nest choices or other special entities in markdown blocks yet.
 
-The `event` tag lets you remember something for later using the `condition` tag.
-
-### Conditions
+### Event
 
 ```html
-<condition found-shiny-locket>
-	<p>As you walk through the room, the locket begins to glow. Suddenly, a new doorway appears in the wall.</p>
-	<choice go-through-hidden-doorway>Go through the doorway.</choice>
-</condition>
+<p>You find a flashlight.</p>
+<event found-flashlight />
 ```
 
-You can nest events in conditions, and conditions in conditions, to create a unique storytelling experience.
+`event` tags are powerful tools that are automatically remembered for the whole story. They can change what the user sees and what choices they have when used in conjunction with the equally simple `condition` tag.
+
+### Condition
+
+`condition` tags will show or hide the content inside them based on `event` tags that the storygoer has previously encountered in their adventure.
 
 ```html
-<condition not found-shiny-locket>
-	<p>You walk into the room. Hmm... it's empty.</p>
-	<choice go-back-to-the-hallway>Nothing here.</choice>
+<p>Suddenly, you hear a terrifying noise.</p>
+<condition found-flashlight>
+	<p>Don't be afraid, for the night is dark and full of terrors.</p>
+	<choice use-flashlight>Turn on your flashlight</choice>
 </condition>
+<choice run-away>Run for it!</choice>
 ```
 
-### Shortcuts
+Note, in the example above, the storygoer would still be able to run away if they choose.
 
-You can nest an event within a choice using the following shortform syntax:
+You can reverse a condition to its negative by adding the word `not`
+
+```html
+<condition not pocket-knife-broke>
+	<md>
+		"Don't worry... we can use my trusty pocket knife!"
+
+		"Don't you mean your *rusty* pocket knife?"
+
+	</md>
+</condition>
+
+```
+
+Often you will want to nest just a single `<choice>` tag in a `condition`. For that, you can use the following shortcut:
 
 ```html
 <choice use-the-wand condition="found-wand" />
 ```
 
-You can reverse this condition by adding the attribute "unless"
+The condition shortcut can also be turned into its negative with `unless`:
 
 ```html
-<choice use-the-wand unless condition="wand-was-stolen" />
+<choice use-the-wand unless condition="found-wand" />
 ```
 
-If you have a choice that the user has to make again and again, and you can create a shortcut with the `crossroads` directive.
+### Crossroad
+
+If you have a particular set of choices you are writing again, and again, you can put them in a single outside file and call it with the `crossroads` tag.
 
 ```html
-<crossroads get-to-the-woods />
-// story/get-to-the-woods.html
-	<snippet>
-	  <choice go-left />
-	  <choice go-right />
-	  <choice use-flashlight condition="got-flashlight" />
-	</snippet>
+<crossroads the-eight-sided-room />
 ```
