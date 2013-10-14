@@ -128,7 +128,7 @@ Often you will want to nest just a single `<choice>` tag in a `condition`. For t
 The condition shortcut can also be turned into its negative with `unless`:
 
 ```html
-<choice use-the-wand unless condition="found-wand" />
+<choice use-the-wand unless condition="lost-wand" />
 ```
 
 ### Crossroad
