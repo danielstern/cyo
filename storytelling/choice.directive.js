@@ -33,18 +33,11 @@ define(['app'], function (app) {
 
         scope.nextChapter = function() {
         	var cmpl = $compile(el)
-          elem.after(el);
+          elem.parent().after(el);
           cmpl(scope);
         }
 
         elem.bind('click', scope.nextChapter);
-
-        /* elem.addClass('animate-slow');
-	        elem.addClass('kate-moss');
-	        _.defer(function(){
-	        	elem.addClass('full-width');
-	        })*/
-
 				
 				elem.addClass('pull-right-in-slow');
 
@@ -53,10 +46,7 @@ define(['app'], function (app) {
           url: 'story/' + page + '.html',
         })
         .error(function (data, status) {
-          var btn = elem.find('button');
-          btn.attr('disabled', true)
-          btn.addClass('btn-disabled')
-          btn.attr('title', "To be continued...")
+          elem.find('button').addClass('btn-disabled');
         });
       },
     }

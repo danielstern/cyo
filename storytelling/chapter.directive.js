@@ -11,11 +11,11 @@ define(['app','underscore','css!global/styles.css'] , function (app, _) {
       },
       link: function (scope, elem, attrs) {
 
+         // hacky
          scope.buttons = elem.find('button');
-
          $(scope.buttons).click(function(){
               $(scope.buttons).hide();
-
+              //elem.addClass('chapter-fade');
             })
 
 					elem.addClass('pull-down-in');
