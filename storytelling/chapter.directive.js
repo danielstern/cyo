@@ -17,13 +17,14 @@ define(['app','underscore','css!global/styles.css'] , function (app, _) {
               $(scope.buttons).hide();
             })
 
-         var page = elem;
-          console.log("Page?", page)
-	        page.addClass('animate');
-	        page.addClass('zipped-up');
+	        elem.addClass('animate');
+	        elem.addClass('zipped-up');
 	        _.defer(function(){
-	        	page.addClass('opened-up');
+	        	elem.addClass('opened-up');
 	        })
+
+	        console.log("Animating body...");
+	        $('html, body').animate({scrollTop: elem.offset().top}, 800);
         },
 
       }
