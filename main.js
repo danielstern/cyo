@@ -57,6 +57,7 @@ require([
 	"storytelling/crossroads.directive",
 	"storytelling/ending.directive",
 	"storytelling/condition.directive",
+	"storytelling/story.directive",
 	"storytelling/event.directive",
 	"storytelling/event.service",
 
