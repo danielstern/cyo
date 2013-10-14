@@ -16,7 +16,6 @@ Clone this repository, as it is set up with the optimal require.js / angular.js 
 ##Elements
 ###Chapters
 
-In `index.html`...
 
 ```html
 <chapter url='intro'></chapter>

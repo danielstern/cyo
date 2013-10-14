@@ -7,9 +7,16 @@ define(['app','underscore','css!global/styles.css'] , function (app, _) {
         url:'=',
       },
       templateUrl:function(elem, atts){
-        return "story/"+atts.url+".html";
+      	console.log("Templateurl...",atts);
+      	var url = atts.url;
+      	url = url || _.dasherize(_.keysToKeyword(atts.$attr));
+        return "story/"+ url +".html";
       },
       link: function (scope, elem, attrs) {
+
+     // 	var url;
+
+      	//scope.url = scope.url || _.dasherize(_.keysToKeyword(attrs.$attr));
 
          // hacky
          scope.buttons = elem.find('button');
