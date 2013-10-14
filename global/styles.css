@@ -35,7 +35,8 @@ page {
 }
 
 body {
-	padding-top: 70px;
+/*	padding-top: 70px;*/
+	padding: 30px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 14px;
 }
