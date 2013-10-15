@@ -17,7 +17,10 @@ define(['app','underscore','css!global/styles.css'] , function (app, _) {
           $element.append(el);
           cmpl($scope);
 
-          $('html, body').animate({scrollTop: el.offset().top}, 2200);
+          $('body').animate(
+          	{scrollTop: el.offset().top}, 
+          	2400
+          );
      		}
       
       },

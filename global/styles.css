@@ -12,10 +12,21 @@
 	display:none;
 }
 
+.col-fixed {
+	position: fixed;
+}
+
 .end-title {
 	text-align: center;
 	font-weight: bold;
 	font-size: 120%;
+}
+
+.fixed-group {
+	position: fixed;
+	right: 75px;
+	top: 95px;
+	width: 40px;
 }
 
 .end-caption {
@@ -39,6 +50,10 @@ body {
 	height: 0;
 	opacity: 0;
 	overflow: hidden;
+}
+
+.margin-top-10 {
+	margin-top: 10px;
 }
 
 .animate {
