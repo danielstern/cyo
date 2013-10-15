@@ -35,6 +35,13 @@
 	font-size: 80%;
 }
 
+.center-block {
+	margin: 0 auto;
+	display: block;
+	width: 200px;
+	margin-top: 20px;
+}
+
 page {
 	display:block;
 }

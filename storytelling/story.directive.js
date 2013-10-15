@@ -1,5 +1,5 @@
 define(['app','underscore','css!global/styles.css'] , function (app, _) {
-	app.directive('story', ['$compile', function ($compile) {
+	app.directive('story', ['$compile', 'eventService', function ($compile, es) {
     return {
       restrict: 'E',
       replace:false,
@@ -19,7 +19,22 @@ define(['app','underscore','css!global/styles.css'] , function (app, _) {
 
           $('body').animate(
           	{scrollTop: el.offset().top}, 
-          	2400
+          	1024
+          );
+     		}
+
+     		this.restart = function() {
+     			console.log("Story restarting..");
+     			var el = angular.element("<chapter url='intro'></chapter>");
+     			var cmpl = $compile(el)
+     			$element.html('');
+     			$element.append(el);
+     			cmpl($scope);
+
+     			es.clearAll();
+   			  $('body').animate(
+          	{scrollTop: 0}, 
+          	204
           );
      		}
       

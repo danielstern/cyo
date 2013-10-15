@@ -29,5 +29,9 @@ define(['app'] , function (app) {
 		this.clearEvent = function(thing) {
 			this.allThingsPassed = _.without(this.allThingsPassed, thing);
 		}
+
+		this.clearAll = function() {
+			this.allThingsPassed = [];
+		}
 	});
 })
