@@ -24,7 +24,7 @@
 
 .fixed-group {
 	position: fixed;
-	right: 75px;
+	right: 55px;
 	top: 95px;
 	width: 40px;
 }
@@ -114,4 +114,11 @@ body {
 
 .pull-right-in-slow {
 	-webkit-animation: fade-in 3s;
+}
+
+@media (max-width: 600px) {
+	.fixed-group {
+		display: none;
+	}
+
 }
