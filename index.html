@@ -2,7 +2,7 @@
 <!-- Copyright 2013 danielstern.ca - -->
 <html> 
 <head>
-	<title>The Spooky House</title>
+	<title>The Mystery of Bedford Manor</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<script src="lib/less/less-1.3.3.min.js"></script>	
 	<script data-main="main" src="lib/require/require.js"></script>	
@@ -13,15 +13,54 @@
 </head>
 <body class='container'>
 	<container  >
+      <div class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">The Mystery of Bedford Manor</a>
+        </div>
+
+         <!-- <ul class="nav navbar-nav">
+           
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+	            <li class="dropdown">
+	              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+	              	<span class="glyphicon glyphicon-sort"></span>
+	              	<span class="glyphicon glyphicon-tag"></span>
+	              </a>
+	              <ul class="dropdown-menu">
+	                <li><a target="_blank" href="http://www.danielstern.ca"><span class="glyphicon glyphicon-link"></span> Daniel Stern</a></li>
+	                <li class="divider"></li>
+	                <li><a target="_blank" href="https://github.com/danielstern/cyo"><span class="glyphicon glyphicon-book"></span> Learn to Make Your Own Story</a></li>
+	              </ul>
+	            </li>
+     
+          </ul>-->
+
+      </div>
+    </div>
 		<div class='container ng-cloak mainBody'>
 			<div class='row'>
-				<div class='col-md-6 pad-top-10'>
-				<h2>The Spooky House</h2>
-				<div story-part url='intro'></div>
+			<div class='col-md-8 col-sm-11 col-xs-11 pad-top-10'>
+				
+				<story first="intro" />
 			</div>
+			<div class='fixed-group'>
+			<div class='col-md-1'>
+			<div class='btn btn-default btn-large up-button'>
+				<span class='glyphicon glyphicon-arrow-up' />
+			</div>
+			<div class='btn btn-default btn-large down-button'>
+				<span class='glyphicon glyphicon-arrow-down' />
+			</div>
+			</div>
+		</div>
 		</div>
 	</div>
 	</container>
 	<ng:view></ng:view>
 </body>
+<script>
+
+</script>
 </html>

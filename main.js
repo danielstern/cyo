@@ -6,6 +6,8 @@ require.config({
     angular: 'lib/angular/angular.min',
     bootstrap: 'lib/bootstrap/js/bootstrap.min',
     d3: 'lib/d3/d3.min',
+    showdown: 'lib/showdown/showdown',
+    markdown: 'lib/angular/angular-markdown/markdown',
   },
   shim: {
   	'underscore_string': {
@@ -26,6 +28,9 @@ require.config({
 	  'angular': {
 	      exports: 'angular'
 	  },
+	  'markdown': {
+	  	deps: ['angular'],
+	  }
 	},
 	urlArgs: "k=" + parseInt(Math.random() * 1000).toString(16),
 	priority: [
@@ -44,11 +49,20 @@ require([
 	"angular",
 	"d3",
 	"bootstrap",
+	"showdown",
+	"markdown",
 
-	"storytelling/game-option.directive",
-	"storytelling/storyPart",
+	"storytelling/choice.directive",
+	"storytelling/chapter.directive",
+	"storytelling/crossroads.directive",
+	"storytelling/ending.directive",
+	"storytelling/condition.directive",
+	"storytelling/story.directive",
+	"storytelling/event.directive",
+	"storytelling/event.service",
 
 	"global/analytics",
+	"global/utility",
 
 	], function($, app, angular) {
 

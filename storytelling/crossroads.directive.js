@@ -1,13 +1,12 @@
 define(['app','underscore','css!global/styles.css'] , function (app, _) {
-	app.directive('storyPart', function () {
+	app.directive('crossroads', function () {
     return {
-      restrict: 'A',
+      restrict: 'E',
       replace:true,
-      scope: {
-        url:'=',
-      },
       templateUrl:function(elem, atts){
-        return "story/"+atts.url+".html";
+      	var key = _.first(_.keys(atts.$attr));
+      	var url = atts.$attr[key];
+        return "story/"+url+".html";
       },
       link: function (scope, elem, attrs) {
 
@@ -15,6 +14,7 @@ define(['app','underscore','css!global/styles.css'] , function (app, _) {
 
          $(scope.buttons).click(function(){
               $(scope.buttons).hide();
+               
             })
         },
       }
