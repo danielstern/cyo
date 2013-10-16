@@ -51,6 +51,8 @@ body {
 /*	padding-top: 70px;*/
 	padding: 30px;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: #16171A;
+	color: #DDDDED;
 }
 
 .zipped-up {
@@ -75,10 +77,33 @@ body {
 	transition: all 1s;  
 }
 
+choice {
+	margin-top: 5px;
+}
+
 .opened-up {
 	height: auto;
 	opacity: 1;
 }
+
+thoughtwindow {
+	display: block;
+	border: 1px solid #1C1A24;
+	border-radius: 5px 3px 5px 3px;
+	width: 100%;
+	padding-bottom: 75%;
+
+
+}
+
+thoughtwindow div {
+	height: 85%;
+	width: 85%;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
 
 .kate-moss {
 	width: 0px;
@@ -86,6 +111,11 @@ body {
 	display:block;
 	float: left;
 	opacity: 0;
+}
+
+.centerize {
+	margin: 0 auto;
+	float: none;
 }
 
 .ending {
