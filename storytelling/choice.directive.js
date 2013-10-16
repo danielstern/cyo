@@ -16,6 +16,7 @@ define(['app'], function (app) {
         var condition;
         var story = ctrls [0];
         var chapter = ctrls [1];
+        var disabled = false;
 
         page = scope.page || _.dasherize(_.keysToKeyword(attrs.$attr));
 
@@ -35,7 +36,8 @@ define(['app'], function (app) {
 
         elem.bind('click', handleButtonClick);
         function handleButtonClick() {
-        	chapter.over();
+          if (disabled) return;
+         	chapter.over();
         	story.nextChapter(page);
         }
 				
@@ -46,7 +48,10 @@ define(['app'], function (app) {
           url: 'story/' + page + '.html',
         })
         .error(function (data, status) {
-          elem.find('button').addClass('btn-disabled');
+        //  console.log("This button link does not work")
+          disabled = true;
+          elem.find('.btn').addClass('btn-disabled');
+          elem.find('.btn').attr('disabled',true);
         });
       },
     }
