@@ -519,6 +519,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/C/Users/New Owner/Desktop/lowe roche/tresemmeplatinumentries_10102013/Data_modified/tresemmeplatinumentries_endesktop_enmobile_enfrench-2.xml",
+			"settings":
+			{
+				"buffer_size": 12265326,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -552,6 +560,16 @@
 	},
 	"file_history":
 	[
+		"/C/Users/New Owner/Desktop/lowe roche/tresemmeplatinumentries_10102013/Data_modified/tresemmeplatinumentries_EN_Desktop-allEntries.csv",
+		"/C/Users/New Owner/Desktop/lowe roche/tresemmeplatinumentries_EN_Mobile.xml",
+		"/C/Users/New Owner/Desktop/lowe roche/tresemmeplatinumentries_10102013/Data_modified/tresemmeplatinumentries_endesktop_enmobile_enfrench.xml",
+		"/C/Users/New Owner/Desktop/lowe roche/tresemmeplatinumentries_10102013/Data_modified/tresemmeplatinumentries_FR_Desktop.csv",
+		"/C/Users/New Owner/Desktop/lowe roche/tresemmeplatinumentries_10102013/Data_modified/tresemmeplatinumentries_EN_Mobile.csv",
+		"/E/lowe roche/tresemmeplatinumentries_EN_Mobile.xml",
+		"/C/Users/New Owner/Desktop/lowe roche/allCSVsMerged",
+		"/C/Users/New Owner/Desktop/lowe roche/Data/tresemmeplatinumentries_EN_Mobile.csv",
+		"/C/Users/New Owner/Desktop/lowe roche/Data/tresemmeplatinumentries_FR_Desktop.csv",
+		"/C/Users/New Owner/Desktop/lowe roche/Data/tresemmeplatinumentries_EN_Desktop.csv",
 		"/C/wamp/www/mega-game/index.html",
 		"/C/wamp/www/mega-game/main.js",
 		"/C/wamp/www/mega-game/storytelling/storyPart.js",
@@ -669,17 +687,7 @@
 		"/C/wamp/www/lisa/lang/things.js",
 		"/C/wamp/www/lisa/lang/attributes.js",
 		"/C/wamp/www/lisa/lang/verbs.js",
-		"/C/wamp/www/lisa/js/speech/Expressor.js",
-		"/C/wamp/www/lisa/js/speech/expressions/expressions.js",
-		"/C/wamp/www/lisa/js/expresso/Extractor.js",
-		"/C/wamp/www/lisa/js/expresso/Conjugator.js",
-		"/C/wamp/www/lisa/js/expresso/Expressor.js",
-		"/C/wamp/www/lisa/js/expresso/Prepositor.js",
-		"/C/wamp/www/lisa/js/expresso/Momento.js",
-		"/C/wamp/www/lisa/README.md",
-		"/C/wamp/www/lisa/js/expresso/Expresso.js",
-		"/C/Users/New Owner/Documents/more notes",
-		"/C/wamp/www/lisa/js/expresso/Lexicator.js"
+		"/C/wamp/www/lisa/js/speech/Expressor.js"
 	],
 	"find":
 	{
@@ -698,6 +706,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"swati",
 			"...</",
 			"define",
 			"frame",
@@ -824,8 +833,7 @@
 			"express",
 			"s",
 			"express",
-			"prepositionObj",
-			"getPrep"
+			"prepositionObj"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -851,8 +859,37 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/C/Users/New Owner/Desktop/lowe roche/tresemmeplatinumentries_10102013/Data_modified/tresemmeplatinumentries_endesktop_enmobile_enfrench-2.xml",
+					"settings":
+					{
+						"buffer_size": 12265326,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1620,
+								1620
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2729961.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
