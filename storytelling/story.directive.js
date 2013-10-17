@@ -12,6 +12,8 @@ define(['app','underscore','css!global/styles.css'] , function (app, _) {
 
      		this.nextChapter = function(page) {
 
+          _.delay(function(){
+
      			var el = angular.element("<chapter url='" + page + "'></chapter>");
      			var cmpl = $compile(el)
           $element.append(el);
@@ -21,6 +23,8 @@ define(['app','underscore','css!global/styles.css'] , function (app, _) {
           	{scrollTop: el.offset().top}, 
           	1024
           );
+
+        }, 500)
      		}
 
      		this.restart = function() {

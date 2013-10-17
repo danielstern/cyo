@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"background",
+				"background-color"
+			],
+			[
+				"padding",
+				"padding-bottom"
+			],
+			[
+				"bord",
+				"border-radius"
+			],
+			[
 				"sto",
 				"storyNextPart"
 			],
@@ -502,50 +514,11 @@
 			[
 				"recen",
 				"recentThings"
-			],
-			[
-				"use",
-				"useAsync"
-			],
-			[
-				"in",
-				"invoked"
-			],
-			[
-				"express",
-				"expression"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "/C/Users/New Owner/Desktop/lowe roche/tresemmeplatinumentries_10102013/Data_modified/tresemmeplatinumentries_endesktop_enmobile_enfrench-2.xml",
-			"settings":
-			{
-				"buffer_size": 12265326,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "# Copyright (c) 1993-2006 Microsoft Corp.\n#\n# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.\n#\n# This file contains the mappings of IP addresses to host names. Each\n# entry should be kept on an individual line. The IP address should\n# be placed in the first column followed by the corresponding host name.\n# The IP address and the host name should be separated by at least one\n# space.\n#\n# Additionally, comments (such as these) may be inserted on individual\n# lines or following the machine name denoted by a '#' symbol.\n#\n# For example:\n#\n#      102.54.94.97     rhino.acme.com          # source server\n#       38.25.63.10     x.acme.com              # x client host\n\n127.0.0.1       localhost\n#::1             localhost\n\n127.0.0.1       localhost",
-			"file": "/C/Windows/System32/drivers/etc/hosts",
-			"file_size": 788,
-			"file_write_time": 130123693296740000,
-			"settings":
-			{
-				"buffer_size": 768,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "index.html",
-			"settings":
-			{
-				"buffer_size": 2159,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -579,6 +552,36 @@
 	},
 	"file_history":
 	[
+		"/C/Users/New Owner/Desktop/tresemme_new/modified files/xml-output-13.xml",
+		"/C/Users/New Owner/Desktop/tresemme_new/modified files/template.map.updated.xml",
+		"/C/Users/New Owner/Desktop/tresemme_new/modified files/schema_2.xsd",
+		"/C/Users/New Owner/Desktop/tresemme_new/modified files/xml-output-14.xml",
+		"/C/Users/New Owner/Desktop/tresemme_new/modified files/schema_2.xst",
+		"/C/Users/New Owner/Downloads/Tresemme_Template.xml",
+		"/C/Users/New Owner/Desktop/tresemme_new/modified files/xml-output-12.xml",
+		"/C/Users/New Owner/Desktop/tresemme_new/modified files/xml-output-6.xml",
+		"/C/Users/New Owner/Desktop/tresemme_new/modified files/xml-output-11.xml",
+		"/C/Users/New Owner/Desktop/tresemme_new/modified files/template.map.3.xml",
+		"/C/Users/New Owner/Desktop/tresemme_new/modified files/template.map.4.xml",
+		"/C/Users/New Owner/Desktop/tresemme_new/modified files/xml-output-10.xml",
+		"/C/Users/New Owner/Desktop/tresemme_new/modified files/xml-output-9.xml",
+		"/C/Users/New Owner/Desktop/tresemme_new/modified files/xml-output-7.xml",
+		"/C/Users/New Owner/Desktop/tresemme_new/modified files/xml-output-3.xml",
+		"/C/Users/New Owner/Desktop/tresemme_new/modified files/xml-output-8.xml",
+		"/C/Users/New Owner/Desktop/tresemme_new/modified files/xml-output-4.xml",
+		"/C/Users/New Owner/Desktop/tresemme_new/modified files/xml-output-5.xml",
+		"/C/Users/New Owner/Desktop/tresemme_new/modified files/xml-output-1.xml",
+		"/C/Users/New Owner/Desktop/tresemme_new/modified files/tresemmeplatinumentries_remove_duplicates.csv",
+		"/C/Users/New Owner/Desktop/tresemme_new/modified files/xml-output-2.xml",
+		"/C/Users/New Owner/Desktop/tresemme_new/modified files/tresemmeplatinumentries_remove_duplicates.xml",
+		"/C/wamp/www/mega-game/storytelling/choice.directive.js",
+		"/C/wamp/www/mega-game/index.html",
+		"/C/wamp/www/mega-game/story/just-lay-there.html",
+		"/C/wamp/www/mega-game/global/styles.css",
+		"/C/wamp/www/responsive-calculator/common/styles/bootstrapcalculator.css",
+		"/C/wamp/www/mega-game/story/intro.html",
+		"/C/Users/New Owner/Desktop/lowe roche/tresemmeplatinumentries_10102013/Data_modified/tresemmeplatinumentries_endesktop_enmobile_enfrench-2.xml",
+		"/C/Windows/System32/drivers/etc/hosts",
 		"/C/Users/New Owner/Desktop/lowe roche/tresemmeplatinumentries_10102013/Data_modified/tresemmeplatinumentries_EN_Desktop-allEntries.csv",
 		"/C/Users/New Owner/Desktop/lowe roche/tresemmeplatinumentries_EN_Mobile.xml",
 		"/C/Users/New Owner/Desktop/lowe roche/tresemmeplatinumentries_10102013/Data_modified/tresemmeplatinumentries_endesktop_enmobile_enfrench.xml",
@@ -589,7 +592,6 @@
 		"/C/Users/New Owner/Desktop/lowe roche/Data/tresemmeplatinumentries_EN_Mobile.csv",
 		"/C/Users/New Owner/Desktop/lowe roche/Data/tresemmeplatinumentries_FR_Desktop.csv",
 		"/C/Users/New Owner/Desktop/lowe roche/Data/tresemmeplatinumentries_EN_Desktop.csv",
-		"/C/wamp/www/mega-game/index.html",
 		"/C/wamp/www/mega-game/main.js",
 		"/C/wamp/www/mega-game/storytelling/storyPart.js",
 		"/C/wamp/www/mega-game/game-option.directive.js",
@@ -598,7 +600,6 @@
 		"/C/wamp/www/mega-game/story/go-to-old-house.html",
 		"/C/wamp/www/mega-game/story/jake-talks.html",
 		"/C/wamp/www/mega-game/storyPart.js",
-		"/C/wamp/www/mega-game/story/intro.html",
 		"/C/wamp/www/mega-game/assets/last-guardian-sprites.zip",
 		"/C/wamp/www/mega-game/story/001.html",
 		"/C/wamp/www/mega-game/story/check-out-the-old-hospital.html",
@@ -620,7 +621,6 @@
 		"/C/wamp/www/responsive-calculator/settings/settings.html",
 		"/C/wamp/www/responsive-calculator/charts/ChartCtrl.js",
 		"/C/wamp/www/responsive-calculator/charts/Chartmaster.js",
-		"/C/wamp/www/responsive-calculator/common/styles/bootstrapcalculator.css",
 		"/C/wamp/www/responsive-calculator/common/defaults.js",
 		"/C/wamp/www/responsive-calculator/interface/interface.html",
 		"/C/wamp/www/responsive-calculator/main.js",
@@ -679,34 +679,7 @@
 		"/C/wamp/www/lisa/js/logic/Logic.js",
 		"/C/wamp/www/lisa/js/speech/Momento.js",
 		"/C/wamp/www/lisa/js/story/stories_jack.js",
-		"/C/wamp/www/lisa/js/speech/Lexicator.js",
-		"/C/wamp/www/lisa/js/Brain.js",
-		"/C/wamp/www/lisa/js/lang/things.js",
-		"/C/wamp/www/lisa/js/lang/verbs.js",
-		"/C/wamp/www/lisa/js/logic/Emotionalizer.js",
-		"/C/wamp/www/lisa/js/Memory.js",
-		"/C/wamp/www/lisa/js/Lisa.js",
-		"/C/wamp/www/lisa/js/Utility.js",
-		"/C/Users/New Owner/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
-		"/C/wamp/www/lisa/js/logic/Counterposer.js",
-		"/C/wamp/www/lisa/js/story/stories.js",
-		"/C/wamp/www/lisa/js/logic/MomentObject.js",
-		"/C/wamp/www/lisa/js/lang/attributes.js",
-		"/C/wamp/www/lisa/js/logic/Storyteller.js",
-		"/C/wamp/www/lisa/js/speech/Conjugator.js",
-		"/C/wamp/www/lisa/js/speech/Prepositor.js",
-		"/C/wamp/www/lisa/js/speech/Speech.js",
-		"/C/wamp/www/lisa/js/Factory.js",
-		"/C/wamp/www/lisa/js/speech/Extractor.js",
-		"/C/wamp/www/lisa/lib/underscore/lodash.underscore.min.js",
-		"/C/wamp/www/lisa/lib/require/require.js",
-		"/C/wamp/www/lisa/js/memory/Memory.js",
-		"/C/wamp/www/lisa/js/utility/Utility.js",
-		"/C/wamp/www/lisa/story/stories.js",
-		"/C/wamp/www/lisa/lang/things.js",
-		"/C/wamp/www/lisa/lang/attributes.js",
-		"/C/wamp/www/lisa/lang/verbs.js",
-		"/C/wamp/www/lisa/js/speech/Expressor.js"
+		"/C/wamp/www/lisa/js/speech/Lexicator.js"
 	],
 	"find":
 	{
@@ -725,6 +698,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"PermissionToContact2",
+			"type=\"xs:short\"",
+			"type=\"xs:string\"",
+			"type=\"xs:dateTime\"",
+			"survey",
+			"padding-",
+			"body",
 			"swati",
 			"...</",
 			"define",
@@ -845,14 +825,7 @@
 			"beansta",
 			"bed",
 			"out",
-			"bed",
-			"going",
-			"console",
-			"feel",
-			"express",
-			"s",
-			"express",
-			"prepositionObj"
+			"bed"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -860,6 +833,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"PermissionToContact",
+			"",
 			":",
 			"calc",
 			"expresso",
@@ -878,89 +853,8 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/C/Users/New Owner/Desktop/lowe roche/tresemmeplatinumentries_10102013/Data_modified/tresemmeplatinumentries_endesktop_enmobile_enfrench-2.xml",
-					"settings":
-					{
-						"buffer_size": 12265326,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/C/Windows/System32/drivers/etc/hosts",
-					"settings":
-					{
-						"buffer_size": 768,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								762,
-								762
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "index.html",
-					"settings":
-					{
-						"buffer_size": 2159,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								72,
-								898
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
