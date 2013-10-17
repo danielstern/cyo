@@ -60,6 +60,8 @@ require([
 	"storytelling/story.directive",
 	"storytelling/event.directive",
 	"storytelling/event.service",
+	
+	"visualizer/thoughtwindow",
 
 	"global/analytics",
 	"global/utility",

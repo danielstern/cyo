@@ -88,7 +88,7 @@ choice {
 
 thoughtwindow {
 	display: block;
-	border: 1px solid #1C1A24;
+	/*border: 1px solid #1C1A24;*/
 	border-radius: 5px 3px 5px 3px;
 	width: 100%;
 	padding-bottom: 75%;
