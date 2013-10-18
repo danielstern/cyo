@@ -20,23 +20,15 @@ define(['app'], function (app) {
           .value();
         
 
-        console.log("Thought window init...", ideas, elem);
 
         var svg = d3.select(elem[0])
-      //  .select('.content')
-      //  .append("svg")
-       // .attr("preserveAspectRatio", "xMinYMin meet")
-       // .attr("viewBox", "0,0,100,100");
-
 
         svg
-        //.append('text')
         .selectAll('text.q')
         .data(ideas)
         .enter()
         .append('text')
         .text(function(a,b){
-          console.log("applying text...",a,b);
           return a;
         })
         //.attr('class','white-text pull-right-in-slow')

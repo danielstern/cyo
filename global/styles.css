@@ -192,6 +192,10 @@ thoughtwindow div {
 
 }
 
+.fade-in-slow {
+	-webkit-animation: fade-in 3s;
+}
+
 .fade-in-after-10 {
 
 	-webkit-animation: fade-in-at-half 20s;
