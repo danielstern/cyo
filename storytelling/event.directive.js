@@ -1,9 +1,15 @@
 define(['app'], function (app) {
   app.directive('event', ['eventService',
     function (es, $compile, $http) {
+
+      var testMode = true; 
       return {
         restrict: 'E',
         require: '?^condition',
+        template: function(a,b) {
+          console.log("Event?",b);
+          if (testMode) return "<p class='evt'>("+ _.values(b.$attr)[0] +")</p>"
+        },
         link: function (scope, elem, attrs, condition) {
           if (condition) {
 

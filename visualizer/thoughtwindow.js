@@ -1,12 +1,16 @@
 define(['app'], function (app) {
   app.directive('thoughtwindow', [function () {
     return {
+      scope: {
+        number:'=',
+      },
       restrict: 'AE',
       
       template: function (a, b) {
         return "<div fadeInThoughts><div class='hidden'>"+a.text()+"</div><div class='content'></div></div>";
       },
       link: function (scope, elem, attrs) {
+        var count = scope.number || 1;
         var txt = elem.find('.hidden').text();
         txt = txt.replace(/[\n]/gi, '');
         var ideas = txt.split(',');
@@ -16,7 +20,7 @@ define(['app'], function (app) {
             return _.trim(idea);
           })
           .compact()
-          .sample(3)
+          .sample(count)
           .value();
         
 
