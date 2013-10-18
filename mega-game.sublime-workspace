@@ -519,6 +519,38 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "story/just-lay-there.html",
+			"settings":
+			{
+				"buffer_size": 753,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "main.js",
+			"settings":
+			{
+				"buffer_size": 1470,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "visualizer/thoughtwindow.js",
+			"settings":
+			{
+				"buffer_size": 659,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "global/styles.css",
+			"settings":
+			{
+				"buffer_size": 2316,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -552,6 +584,14 @@
 	},
 	"file_history":
 	[
+		"/C/wamp/www/mega-game/vizualizer/thoughtwindow",
+		"/C/wamp/www/mega-game/visualizer/thoughtwindow.js",
+		"/C/wamp/www/mega-game/storytelling/choice.directive.js",
+		"/C/wamp/www/mega-game/story/intro.html",
+		"/C/wamp/www/mega-game/global/styles.css",
+		"/C/wamp/www/mega-game/storytelling/chapter.directive.js",
+		"/C/wamp/www/mega-game/storytelling/story.directive.js",
+		"/C/wamp/www/mega-game/.gitignore",
 		"/C/Users/New Owner/Desktop/tresemme_new/modified files/xml-output-13.xml",
 		"/C/Users/New Owner/Desktop/tresemme_new/modified files/template.map.updated.xml",
 		"/C/Users/New Owner/Desktop/tresemme_new/modified files/schema_2.xsd",
@@ -574,12 +614,9 @@
 		"/C/Users/New Owner/Desktop/tresemme_new/modified files/tresemmeplatinumentries_remove_duplicates.csv",
 		"/C/Users/New Owner/Desktop/tresemme_new/modified files/xml-output-2.xml",
 		"/C/Users/New Owner/Desktop/tresemme_new/modified files/tresemmeplatinumentries_remove_duplicates.xml",
-		"/C/wamp/www/mega-game/storytelling/choice.directive.js",
 		"/C/wamp/www/mega-game/index.html",
 		"/C/wamp/www/mega-game/story/just-lay-there.html",
-		"/C/wamp/www/mega-game/global/styles.css",
 		"/C/wamp/www/responsive-calculator/common/styles/bootstrapcalculator.css",
-		"/C/wamp/www/mega-game/story/intro.html",
 		"/C/Users/New Owner/Desktop/lowe roche/tresemmeplatinumentries_10102013/Data_modified/tresemmeplatinumentries_endesktop_enmobile_enfrench-2.xml",
 		"/C/Windows/System32/drivers/etc/hosts",
 		"/C/Users/New Owner/Desktop/lowe roche/tresemmeplatinumentries_10102013/Data_modified/tresemmeplatinumentries_EN_Desktop-allEntries.csv",
@@ -674,12 +711,7 @@
 		"/C/wamp/www/responsive-calculator/php/head.php",
 		"/C/wamp/www/responsive-calculator/php/echo.php",
 		"/C/wamp/www/lisa/lisa-project.sublime-workspace",
-		"/C/wamp/www/lisa/lisa-project.sublime-project",
-		"/C/wamp/www/lisa/js/Extractor.js",
-		"/C/wamp/www/lisa/js/logic/Logic.js",
-		"/C/wamp/www/lisa/js/speech/Momento.js",
-		"/C/wamp/www/lisa/js/story/stories_jack.js",
-		"/C/wamp/www/lisa/js/speech/Lexicator.js"
+		"/C/wamp/www/lisa/lisa-project.sublime-project"
 	],
 	"find":
 	{
@@ -698,6 +730,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"thoughtwindow",
 			"PermissionToContact2",
 			"type=\"xs:short\"",
 			"type=\"xs:string\"",
@@ -824,8 +857,7 @@
 			"in",
 			"beansta",
 			"bed",
-			"out",
-			"bed"
+			"out"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -853,8 +885,117 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "story/just-lay-there.html",
+					"settings":
+					{
+						"buffer_size": 753,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								720,
+								720
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "main.js",
+					"settings":
+					{
+						"buffer_size": 1470,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1338,
+								1338
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 126.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "visualizer/thoughtwindow.js",
+					"settings":
+					{
+						"buffer_size": 659,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								292,
+								292
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "global/styles.css",
+					"settings":
+					{
+						"buffer_size": 2316,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1225,
+								1225
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1131.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],

@@ -66,7 +66,7 @@ require([
 	"global/analytics",
 	"global/utility",
 
-	], function($, app, angular) {
+	], function($, app, angular, d3) {
 
    	angular.bootstrap(document , ['gameApp']);
 		
