@@ -23,10 +23,10 @@ define(['app'], function (app) {
         console.log("Thought window init...", ideas, elem);
 
         var svg = d3.select(elem[0])
-        .select('.content')
-        .append("svg")
-        .attr("preserveAspectRatio", "xMinYMin meet")
-        .attr("viewBox", "0,0,100,100");
+      //  .select('.content')
+      //  .append("svg")
+       // .attr("preserveAspectRatio", "xMinYMin meet")
+       // .attr("viewBox", "0,0,100,100");
 
 
         svg
@@ -40,39 +40,20 @@ define(['app'], function (app) {
           return a;
         })
         //.attr('class','white-text pull-right-in-slow')
-        .attr('class','white-text fade-in-out')
+        .attr('class','white-text fade-in-out transparent')
     //    .attr('class','white-text')
-        .attr('y',function(){
-          return Math.random() * 100;
+        .style('position','absolute')
+        .style('top',function(){
+          return Math.random() * 100 + 'px';
         })
-        .attr('x',function(){
-          return Math.random() * 100;
+        .style('left',function(){
+          return Math.random() * 100 + 'px';
         })
-        .attr('font-size', function(){
-          return Math.random() * 12;
+        .style('font-size', function(){
+          return Math.random() * 34 + 'px';
         })
-        .attr('opacity', function(){
-         // return Math.random() * 1;
-         return 0;
-        })
-        //.on('mouseover',blur)
-      //  .attr('filter','url(#blur)')
-       // .append('filter')
-       // .attr('id',function(e,i){return 'blur' + i})
-       // .append('feGaussianBlur')
-       // .attr("stdDeviation", 6);
 
-        function blur(){
-          console.log("blurring...")
-          filter.attr("stdDeviation",1)
-        }
-     
-      var filter = svg.append('defs')
-        .append('filter')
-        .attr('id','blur')
-        .append('feGaussianBlur')
-         .attr("stdDeviation", 2);
-
+    
       },
     }
   }]);

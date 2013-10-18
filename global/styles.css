@@ -12,20 +12,30 @@
 	display:none;
 }
 
+.transparent {
+	opacity: 0;
+}
+
 .col-fixed {
 	position: fixed;
 }
 
 .white-text {
 	fill: #E7E6F2;
+	-webkit-transition: all 2.4s;  
+	-webkit-filter: blur(5px);
+
 }
 
 .white-text:hover {
-/*  -webkit-filter: blur(10px);*/
-	filter:url(#blur)
+  -webkit-filter: blur(0px);
+	/*filter:url(#blur)*/
 
 }
 
+.content {
+	position: relative;
+}
 
 
 .end-title {
