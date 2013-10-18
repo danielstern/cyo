@@ -171,10 +171,31 @@ thoughtwindow div {
   100% { opacity: 0; }
 }
 
+@-webkit-keyframes fade-in-at-half {
+  0%   { opacity: 0; }
+  50%   { opacity: 0; }
+  60% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+
+
 
 
 .pull-down-in {
 	-webkit-animation: fade-in 1s;
+}
+
+.fade-in-after-5 {
+
+	-webkit-animation: fade-in-at-half 10s;
+
+}
+
+.fade-in-after-10 {
+
+	-webkit-animation: fade-in-at-half 20s;
+
 }
 
 .fade-in-out {
