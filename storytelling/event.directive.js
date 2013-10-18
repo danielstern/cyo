@@ -2,7 +2,7 @@ define(['app'], function (app) {
   app.directive('event', ['eventService',
     function (es, $compile, $http) {
 
-      var testMode = true; 
+      var testMode = false; 
       return {
         restrict: 'E',
         require: '?^condition',
