@@ -39,6 +39,7 @@ define(['app'], function (app) {
           if (disabled) return;
          	chapter.over();
         	story.nextChapter(page);
+          disabled = true;
         }
 				
 				elem.addClass('pull-right-in-slow');

@@ -16,6 +16,7 @@ define(['app'], function (app) {
             return _.trim(idea);
           })
           .compact()
+          .sample(3)
           .value();
         
 
@@ -23,8 +24,32 @@ define(['app'], function (app) {
 
         var elem3 = d3.select(elem[0])
         .select('.content')
+        .append("svg")
+        .attr("preserveAspectRatio", "xMinYMin meet")
+        .attr("viewBox", "0,0,100,100")
+        //.append('text')
+        .selectAll('text.q')
+        .data(ideas)
+        .enter()
         .append('text')
-        .text('12345');
+        .text(function(a,b){
+          console.log("applying text...",a,b);
+          return a;
+        })
+        //.attr('class','white-text pull-right-in-slow')
+        .attr('class','white-text')
+        .attr('y',function(){
+          return Math.random() * 100;
+        })
+        .attr('x',function(){
+          return Math.random() * 100;
+        })
+        .attr('font-size', function(){
+          return Math.random() * 12;
+        })
+        .attr('opacity', function(){
+          return Math.random() * 1;
+        })
         console.log('3elem?',elem3)
 
      

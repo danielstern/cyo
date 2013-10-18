@@ -16,6 +16,10 @@
 	position: fixed;
 }
 
+.white-text {
+	fill: #E7E6F2;
+}
+
 .end-title {
 	text-align: center;
 	font-weight: bold;
@@ -81,10 +85,6 @@ choice {
 	margin-top: 5px;
 }
 
-.opened-up {
-	height: auto;
-	opacity: 1;
-}
 
 thoughtwindow {
 	display: block;
@@ -102,19 +102,7 @@ thoughtwindow div {
   margin: auto;
   position: absolute;
   top: 0; left: 0; bottom: 0; right: 0;
-  background-color: #18171C;
 
-  	border-radius: 5px 3px 5px 3px;
-   outline: 0px solid black;
-
-  	-moz-transition: all 0.3s;   
-	-webkit-transition: all 0.3s ease-in-out;  
-	transition: all 0.3s;  
-}
-
-thoughtwindow div:hover {
-
-  background-color: #1D1B24;
 
 }
 
