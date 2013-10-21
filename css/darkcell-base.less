@@ -1,3 +1,17 @@
+@import "darkcell.mixins.less";
+
+body {
+
+	padding: 30px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: #16171A;
+	color: #DDDDED;
+}
+
+.ng-cloak {
+	display: none;
+}
+
 @font-face { 
 	font-family: Alagard;
 	src: url('../assets/alagard_by_pix3m-d6awiwp.ttf');
@@ -18,13 +32,13 @@
 
 .evt {
 	color: #9F76AB;
-		font-family: Alagard;
+	font-family: Alagard;
 
 }
 
 .hoverwindow {
 	opacity: 0;
-	-webkit-transition: all 2.1s;  
+	.transition-all(2.1s);
 }
 
 .hoverwindow:hover {
@@ -39,7 +53,7 @@
 
 .white-text {
 	fill: #E7E6F2;
-	-webkit-transition: all 2.4s;  
+	.transition-all(2.4s) ;
 	-webkit-filter: blur(5px);
 	font-family: Romulus;
 
@@ -48,7 +62,6 @@
 .white-text:hover {
   -webkit-filter: blur(0px);
   cursor: help;
-	/*filter:url(#blur)*/
 
 }
 
@@ -88,8 +101,6 @@ page {
 }
 
 
-
-
 .zipped-up {
 	height: 0;
 	opacity: 0;
@@ -101,15 +112,11 @@ page {
 }
 
 .animate {
-	-moz-transition: all 0.3s;   
-	-webkit-transition: all 0.3s ease-in-out;  
-	transition: all 0.3s;  
+  .transition-all(0.4s)
 }
 
 .animate-slow {
-	-moz-transition: all 1s;   
-	-webkit-transition: all 1s ease-in-out;  
-	transition: all 1s;  
+  .transition-all(1.0s) 
 }
 
 choice {
@@ -118,37 +125,17 @@ choice {
 
 
 thoughtwindow {
-	display: block;
-	/*border: 1px solid #1C1A24;*/
-	border-radius: 5px 3px 5px 3px;
-	width: 100%;
-	padding-bottom: 60%;
-
-
+	.autosq(50px);
+	.border-radius(3px);
 }
 
 thoughtwindow div {
-	height: 85%;
-	width: 85%;
-  margin: auto;
-  position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
-
-
-}
-
-
-.kate-moss {
-	width: 0px;
-	overflow: hidden;
-	display:block;
-	float: left;
-	opacity: 0;
+  .square(85%);
+  .center-both;
 }
 
 .centerize {
-	margin: 0 auto;
-	float: none;
+  .center-w;
 }
 
 .ending {
@@ -157,38 +144,12 @@ thoughtwindow div {
 	font-size: 140%;
 }
 
-.full-width {
-	width: auto;
-	opacity: 1;
-}
 
 .chapter-fade {
 	opacity: 0.5;
-	-webkit-transition: opacity 0.4s ease-in-out;  
-}
+	.transition-all(0.4s);
 
-.chapter-fade:hover {
-	opacity: 1
-}
-
-
-@-webkit-keyframes fade-in {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-@-webkit-keyframes fade-in-out {
-  0%   { opacity: 0; }
-  20%   { opacity: 0; }
-  50% { opacity: 1; }
-  100% { opacity: 0; }
-}
-
-@-webkit-keyframes fade-in-at-half {
-  0%   { opacity: 0; }
-  50%   { opacity: 0; }
-  60% { opacity: 1; }
-  100% { opacity: 1; }
+	&:hover{opacity: 1;};
 }
 
 
@@ -224,5 +185,4 @@ thoughtwindow div {
 	.fixed-group {
 		display: none;
 	}
-
 }

@@ -1,4 +1,4 @@
-define(['app','underscore','css!global/styles.css'] , function (app, _) {
+define(['app','underscore'] , function (app, _) {
 	app.directive('story', ['$compile', 'eventService', function ($compile, es) {
     return {
       restrict: 'E',
