@@ -27,6 +27,11 @@ define(['app','underscore','css!global/styles.css'] , function (app, _) {
         }, 500)
      		}
 
+        this.logEvent = function(event) {
+          es.somethingHappened(event);
+          console.log("Logging vevent...", event)
+        }
+
      		this.restart = function() {
      			console.log("Story restarting..");
      			var el = angular.element("<chapter url='intro'></chapter>");

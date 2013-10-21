@@ -22,6 +22,17 @@
 
 }
 
+.hoverwindow {
+	opacity: 0;
+	-webkit-transition: all 2.1s;  
+}
+
+.hoverwindow:hover {
+	opacity: 1;
+	cursor: help;
+	
+}
+
 .col-fixed {
 	position: fixed;
 }

@@ -62,6 +62,7 @@ require([
 	"storytelling/event.service",
 	
 	"visualizer/thoughtwindow",
+	"visualizer/hoverwindow",
 	"visualizer/delay",
 
 	"global/analytics",
