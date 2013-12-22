@@ -4,7 +4,7 @@ define(['angular', 'jquery',], function (angular, $) {
 
 	 $('.up-button').click(function(){scroll(-75)});
 	 $('.down-button').click(function(){scroll(75)});
-	 
+
 
 	 function scroll(amt) {
 
@@ -16,8 +16,7 @@ define(['angular', 'jquery',], function (angular, $) {
 	 
 	 };
 
-  return angular.module('gameApp', ['btford.markdown']);
-
+  return angular.module('gameApp', ['btford.markdown'])
 
   
 });

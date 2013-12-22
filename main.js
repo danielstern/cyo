@@ -33,7 +33,7 @@ require.config({
 	  	deps: ['angular'],
 	  }
 	},
-	urlArgs: "k=" + parseInt(Math.random() * 1000).toString(16),
+//	urlArgs: "k=" + parseInt(Math.random() * 1000).toString(16),
 	priority: [
 		'angular'
 	],

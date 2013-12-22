@@ -8,74 +8,82 @@ define(['app','underscore'] , function (app, _) {
       	return "<chapter " + _.dasherize(atts.first) + " />";
 
       },
-     controller: function ($scope, $attrs, $element) {
+      controller: function ($scope, $attrs, $element) {
 
-        console.log("Attempting to load...")
+        $scope.state = "???";
+
+        var st = this;
+
         var data = localStorage.getItem("data");
-        if (!data) {console.log("Couldn't get data...")} 
-          else {
-            var obj = JSON.parse(_.dataToString(data));
-            console.log("Got data...",obj);
+        if (data) {
+          var obj = JSON.parse(_.dataToString(data));
+          console.log("Got data...",obj);
+          // TODO... load to state
+        }
+
+        $scope.$watch("loadHash",function(val){
+          console.log("Loadhash changed...", val);
+          try {
+            var obj = JSON.parse(_.dataToString(val));
+            console.log("Success!");
+            st.load(obj);
+          } catch (e) {
+            console.warn("failure!",e);
           }
+
+        })
+
+        this.load = function(data) {
+          console.log("Loading data", data);
+          var t = _.last(data.p);
+          this.restart(t);
+          $scope.saveDisplaying = false;
+        }
 
      		this.nextChapter = function(page) {
 
-        _.delay(function(){
-
-            // this is pretty hacky
-       			var el = angular.element("<chapter url='" + page + "'></chapter>");
-       			var cmpl = $compile(el);
-            $element.append(el);
-            cmpl($scope);
-
-            $('body').animate(
-              	{scrollTop: el.offset().top}, 
-              	1024
-              );
-
-          }, 500);
+     			var el = angular.element("<chapter url='" + page + "'></chapter>");
+     			var cmpl = $compile(el);
+          $element.append(el);
+          cmpl($scope);
 
           es.logChapter(page);
           this.save();
+
      		}
 
 
 
         this.logEvent = function(event) {
           es.somethingHappened(event);
-     //     console.log("Logging vevent...", event)
         }
 
         this.save = function() {
-          //console.log("Saving...");
-          function toHash(str) {return btoa(unescape(encodeURIComponent(str)))};
-          
+                    
           var events = es.getAllThingsPassed();
-          //console.log("Getting events...", events);
           var pages = es.getAllPages();
           var r = {};
           r.e = events;
           r.p = pages;
-          var k = toHash(JSON.stringify(r));
+          var k = _.toHash(JSON.stringify(r));
           console.log("Saving game...", r,k);
           localStorage.setItem("data",k);
 
+          $scope.state = k;
 
         }
 
-     		this.restart = function() {
+     		this.restart = function(page) {
+          page = page || "intro";
      			console.log("Story restarting..");
-     			var el = angular.element("<chapter url='intro'></chapter>");
+     			var el = angular.element("<chapter url='"+page+"'></chapter>");
      			var cmpl = $compile(el)
      			$element.html('');
      			$element.append(el);
      			cmpl($scope);
 
      			es.clearAll();
-   			  $('body').animate(
-          	{scrollTop: 0}, 
-          	204
-          );
+   			
      		}
       
       },

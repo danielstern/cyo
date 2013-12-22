@@ -9,14 +9,17 @@ define(['underscore'], function (_) {
 
       return totalNumber;
     },
+    
     keysToKeyword: function (array) {
     	
     	if (_.isString(array)) return array;
     	return	_.first(_.without(array, 'not', 'clear','condition'))
     },
+
     beginsWithNumber: function (string) {
     	return _.isNumber(_.first(string));
     },
+
     compoundToObject: function (string) {
 
     	var returnObj = {};
@@ -29,7 +32,8 @@ define(['underscore'], function (_) {
 			return returnObj;
     },
 
-    dataToString: function(hash) {return decodeURIComponent(escape(atob(hash)))}
+    dataToString: function(hash) {return decodeURIComponent(escape(atob(hash)))},
+    toHash: function(str) {return btoa(unescape(encodeURIComponent(str)))}
     
   })
 });

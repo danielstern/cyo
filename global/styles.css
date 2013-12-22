@@ -7,3 +7,57 @@
 		font-size: 1rem;
 	}
 }
+
+.save {
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+}
+
+.nav-options {
+	position: relative;
+	height: 4rem;
+	width: 50px;
+	float: right;
+}
+
+.nav-save {
+	font-size:2rem;
+	position: absolute;
+	top: 0%;
+	bottom: 0%;
+	height: 2rem;;
+	margin: auto;
+	
+	right: 0;
+}
+
+.navbar-left {
+	font-size:2rem;
+	float-left;
+		position: absolute;
+	left: 2rem;
+	top: 0%;
+	bottom: 0%;
+	height: 3rem;
+	margin: auto;
+}
+
+#saves {
+	padding: 1rem;
+	min-width: 250px;
+	padding-bottom: 1rem;
+	position: fixed;
+	top: 9rem;
+	right: 4rem;
+	display: block;
+	background-color: #222;
+	border: 1px solid #333;
+	border-radius: 0.314rem;
+}
+
+.state-display {
+	max-width: 250px;
+	word-break:break-all;
+}

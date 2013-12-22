@@ -18,18 +18,36 @@
 <body class='container col-md-8 col-md-8 col-sm-11 col-xs-11 centerize ng-cloak'>
 	<container  >
       <div class="navbar navbar-inverse ng-cloak">
-      <div class="container">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">The Dark Cell</a>
+      	<div class="title navbar-left">
+      		The Dark Cell
+      	</div>
+        <div class="nav navbar-right navbar-menu nav-options">
+        	<div class="nav-steering">
+        		<!--<span class='glyphicon glyphicon-arrow-up' />
+        		<span class='glyphicon glyphicon-arrow-down' />-->
+        	</div>
+        	
+        	
         </div>
-
-      </div>
     </div>
 		<div class='container ng-cloak mainBody'>
 			<div class='row'>
 			<div class='col-md-12 centerize pad-top-10'>
-				<story first="intro" />
+				<story first="intro">
+					
+				</story>
 			</div>
+			<div class="nav-save" id="saveButton" ng-click="saveDisplaying = !saveDisplaying">
+
+        	<span class="glyphicon glyphicon-floppy-disk"></span>
+        	</div>
+			<div id='saves' ng-hide="!saveDisplaying">
+				SAVE
+        		<div class="state-display" title="This is your save data. Use this and you can restart from here at any time. Copy and paste it into a safe place.">{{state}}</div>
+
+        		LOAD
+        		<input ng-model="loadHash" id="load">
+        	</div>
 			<!--<div class='fixed-group'>
 			<div class='col-md-1'>
 			<div class='btn btn-default btn-large up-button'>
@@ -38,8 +56,8 @@
 			<div class='btn btn-default btn-large down-button'>
 				<span class='glyphicon glyphicon-arrow-down' />
 			</div>
-			</div>
-		</div>-->
+			</div>-->
+		</div>
 		</div>
 	</div>
 	</container>

@@ -3,7 +3,6 @@ define(['app'] , function (app) {
 
 		this.allThingsPassed = [];
 		this.allPages = [];
-	//	window.atp = this.allThingsPassed;
 
 		this.somethingHappened = function(thing) {
 			this.allThingsPassed = this.allThingsPassed.concat(thing);
