@@ -14,12 +14,17 @@ define(['app','underscore','css!global/styles.css'] , function (app, _) {
 
       },
       controller: function ($scope, $attrs, $element) {
-     		this.over = function() {
-     			var buttons = $element.find('button');
+     		
+        /* just tells all the buttons to hide*/
+        this.over = function() {
      			$element.addClass('chapter-fade');
-          buttons.animate({opacity:0}, 450, function(){
+          var buttons = $element.find('button');
+          buttons.hide();
+          
+
+          /*buttons.animate({opacity:0}, 450, function(){
             buttons.hide();
-          })
+          })*/
           
 
      		}      

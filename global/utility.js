@@ -27,7 +27,9 @@ define(['underscore'], function (_) {
 			returnObj.target = returnObj.target || string;
 
 			return returnObj;
-    }
+    },
+
+    dataToString: function(hash) {return decodeURIComponent(escape(atob(hash)))}
     
   })
 });

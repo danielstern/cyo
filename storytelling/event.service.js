@@ -2,7 +2,8 @@ define(['app'] , function (app) {
 	app.service('eventService', function() {
 
 		this.allThingsPassed = [];
-		window.atp = this.allThingsPassed;
+		this.allPages = [];
+	//	window.atp = this.allThingsPassed;
 
 		this.somethingHappened = function(thing) {
 			this.allThingsPassed = this.allThingsPassed.concat(thing);
@@ -24,6 +25,18 @@ define(['app'] , function (app) {
 			if (neg) r = !r;
 
 			return r;
+		}
+
+		this.logChapter = function(page) {
+			this.allPages = this.allPages.concat(page);
+		}
+
+		this.getAllThingsPassed = function() {
+			return this.allThingsPassed;
+		}
+
+		this.getAllPages = function() {
+			return this.allPages;
 		}
 
 		this.clearEvent = function(thing) {
