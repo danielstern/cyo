@@ -30,6 +30,8 @@ define(['app'] , function (app) {
 			this.allPages = this.allPages.concat(page);
 		}
 
+		
+
 		this.getAllThingsPassed = function() {
 			return this.allThingsPassed;
 		}

@@ -1,5 +1,5 @@
 define(['app','underscore'] , function (app, _) {
-	app.directive('story', ['$compile', 'eventService', function ($compile, es) {
+	app.directive('story', ['$compile','$location', 'eventService', function ($compile, $location, es) {
     return {
       restrict: 'E',
       replace:false,
@@ -10,15 +10,25 @@ define(['app','underscore'] , function (app, _) {
       },
       controller: function ($scope, $attrs, $element) {
 
+        var data = '';
+
         $scope.state = "???";
 
         var st = this;
+        if ($location.path()) {
+          data = $location.path().split('/')[1].toString();
+        } 
 
-        var data = localStorage.getItem("data");
+        data = data || localStorage.getItem("data");
         if (data) {
-          var obj = JSON.parse(_.dataToString(data));
-          console.log("Got data...",obj);
-          // TODO... load to state
+          try {
+            var obj = JSON.parse(_.dataToString(data));
+            console.log("Got data...",obj);
+            st.load(obj);
+          } catch (e) {
+            // doesn't work..?
+            console.warn("Cant load this", data);
+          }
         }
 
         $scope.$watch("loadHash",function(val){
@@ -37,6 +47,7 @@ define(['app','underscore'] , function (app, _) {
           console.log("Loading data", data);
           var t = _.last(data.p);
           this.restart(t);
+          es.somethingHappened(data.e)
           $scope.saveDisplaying = false;
         }
 
