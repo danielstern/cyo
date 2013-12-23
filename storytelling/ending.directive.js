@@ -10,6 +10,7 @@ define(['app'], function (app) {
         link: function (scope, elem, attrs, story) {
         	elem.click(function(){
         		story.restart();
+            document.getElementById('click-1').play();
         	});
 
         }

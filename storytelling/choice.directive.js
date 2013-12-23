@@ -40,6 +40,8 @@ define(['app'], function (app) {
          	chapter.over();
         	story.nextChapter(page);
           disabled = true;
+          console.log("Playing sound!")
+          document.getElementById('click-1').play();
         }
 				
 				elem.addClass('pull-right-in-slow');

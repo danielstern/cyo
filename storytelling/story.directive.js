@@ -12,7 +12,7 @@ define(['app','underscore'] , function (app, _) {
 
         var data = '';
 
-        $scope.state = "???";
+        $scope.state = "";
 
         var st = this;
         if ($location.path()) {
