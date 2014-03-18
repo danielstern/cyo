@@ -13,7 +13,7 @@ Getting Started with CYO
 --------------
 ### The Very Simple Way:
 - Clone this repository
-- Open `example1_thedarkcell`
+- Open an example you like
 - Delete every file in `story/` except `intro.html`
 - Start writing your own story, starting with `intro.html`
 
