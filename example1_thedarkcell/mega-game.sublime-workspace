@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"all",
+				"allThingsPassed"
+			],
+			[
+				"load",
+				"loadData"
+			],
+			[
 				"background",
 				"background-color"
 			],
@@ -118,10 +126,6 @@
 			[
 				"sett",
 				"settingsOpen"
-			],
-			[
-				"all",
-				"allPreviousValues"
 			],
 			[
 				"bacl",
@@ -510,23 +514,72 @@
 			[
 				"lis",
 				"lisaDirective"
-			],
-			[
-				"recen",
-				"recentThings"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"contents": "<html>\n\n</html>",
-			"file": "index.html",
-			"file_size": 23,
-			"file_write_time": 130396300359700000,
+			"file": "story/exit-kitchen.html",
 			"settings":
 			{
-				"buffer_size": 15,
+				"buffer_size": 370,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "story/explore-library.html",
+			"settings":
+			{
+				"buffer_size": 791,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "story/vampire-book.html",
+			"settings":
+			{
+				"buffer_size": 391,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "story/explore-catacomb.html",
+			"settings":
+			{
+				"buffer_size": 1079,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "story/talk-to-vampire.html",
+			"settings":
+			{
+				"buffer_size": 407,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "story/talk-to-vampire-again.html",
+			"settings":
+			{
+				"buffer_size": 381,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "story/immortality.html",
+			"settings":
+			{
+				"buffer_size": 596,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "story/escape-vampire.html",
+			"settings":
+			{
+				"buffer_size": 483,
 				"line_ending": "Windows"
 			}
 		}
@@ -563,33 +616,76 @@
 	},
 	"file_history":
 	[
-		"/C/wamp/www/mega-game/storytelling/story.directive.js",
-		"/C/wamp/www/mega-game/main.js",
-		"/C/wamp/www/mega-game/story/just-lay-there.html",
-		"/C/wamp/www/mega-game/story/go-quietly.html",
-		"/C/wamp/www/mega-game/visualizer/hoverwindow.js",
-		"/C/wamp/www/mega-game/index.html",
-		"/C/wamp/www/mega-game/global/styles.css",
-		"/C/wamp/www/mega-game/assets/Sprite-0002moonbackground_0.gif",
-		"/C/wamp/www/mega-game/storytelling/chapter.directive.js",
-		"/C/wamp/www/mega-game/story/pretend-to-keep-sleeping.html",
-		"/C/wamp/www/mega-game/story/complain-of-hand.html",
-		"/C/wamp/www/mega-game/storytelling/event.directive.js",
-		"/C/Users/New Owner/Desktop/intel 2600k 274",
-		"/C/wamp/www/mega-game/story/dream.html",
-		"/C/wamp/www/mega-game/story/look-around.html",
-		"/C/wamp/www/mega-game/story/refuse-agamemnon.html",
-		"/C/wamp/www/mega-game/story/wake-up-from-struggle.html",
-		"/C/wamp/www/mega-game/story/ask-shadowy-man.html",
-		"/C/wamp/www/mega-game/story/struggle.html",
-		"/C/wamp/www/mega-game/visualizer/delay.js",
-		"/C/wamp/www/mega-game/visualizer/thoughtwindow.js",
-		"/C/wamp/www/mega-game/lib/angular/angular-markdown/markdown.js",
-		"/C/wamp/www/responsive-calculator/charts/Chartmaster.js",
-		"/C/wamp/www/mega-game/storytelling/choice.directive.js",
-		"/C/wamp/www/responsive-calculator/charts/rcChart.js",
-		"/C/wamp/www/mega-game/story/intro.html",
+		"/E/wamp/www/mega-game/story/run-for-it.html",
+		"/E/wamp/www/mega-game/story/no.html",
+		"/E/wamp/www/mega-game/story/wake-up.html",
+		"/E/wamp/www/mega-game/story/escape-manor.html",
+		"/E/wamp/www/mega-game/story/chalmers-heroic.html",
+		"/E/wamp/www/mega-game/story/explore-libary.html",
+		"/E/wamp/www/mega-game/story/leave-library.html",
+		"/E/wamp/www/mega-game/story/stop-escape.html",
+		"/E/wamp/www/mega-game/story/enter-foyer.html",
+		"/E/wamp/www/mega-game/story/algo-manor.html",
+		"/E/wamp/www/mega-game/story/complain.html",
+		"/E/wamp/www/mega-game/story/feign-unconsciousness.html",
+		"/E/wamp/www/mega-game/story/chalmers-unconscious.html",
+		"/E/wamp/www/mega-game/story/explore-guest-house.html",
+		"/E/wamp/www/mega-game/story/chalmers-cowardly.html",
+		"/E/wamp/www/mega-game/story/follow-further.html",
+		"/E/wamp/www/mega-game/story/shoot-chefchef.html",
+		"/E/wamp/www/mega-game/story/dream-sequence.html",
+		"/E/wamp/www/mega-game/story/go-with-lisa.html",
+		"/E/wamp/www/mega-game/story/follow-lisa.html",
+		"/E/wamp/www/mega-game/story/just-lay-there.html",
+		"/E/wamp/www/mega-game/story/chalmers-hostile.html",
+		"/E/wamp/www/mega-game/story/talk-to-lisa.html",
+		"/E/wamp/www/mega-game/story/struggle.html",
+		"/E/wamp/www/mega-game/story/go-easy.html",
+		"/E/wamp/www/mega-game/story/chalmers-friendly.html",
+		"/E/wamp/www/mega-game/story/chalmers-friendly-again.html",
+		"/E/wamp/www/mega-game/story/go-to-danger-room.html",
+		"/E/wamp/www/mega-game/story/go-to-laboratory.html",
+		"/E/wamp/www/mega-game/story/search-desk.html",
+		"/E/wamp/www/mega-game/story/go-to-kitchen.html",
+		"/E/wamp/www/mega-game/story/explore-kitchen.html",
+		"/E/wamp/www/mega-game/story/refuse-drink.html",
+		"/E/wamp/www/mega-game/story/explore-shaft.html",
+		"/E/wamp/www/mega-game/story/refuse-chefchef.html",
+		"/E/wamp/www/mega-game/story/take-drink.html",
+		"/E/wamp/www/mega-game/story/hey-arnold.html",
+		"/E/wamp/www/mega-game/story/look-around.html",
+		"/E/wamp/www/mega-game/story/who-are-you.html",
+		"/E/wamp/www/mega-game/story/forgive-him.html",
+		"/E/wamp/www/mega-game/storytelling/story.directive.js",
+		"/E/wamp/www/mega-game/storytelling/event.service.js",
+		"/E/wamp/www/mega-game/story/explore-further.html",
+		"/E/wamp/www/mega-game/global/styles.css",
+		"/E/wamp/www/mega-game/story/follow-him.html",
+		"/E/wamp/www/mega-game/story/explore-further.htmk",
+		"/E/wamp/www/mega-game/story/kill-him.html",
+		"/E/wamp/www/mega-game/story/free-him.html",
+		"/E/wamp/www/mega-game/index.html",
+		"/E/wamp/www/mega-game/app.js",
+		"/E/wamp/www/mega-game/main.js",
+		"/E/wamp/www/mega-game/global/analytics.js",
+		"/E/wamp/www/mega-game/storytelling/chapter.directive.js",
+		"/E/wamp/www/mega-game/story/abandon-him.html",
+		"/E/wamp/www/mega-game/global/utility.js",
+		"/E/wamp/www/mega-game/story/intro.html",
+		"/E/wamp/www/mega-game/css/darkcell-base.less",
+		"/E/wamp/www/mega-game/story/abandon-him.htnk",
+		"/E/wamp/www/mega-game/story/ok.html",
+		"/E/wamp/www/mega-game/css/darkcell-animations.less",
+		"/E/wamp/www/mega-game/story/look-around",
+		"/E/wamp/www/mega-game/story/go-quietly.html",
+		"/E/wamp/www/mega-game/visualizer/thoughtwindow.js",
 		"/C/wamp/www/mega-game/vizualizer/thoughtwindow",
+		"/C/wamp/www/mega-game/visualizer/thoughtwindow.js",
+		"/C/wamp/www/mega-game/storytelling/choice.directive.js",
+		"/C/wamp/www/mega-game/story/intro.html",
+		"/C/wamp/www/mega-game/global/styles.css",
+		"/C/wamp/www/mega-game/storytelling/chapter.directive.js",
+		"/C/wamp/www/mega-game/storytelling/story.directive.js",
 		"/C/wamp/www/mega-game/.gitignore",
 		"/C/Users/New Owner/Desktop/tresemme_new/modified files/xml-output-13.xml",
 		"/C/Users/New Owner/Desktop/tresemme_new/modified files/template.map.updated.xml",
@@ -613,6 +709,8 @@
 		"/C/Users/New Owner/Desktop/tresemme_new/modified files/tresemmeplatinumentries_remove_duplicates.csv",
 		"/C/Users/New Owner/Desktop/tresemme_new/modified files/xml-output-2.xml",
 		"/C/Users/New Owner/Desktop/tresemme_new/modified files/tresemmeplatinumentries_remove_duplicates.xml",
+		"/C/wamp/www/mega-game/index.html",
+		"/C/wamp/www/mega-game/story/just-lay-there.html",
 		"/C/wamp/www/responsive-calculator/common/styles/bootstrapcalculator.css",
 		"/C/Users/New Owner/Desktop/lowe roche/tresemmeplatinumentries_10102013/Data_modified/tresemmeplatinumentries_endesktop_enmobile_enfrench-2.xml",
 		"/C/Windows/System32/drivers/etc/hosts",
@@ -626,6 +724,7 @@
 		"/C/Users/New Owner/Desktop/lowe roche/Data/tresemmeplatinumentries_EN_Mobile.csv",
 		"/C/Users/New Owner/Desktop/lowe roche/Data/tresemmeplatinumentries_FR_Desktop.csv",
 		"/C/Users/New Owner/Desktop/lowe roche/Data/tresemmeplatinumentries_EN_Desktop.csv",
+		"/C/wamp/www/mega-game/main.js",
 		"/C/wamp/www/mega-game/storytelling/storyPart.js",
 		"/C/wamp/www/mega-game/game-option.directive.js",
 		"/C/wamp/www/mega-game/storytelling/game-option.directive.js",
@@ -644,53 +743,7 @@
 		"/C/wamp/www/mega-game/GameCtrl.js",
 		"/C/wamp/www/mega-game/StoryPartCtrl.js",
 		"/C/wamp/www/mega-game/app.js",
-		"/C/wamp/www/mega-game/storytellingService.js",
-		"/C/wamp/www/responsive-calculator/charts/charts.html",
-		"/C/wamp/www/responsive-calculator/charts/chartService.js",
-		"/C/wamp/www/mega-game/analytics.js",
-		"/C/wamp/www/responsive-calculator/interface/InterfaceCtrl.js",
-		"/C/wamp/www/responsive-calculator/index.html",
-		"/C/wamp/www/responsive-calculator/settings/settings.html",
-		"/C/wamp/www/responsive-calculator/charts/ChartCtrl.js",
-		"/C/wamp/www/responsive-calculator/common/defaults.js",
-		"/C/wamp/www/responsive-calculator/interface/interface.html",
-		"/C/wamp/www/responsive-calculator/main.js",
-		"/C/wamp/www/responsive-calculator/charts/chart.html",
-		"/C/wamp/www/responsive-calculator/calculator/calculationService.js",
-		"/C/wamp/www/responsive-calculator/calculator/Calculator.js",
-		"/C/wamp/www/responsive-calculator/common/Utility.js",
-		"/C/wamp/www/responsive-calculator/settings/SettingsCtrl.js",
-		"/C/wamp/www/responsive-calculator/js/controllers/ChartCtrl.js",
-		"/C/wamp/www/responsive-calculator/views/chart.html",
-		"/C/wamp/www/responsive-calculator/php/analytics.html",
-		"/C/wamp/www/responsive-calculator/interface/MainCtrl.js",
-		"/C/wamp/www/responsive-calculator/analytics.html",
-		"/C/wamp/www/responsive-calculator/index.php",
-		"/C/wamp/www/responsive-calculator/views/charts.html",
-		"/C/wamp/www/responsive-calculator/js/controllers/MainCtrl.js",
-		"/C/wamp/www/responsive-calculator/styles/bootstrapcalculator.css",
-		"/C/wamp/www/responsive-calculator/js/Chartmaster.js",
-		"/C/wamp/www/responsive-calculator/js/calculator.js",
-		"/C/wamp/www/responsive-calculator/js/Utility.js",
-		"/C/wamp/www/responsive-calculator/js/services/chartService.js",
-		"/C/wamp/www/responsive-calculator/js/settings.js",
-		"/C/wamp/www/responsive-calculator/js/services/calculationService.js",
-		"/C/wamp/www/responsive-calculator/views/interface.html",
-		"/C/Users/New Owner/Desktop/Lumberjack Game",
-		"/C/wamp/www/responsive-calculator/js/controllers/SettingsCtrl.js",
-		"/C/wamp/www/responsive-calculator/views/settings.html",
-		"/C/wamp/www/responsive-calculator/js/main.js",
-		"/C/wamp/www/responsive-calculator/js/app.js",
-		"/C/wamp/www/responsive-calculator/settings.html",
-		"/C/wamp/www/assassin/js/calculator.js",
-		"/C/wamp/www/assassin/index.php",
-		"/C/wamp/www/assassin/php/body.php",
-		"/C/wamp/www/responsive-calculator/lib/isotope/isotope.css",
-		"/C/wamp/www/responsive-calculator/lib/d3/d3.min.js",
-		"/C/wamp/www/responsive-calculator/js/Calculator.js",
-		"/C/wamp/www/responsive-calculator/js/graph.js",
-		"/C/Users/New Owner/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
-		"/C/Users/New Owner/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings"
+		"/C/wamp/www/mega-game/storytellingService.js"
 	],
 	"find":
 	{
@@ -698,7 +751,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
 			"calc"
@@ -709,14 +762,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"ala",
-			"rom",
-			".content",
-			"white-t",
-			"transi",
-			"filter",
-			"white",
-			"text",
+			"//  ",
+			"loadData",
+			"st",
 			"thoughtwindow",
 			"PermissionToContact2",
 			"type=\"xs:short\"",
@@ -836,7 +884,12 @@
 			"logic",
 			"synon",
 			"synony",
-			"extract"
+			"extract",
+			"what",
+			"whatis",
+			"whati",
+			"sleep",
+			"in"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -864,23 +917,205 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 6,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "index.html",
+					"file": "story/exit-kitchen.html",
 					"settings":
 					{
-						"buffer_size": 15,
+						"buffer_size": 370,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7,
-								7
+								36,
+								36
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "story/explore-library.html",
+					"settings":
+					{
+						"buffer_size": 791,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								643,
+								655
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "story/vampire-book.html",
+					"settings":
+					{
+						"buffer_size": 391,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								391
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "story/explore-catacomb.html",
+					"settings":
+					{
+						"buffer_size": 1079,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								1079
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "story/talk-to-vampire.html",
+					"settings":
+					{
+						"buffer_size": 407,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								407
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "story/talk-to-vampire-again.html",
+					"settings":
+					{
+						"buffer_size": 381,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								163,
+								163
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "story/immortality.html",
+					"settings":
+					{
+						"buffer_size": 596,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								496,
+								496
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "story/escape-vampire.html",
+					"settings":
+					{
+						"buffer_size": 483,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								452,
+								452
 							]
 						],
 						"settings":
