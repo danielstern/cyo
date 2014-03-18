@@ -1,37 +1,155 @@
 <html>
-  <title>CYO - The Choose Your Own Adventure Framework</title>
-  <script src='lib/angular/angular.min.js'></script>
-  <script src='js/cyo.js'></script>
+<title>CYO - The Choose Your Own Adventure Framework</title>
+<script src='lib/angular/angular.min.js'></script>
+<script src='lib/underscore.js'></script>
+<script src='lib/underscore/underscore.string.js'></script>
+<script src='js/cyo.js'></script>
 
-    <link href="css/shCore.css" rel="stylesheet" type="text/css">
-    <link href="css/shThemeDefault.css" rel="stylesheet" type="text/css">
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-    <script src="lib/syntax/shCore.js" type="text/javascript"></script>
-    <script src="lib/syntax/shAutoloader.js" type="text/javascript"></script>
-    <script src="lib/syntax/shBrushXml.js" type="text/javascript"></script>
+<link href="css/shCore.css" rel="stylesheet" type="text/css">
+<link href="css/cyoDemo.css" rel="stylesheet" type="text/css">
+<link href="css/shThemeDefault.css" rel="stylesheet" type="text/css">
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<script src="lib/syntax/shCore.js" type="text/javascript"></script>
+<script src="lib/syntax/shAutoloader.js" type="text/javascript"></script>
+<script src="lib/syntax/shBrushXml.js" type="text/javascript"></script>
 
-  <body class='container'>
-  	<h1>CYO</h1>
-  	<h2>Introduction</h2>
-  	<p>
-  		Inspired by those ol'-fashioned, choose-your-own adventure books, CYO (Choose Your Own) is a declarative framework for creating the same kind of experience on the web, with added features that you just couldn't get right in the old paperback books.
-  	</p>
-  	<p>
-  		CYO is used to make choose your own adventure games. You don't need to know any JavaScript at all to use it.
-  	</p>
-  	<h2>Examples</h2>
+<body class='container' ng-app="cyoDemo">
+    <h1>CYO
+        <a target="_new" href="https://github.com/danielstern/cyo">
+            <div class='btn btn-large btn-primary'>Check it out on Github!</div>
+        </a>
+    </h1>
+    <h2>Introduction</h2>
+    <p>
+        Inspired by those ol'-fashioned, choose-your-own adventure books, CYO (Choose Your Own) is a declarative framework for creating the same kind of experience on the web, with added features that you just couldn't get right in the old paperback books.
+    </p>
+    <p>
+        CYO is used to make choose your own adventure games. You don't need to know any JavaScript at all to use it.
+    </p>
+    <p>
+        The Choose Your Own Adventure Engine is built with Angular.js, and requires only HTML to use. A CYO story will run in any browser, and the styling can be fully customized with CSS.
+    </p>
+    <a href="https://github.com/danielstern/cyo/archive/master.zip">
+        <div class='btn btn-default'>Download!</a>
+    </div>
+    <h3>What's in the Download?</h3>
+    <p>
+        <ul>
+            <li>
+                CYO Source
+            </li>
+            <li>
+                Full Working Examples from this Page
+            </li>
+        </ul>
+    </p>
+    <h2 title="Don't mind the typos.">Examples</h2>
     <h3>
-    <a href='example1_bedfordmanor'>Bedford Manor</a>
-  </h3>
-  <h3>
-  	<a href='example2_thedarkcell'>The Dark Cell</a>
-  </h3>
-  	<h2>Usage</h2>
-  	<p>
-  		CYO is a nearly all-directive library. To gain access to the directive, simply require the module as a dependency of your angular app.
-  		<pre>
+        <a href='example1_bedfordmanor'>The Mystery of Bedford Manor</a>
+    </h3>
+    <h3>
+        <a href='example2_thedarkcell'>The Dark Cell</a>
+    </h3>
+    <h2>Usage</h2>
+    <h3>Getting Started</h3>
+    <p>
+        CYO is a nearly all-directive library. To gain access to the directive, simply require the module as a dependency of your angular app.
+        <pre class="brush: html; toolbar: false;">
+        <script src='lib/angular/angular.min.js'></script>
+        <script src='lib/cyo.js'></script>
+        <script>
+            angular.module('gameApp', ['cyo'])
+        </script></pre>
+    </p>
 
-  		</pre>
-  	</p>
-  	<body>
+    Using the above script, any HTML bootstrapped to your "gameApp" module will have the following useful directives added.
+
+    <h3>
+        Story
+    </h3>
+    <p>
+        To initialize a story, you use the
+        <strong>story</strong>tag. The story tag has an attribute that points to the first chapter of your story, usually "intro".
+    </p>
+    <pre class="brush: html; toolbar: false;">
+        &lt;html&gt;
+          &lt;head&gt;
+          &lt;script src='lib/angular/angular.min.js'&gt;&lt;/script&gt;
+          &lt;script src='lib/underscore.js'&gt;&lt;/script&gt;
+          &lt;script src='lib/cyo.js'&gt;&lt;/script&gt;
+          &lt;script&gt;
+              angular.module('gameApp', ['cyo'])
+          &lt;/script&gt;
+        &lt;body&gt;
+          &lt;story intro&gt;&lt;/story&gt;
+        &lt;/body&gt;
+        &lt;/head&gt;
+          &lt;/html&gt;
+        </pre>
+
+    <p>
+        And in the seperate file
+        <strong>story/intro.html</strong>
+    </p>
+
+    <pre class="brush: html; toolbar: false;">
+<page>
+    <p>
+      It was a very short story, and nothing at all happened.
+    </p>
+</page>
+</pre>
+    This gives you
+    <example>
+        <story intro></story>
+    </example>
+</body>
+
 </html>
+
+
+<script>
+
+  _.mixin(_.str.exports());
+
+function path() {
+    var args = arguments,
+        result = [];
+
+    for (var i = 0; i < args.length; i++)
+        result.push(args[i].replace('@', 'lib/syntax/'));
+
+    return result
+};
+
+SyntaxHighlighter.autoloader.apply(null, path(
+    'applescript      @shBrushAppleScript.js',
+    'actionscript3 as3    @shBrushAS3.js',
+    'bash shell       @shBrushBash.js',
+    'coldfusion cf      @shBrushColdFusion.js',
+    'cpp c          @shBrushCpp.js',
+    'c# c-sharp csharp    @shBrushCSharp.js',
+    'css          @shBrushCss.js',
+    'delphi pascal      @shBrushDelphi.js',
+    'diff patch pas     @shBrushDiff.js',
+    'erl erlang       @shBrushErlang.js',
+    'groovy         @shBrushGroovy.js',
+    'java         @shBrushJava.js',
+    'jfx javafx       @shBrushJavaFX.js',
+    'js jscript javascript  @shBrushJScript.js',
+    'perl pl        @shBrushPerl.js',
+    'php          @shBrushPhp.js',
+    'text plain       @shBrushPlain.js',
+    'py python        @shBrushPython.js',
+    'powershell ps posh   @shBrushPowerShell.js',
+    'ruby rails ror rb    @shBrushRuby.js',
+    'sass scss        @shBrushSass.js',
+    'scala          @shBrushScala.js',
+    'sql          @shBrushSql.js',
+    'vb vbnet       @shBrushVb.js',
+    'xml xhtml xslt html  @shBrushXml.js'
+));
+SyntaxHighlighter.all();
+
+angular.module('cyoDemo',['cyo'])
+</script>

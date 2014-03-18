@@ -191,7 +191,20 @@ angular.module('cyo',[])
       replace:false,
       template:function(elem, atts){
 
-      	return "<chapter " + _.dasherize(atts.first) + " />";
+
+        var target;
+        if (atts.first || atts.url) target = atts.first || atts.url;
+
+        if (!target) {
+          target = _.find(atts.$attr,function(att){
+            return att;
+          })
+        }
+
+        console.log("Templating story,",atts,target);
+        if (!target) throw new Error("You must define a first chapter in story with 'first','url', or with an attribute.");
+
+      	return "<chapter " + _.dasherize(target) + " />";
 
       },
       controller: function ($scope, $attrs, $element) {
@@ -209,22 +222,22 @@ angular.module('cyo',[])
         if (data) {
           try {
             var obj = JSON.parse(_.dataToString(data));
-            console.log("Got data...",obj);
+    //        console.log("Got data...",obj);
             st.load(obj);
           } catch (e) {
             // doesn't work..?
-            console.warn("Cant load this", data);
+  //          console.warn("Cant load this", data);
           }
         }
 
         $scope.$watch("loadHash",function(val){
-          console.log("Loadhash changed...", val);
+      //    console.log("Loadhash changed...", val);
           try {
             var obj = JSON.parse(_.dataToString(val));
             console.log("Success!");
             st.load(obj);
           } catch (e) {
-            console.warn("failure!",e);
+           // console.warn("failure!",e);
           }
 
         })
@@ -357,3 +370,35 @@ angular.module('cyo',[])
 
       }
   });
+
+ _.mixin({
+    count: function(array, object) {
+      var totalNumber = 0;
+      
+      _.each(array, function(thing){
+        if (_.isEqual(thing, object)) totalNumber ++;
+      })
+
+      return totalNumber;
+    },
+    keysToKeyword: function (array) {
+      
+      if (_.isString(array)) return array;
+      return  _.first(_.without(array, 'not', 'clear','condition'))
+    },
+    beginsWithNumber: function (string) {
+      return _.isNumber(_.first(string));
+    },
+    compoundToObject: function (string) {
+
+      var returnObj = {};
+      returnObj.isValid = true;
+      returnObj.target = string.split('|')[1];
+      returnObj.attribute = string.split('|')[0];
+
+      returnObj.target = returnObj.target || string;
+
+      return returnObj;
+    }
+    
+  })

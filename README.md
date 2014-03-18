@@ -4,6 +4,8 @@ CYO
 CYO (Choose Your Own) is an extremely simple, but powerful, storytelling engine built with Angular.js.
 
 
+<a target="_new" href="http://danielstern.github.io/cyo/">Check Out the Project Page</a>
+
 Introduction
 ------------
 CYO uses Angular directives to create rich storytelling experiences with an extremely easy-to-remember syntax.
