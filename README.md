@@ -283,11 +283,11 @@ Once you click a choice, all the other choices on the page disappear.
 Making Your Own
 ---------------
 
-Please use this tool to make your own adventures and share them with me. If you have any questions, or need a new feature to complete your latest epic, post it up here. Better yet, add the feature yourself and make a pull request. 
+Please use this tool to make your own adventures and share them. If you have any questions, or need a new feature to complete your latest epic, post it up here. Better yet, add the feature yourself and make a pull request. 
 
 ### Made a Game with CYO?
 
-I'd be happy to link to it on the project page! Get in touch with me @danielsternband
+I'd be happy to link to it on the project page! Get in touch with me @danielsternband or daniel@danielstern.ca
 
 Happy adventuring!
 
