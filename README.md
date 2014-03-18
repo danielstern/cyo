@@ -250,7 +250,7 @@ The markup of your typical page looks like this.
 <p>
 	The room has a dreary air of sadness about it. The wallpaper, purpled with 
 	time, peels from the walls. Engraved candlesticks stand guard in neatly 
-	ordered rows all around upper wall of the massive room. <i>Those looks 
+	ordered rows all around upper wall of the massive room. <i>Those look 
 	valuable. A wonder someone hasn't taken them yet.</i>
 </p>
 <p>
