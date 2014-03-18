@@ -107,7 +107,7 @@ Choices make up the bread and butter of the interactive storytelling process. Th
 		*Hmm... should I go left or right?*
 	</md>
 	<choice go-left>Guess I'll go left.</choice>
-	<choice go-left>Right, definitely right.</choice>
+	<choice go-right>Right, definitely right.</choice>
 </page>
 ```
 
