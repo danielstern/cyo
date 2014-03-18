@@ -17,13 +17,13 @@ Getting Started with CYO
 - Clone this repository
 - Open `example1_thedarkcell`
 - Delete every file in `story/` except `intro.html`
-- Start writing your own story in the existing implementation, tweaking things as necessary.
+- Start writing your own story, starting with intro.html
 
 ###More Detailed Instructions:
 
 All you need to do to get started with CYO is require the module in your Angular app.
 
-```javascript
+```html
 <body ng-app="gameApp">
 </body>
 <script src='lib/angular/angular.min.js'></script>
@@ -36,7 +36,6 @@ All you need to do to get started with CYO is require the module in your Angular
 ```
 
 Requiring the CYO module gives you access to all the directives necessary to make your own adventure. These modules are detailed below.
-
 
 ###Story
 The story tag initializes your story by pointing to your first chapter.
@@ -98,10 +97,9 @@ Choices make up the bread and butter of the interactive storytelling process. Th
 		You see a fork in the path. 
 
 		*Hmm... should I go left or right?*
-
 	</md>
 	<choice go-left>Guess I'll go left.</choice>
-	<choice go-left>Right, definately right.</choice>
+	<choice go-left>Right, definitely right.</choice>
 </page>
 ```
 
@@ -178,6 +176,7 @@ If you have a particular set of choices you are writing again, and again, you ca
 
 And, inside `story/the-eight-sided-room.html`
 
+```html
 <page>
 	<condition not tried-escape>
 		<choice escape-mansion>Hmm... that looks like the exit.</choice>
@@ -187,6 +186,7 @@ And, inside `story/the-eight-sided-room.html`
 	</condition>
 	<choice go-upstairs>Go upstairs</choice>
 </page>
+```
 
 
 Making Your Own
