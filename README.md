@@ -11,11 +11,11 @@ CYO uses Angular directives to create rich storytelling experiences with an extr
 
 Getting Started with CYO
 --------------
-###Very Simple Way:
+### The Very Simple Way:
 - Clone this repository
 - Open `example1_thedarkcell`
 - Delete every file in `story/` except `intro.html`
-- Start writing your own story, starting with intro.html
+- Start writing your own story, starting with `intro.html`
 
 ###More Detailed Instructions:
 
@@ -36,6 +36,12 @@ All you need to do to get started with CYO is require the module in your Angular
 Requiring the CYO module gives you access to all the directives necessary to make your own adventure. These modules are detailed below.
 
 <a target="_new" href="http://danielstern.github.io/cyo/">Full getting started details are available at the project page.</a>
+
+The Characters
+-----------
+*Also known as "The Directives", wherein an interactive adventure is created, and Javascript fumes about not being needed.*
+
+You can use these tools freely in your project to create your own interactive story adventure.
 
 ###Story
 The story tag initializes your story by pointing to your first chapter.
