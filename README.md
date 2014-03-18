@@ -212,7 +212,9 @@ The markup of your typical page looks like this.
 ```html
 <page>
 <p>
-	The floor creaks as you step into the house's massive foyer. Grimy paintings of gaunt and ghastly figures line the walls, and go all the way up to the ceiling. There is table in the middle of the room. 
+	The floor creaks as you step into the house's massive foyer. Grimy paintings 
+	of gaunt and ghastly figures line the walls, and go all the way up to the 
+	ceiling. There is table in the middle of the room. 
 </p>
 <p>
 	"Looks like Sal already got this room pretty good," says Brad nervously.
@@ -220,15 +222,23 @@ The markup of your typical page looks like this.
 <p>
 	"Looks like it."
 </p>
-<!-- The following paragraph will only appear if you got the necklace in chapter one -->
+<!-- The following paragraph will only appear if you got the necklace in 
+	chapter one -->
 <condition get-necklace>
 	<p>
-		The figures in the wall all seem old and tired. Rarely are they smiling. Many of the men have long mustaches. You notice someone familiar in one of the paintings.
+		The figures in the wall all seem old and tired. Rarely are they smiling. 
+		Many of the men have long mustaches. You notice someone familiar in one of 
+		the paintings.
 	</p>
 	<p>
-		<i>That's impossible.</i> Suddenly, you reach for the necklace in your pocket and pop it open. Sure enough. The woman is clearer in the picture. She is has blonde hair and a striking face. She is not smiling in the picture on the wall either. Below the picture you see the words <i>Eliza Bedford.</i>
+		<i>That's impossible.</i> Suddenly, you reach for the necklace in your 
+		pocket and pop it open. Sure enough. The woman is clearer in the picture. 
+		She is has blonde hair and a striking face. She is not smiling in the 
+		picture on the wall either. Below the picture you see the words <i>Eliza 
+		Bedford.</i>
 	</p>
-	<!-- Your character learns Eliza's name and this comes in handy later. This event never triggers if the condition it's inside isn't fulfilled. -->
+	<!-- Your character learns Eliza's name and this comes in handy later. This 
+	event never triggers if the condition it's inside isn't fulfilled. -->
 	<event learned-elizas-name></event>
 	<p>
 		"What are you looking at?" asks Brad.
@@ -238,18 +248,24 @@ The markup of your typical page looks like this.
 	</p>
 </condition>
 <p>
-	The room has a dreary air of sadness about it. The wallpaper, purpled with time, peels from the walls. Engraved candlesticks stand guard in neatly ordered rows all around upper wall of the massive room. <i>Those looks valuable. A wonder someone hasn't taken them yet.</i>
+	The room has a dreary air of sadness about it. The wallpaper, purpled with 
+	time, peels from the walls. Engraved candlesticks stand guard in neatly 
+	ordered rows all around upper wall of the massive room. <i>Those looks 
+	valuable. A wonder someone hasn't taken them yet.</i>
 </p>
 <p>
-	"Well, boys," says crazy Jake, rubbing his hands together. "Let's not get too comfortable."
+	"Well, boys," says crazy Jake, rubbing his hands together. "Let's not get too 
+	comfortable."
 </p>
 <p>
-	"I'm going to look upstairs," says Brad. "Get a handful of jewels and get out of here."
+	"I'm going to look upstairs," says Brad. "Get a handful of jewels and get out 
+	of here."
 </p>
 <p>
-	<i>You get a weird feeling in your stomach. You can't figure out what it is.</i>
+	You get a weird feeling in your stomach. You can't figure out what it is.
 </p>
-<!-- This page ends with two choices thereby allowing the story to go on as a new page is loaded. -->
+<!-- This page ends with two choices thereby allowing the story to go on
+ as a new page is loaded. -->
 <choice page='"go-with-brad"'>Go with Brad</choice>
 <choice page='"go-with-jake"'>Go with Jake</choice>
 </page>
