@@ -161,8 +161,113 @@
     <p>
         As you can see, the second option is disabled. That's because we haven't written that chapter. The buttons for unavailable chapters will be disabled.
     </p>
+    <p>
+      That's about it for choice tags. Using just the choice tag, you can create a fun interactive story.
+    </p>
+
+    <h3 title="a.k.a the Grace and Glory">Event and Condition Tags</h3>
+    <p>
+      Things really get interesting with these two tags. Event and condition work together to show or hide parts of your story.
+    </p>
+    <p>
+      For example, in part of your story, the main character may happen to find a magic comb. Later, there might be a page that more than one page leads to, where the main character can use this comb to break out of a haunted mirror.
+    </p>
+    <h4>Event</h4>
+    <p title="Like finding a shiny penny.">
+      <strong>Event</strong> has an attribute containing the name of an event, which is something that has happened in your story.
+    </p>
+    <pre class="brush: html; toolbar: false;">
+<!-- story/behind-bookshelf.html -->
+&lt;page&gt;
+    &lt;p&gt;
+        You notice behind the bookshelf is an old candelabra.
+        &lt;i&gt;This will come in handy, I'm sure.&lt;/i&gt;
+        &lt;event found-candelabra&gt;&lt;/event&gt;
+    &lt;/p&gt;
+    &lt;choice go-through-door&gt;
+        And now to continue exploring...
+    &lt;/choice&gt;
+&lt;/page&gt;
 
 
+    </pre>
+
+    <p>
+      Now, for the remainder of your story, the <i>found-candelabra</i> event will be remembered. You can take advantage of that with the condition tag.
+    </p>
+    <h4>Condition</h4>
+    <p title="It's... OVER 9000?!">
+      Conditions can optionally show part of your story based on if an event has happened previously. You can nest other events and other choices in side conditions, making them extremely powerful.
+    </p>
+    <pre class="brush: html; toolbar: false;">
+<!-- story/go-through-door.html -->
+&lt;page&gt;
+    &lt;p&gt;
+        The clown slowly approaches you, brandishing a rubber chicken menacingly.
+    &lt;/p&gt;
+    &lt;condition found-candelabra&gt;
+        &lt;p&gt;
+           Suddenly, he recoils, shaking. His eyes fixed on the magic candelabra, he vanishes into a cloud of purple smoke.
+        &lt;/p&gt;
+        &lt;p&gt;
+            Hmm... that was weird.
+        &lt;/p&gt;
+        &lt;event slayed-clown&gt;&lt;/event&gt;
+        &lt;choice keep-on-going&gt;Well, gotta keep on going.&lt;/choice&gt;
+    &lt;/condition&gt;
+    &lt;condition not found-candelabra&gt;
+        &lt;p&gt;
+            Powerless to defend yourself, you are lightly chastised with rubber chicken until your friends come for you.
+        &lt;/p&gt;
+        &lt;p&gt;
+            THE END
+        &lt;/p&gt;
+    &lt;/condition&gt;
+&lt;/page&gt;
+
+
+    </pre>
+<p>
+  Notice we've used the <strong>not</strong> modifier to create an opportunity to include both possiblities. This tends to happen pretty commonly.
+</p>
+<p>
+  We've also included an event tag in the condition tag, allowing for powerful customization as stories grow in complexity.
+</p>
+<p>
+  Now let's put it all together.
+</p>
+
+<pre class="brush: html; toolbar: false;">
+
+&lt;!-- story/the-haunted-room.html --&gt;
+&lt;page&gt;
+    &lt;p&gt;
+        You're in some kind of haunted room. It's pretty spooky, I guess.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Anyways, there's a bookshelf and I don't know, some kind of door.
+    &lt;/p&gt;
+    &lt;choice behind-bookshelf&gt;
+        I should investigate this bookshelf.
+    &lt;/choice&gt;
+    &lt;choice go-through-door&gt;
+        I want to get out of here.
+    &lt;/choice&gt;
+&lt;/page&gt;
+
+</pre>
+
+<pre class="brush: html; toolbar: false;">
+  &lt;story the-haunted-room&gt;&lt;/story&gt;
+</pre>
+
+    <example>
+        <story the-haunted-room></story>
+    </example>
+
+<p>
+  As you can now see, making a story with CYO is tons of fun! Get started now!
+</p>
 
 </body>
 
@@ -170,3 +275,13 @@
 
 
 <script src='cyoDemo.js'></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40501021-14', 'danielstern.github.io');
+  ga('send', 'pageview');
+
+</script>
