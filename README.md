@@ -205,6 +205,7 @@ story/
   intro.html
   go-to-school.html
   stay-home-today.html
+```
 
 The markup of your typical page looks like this.
 
