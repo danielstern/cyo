@@ -9,6 +9,7 @@ require.config({
     less: 'lib/less/less-1.3.3.min',
     showdown: 'lib/showdown/showdown',
     markdown: 'lib/angular/angular-markdown/markdown',
+    cyo: '../js/cyo',
   },
   shim: {
   	'underscore_string': {
@@ -30,6 +31,9 @@ require.config({
 	      exports: 'angular'
 	  },
 	  'markdown': {
+	  	deps: ['angular'],
+	  },
+	  'cyo': {
 	  	deps: ['angular'],
 	  }
 	},
@@ -53,21 +57,10 @@ require([
 	"bootstrap",
 	"showdown",
 	"markdown",
+	"cyo",
 
-	"storytelling/choice.directive",
-	"storytelling/chapter.directive",
-	"storytelling/crossroads.directive",
-	"storytelling/ending.directive",
-	"storytelling/condition.directive",
-	"storytelling/story.directive",
-	"storytelling/event.directive",
-	"storytelling/event.service",
-	
-	"visualizer/thoughtwindow",
-	"visualizer/hoverwindow",
 	"visualizer/delay",
 
-	"global/analytics",
 	"global/utility",
 
 	], function($, app, angular, d3) {
