@@ -1,4 +1,6 @@
 angular.module('cyo',[])
+
+// Chapter Directive: Loads a seperate HTML file
 .directive('chapter', function () {
   return {
     restrict: 'E',
@@ -23,14 +25,10 @@ angular.module('cyo',[])
    		}      
     },
     
-    link: function (scope, elem, attrs) {
-
-				elem.addClass('pull-down-in');
-
-      },
-
     }
 })
+
+// Chapter Directive: Loads a seperate HTML file
 .directive('choice', ['eventService', '$http',
   	function (es, $http) {
     return {
@@ -74,8 +72,6 @@ angular.module('cyo',[])
           disabled = true;
         }
 				
-				elem.addClass('pull-right-in-slow');
-
         $http({
           method: "GET",
           url: 'story/' + page + '.html',
@@ -339,4 +335,25 @@ angular.module('cyo',[])
 		this.clearAll = function() {
 			this.allThingsPassed = [];
 		}
-	});
+	})
+
+.directive('delay', function () {
+    return {
+      restrict: 'AE',
+
+      link: function (scope, elem, attrs) {
+
+        var delay = _.sample(_.values(attrs.$attr));
+
+        elem.css('opacity',0)
+
+        _.delay(function(){
+          elem.css('opacity',1)
+          elem.addClass('fade-in-slow');
+        }, delay * 1000)
+
+
+      },
+
+      }
+  });

@@ -59,8 +59,6 @@ require([
 	"markdown",
 	"cyo",
 
-	"visualizer/delay",
-
 	"global/utility",
 
 	], function($, app, angular, d3) {
