@@ -3,8 +3,6 @@ CYO
 
 CYO (Choose Your Own) is an extremely simple, but powerful, storytelling engine built with Angular.js.
 
-<a target="_new" href="http://danielstern.github.io/cyo/">Check Out the Project Page for More Examples</a>
------------
 
 Introduction
 ------------
@@ -36,6 +34,8 @@ All you need to do to get started with CYO is require the module in your Angular
 ```
 
 Requiring the CYO module gives you access to all the directives necessary to make your own adventure. These modules are detailed below.
+
+<a target="_new" href="http://danielstern.github.io/cyo/">Full getting started details are available at the project page.</a>
 
 ###Story
 The story tag initializes your story by pointing to your first chapter.
@@ -195,5 +195,8 @@ Making Your Own
 Please use this tool to make your own adventures and share them with me. If you have any questions, or need a new feature to complete your latest epic, post it up here. Better yet, add the feature yourself and make a pull request. 
 
 Happy adventuring!
+
+<a target="_new" href="http://danielstern.github.io/cyo/">Check Out the Project Page for More Examples</a>
+-----------
 
 *CYO was created by Daniel Stern*
