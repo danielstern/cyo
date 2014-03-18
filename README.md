@@ -141,15 +141,15 @@ You can reverse a condition to its negative by adding the word `not`
 <p>
 	The tall gate is locked and made of heavy iron bars.
 </p>
+<choice go-home>These guys are closed.</choice>
 <condition not pocket-knife-broke>
 	<md>
 		"Don't worry... we can use my trusty pocket knife!"
 
 		"Don't you mean your *rusty* pocket knife?"
 	</md>
-	<choice use-pocketknife>Jimmy the lock with your knife</choice>
+	<choice break-lock>Looks like they're not closed after all.</choice>
 </condition>
-
 ```
 
 Often you will want to nest just a single `<choice>` tag in a `condition`. For that, you can use the following shortcut:
