@@ -13,7 +13,25 @@ CYO uses Angular directives to create rich storytelling experiences with an extr
 
 Getting Started with CYO
 --------------
-### The Very Simple Way:
+## New!! Get Started Easy with Yeoman!
+Get started super easy using Yeoman.
+
+```node
+npm install yeoman;
+npm install -g generator-cyo;
+yo cyo;
+// answer the questions and enjoy!
+```
+
+#### Creating pages with the CYO generator
+
+```
+// in the app directory
+yo cyo:chapter my-chapter
+// ta-da!
+```
+
+### The Alternate Way
 - Clone this repository
 - Open an example you like
 - Delete every file in `story/` except `intro.html`
