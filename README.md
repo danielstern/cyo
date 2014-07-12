@@ -13,6 +13,7 @@ CYO uses Angular directives to create rich storytelling experiences with an extr
 
 Getting Started with CYO
 --------------
+<!--
 ## New!! Get Started Easy with Yeoman!
 Get started super easy using Yeoman.
 
@@ -32,6 +33,7 @@ yo cyo:chapter my-chapter
 ```
 
 ### The Alternate Way
+-->
 - Clone this repository
 - Open an example you like
 - Delete every file in `story/` except `intro.html`
