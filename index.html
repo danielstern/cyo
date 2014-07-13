@@ -9,7 +9,7 @@
     <h1>CYO2</h1>
 
     <story>
-        {{choices}}
+        <!-- {{choices}} -->
         <!-- {{events}} -->
         <page intro>
             <!-- {{isComplete}} -->
@@ -18,21 +18,21 @@
             <choice stay>Time to stay!</choice>
         </page>
         <page go>
-             <!-- {{isComplete}} -->
+            <!-- {{isComplete}} -->
             Ho ho! Now I go!
             <event went></event>
             <choice next-zone>The next zone?</choice>
         </page>
-       <!--  <page stay>
+         <page stay>
             Hey hey! Think I'll stay!
             <choice next-zone>The next zone, then.</choice>
-        </page> -->
-        <!-- <page next-zone>
+        </page>
+        <page next-zone>
             You arrive in the next zone.
             <condition went>
                 Glad I went.
             </condition>
-        </page> -->
+        </page>
     </story>
 
 
@@ -67,88 +67,98 @@ angular.module("cyo2", [])
     })
 
 
-    .controller("StoryController", function($scope) {
-        $scope.events = {};
-        $scope.pages = {};
-        $scope.choices = {};
+.controller("StoryController", function($scope) {
+    $scope.events = {};
+    $scope.pages = {};
+    $scope.choices = {};
 
-        $scope.registerPage = function(name,controller) {
-            
-            controller.hide();
-        };
+    $scope.decisions = {};
 
-        $scope.$watch("pages",function(){
-          for (var title in $scope.pages) {
+    $scope.registerPage = function(name, controller) {
+
+        controller.hide();
+    };
+
+    $scope.$watch("pages", function() {
+        for (var title in $scope.pages) {
             var page = $scope.pages[title];
             if (title == "intro") page.show();
-          }
-        })
+        }
+    });
 
-        $scope.$watch("choices",function(){
-            console.log("choices change...");
-          for (var choiceName in $scope.choices) {
+    $scope.$watch("choices", function() {
+        for (var choiceName in $scope.choices) {
+            // $scope.pages[choiceName].show();
+        }
+    }, true);
+
+    $scope.$watch("decisions", function() {
+        for (var choiceName in $scope.decisions) {
             $scope.pages[choiceName].show();
-          }
-        })
+        }
+    }, true)
+})
 
-        // $scope.$watch()
-    })
+.controller("PageController", function($scope, $attrs, $element) {
 
-    .controller("PageController", function($scope, $attrs,$element) {
- 
-        // $scope.choicesOnPage = {};
+    var pageName = Object.keys($attrs.$attr)[0];
+    $scope.pages[pageName] = this;
 
-        var pageName = Object.keys($attrs.$attr)[0];
-        $scope.pages[pageName] = this;
+    this.show = function() {
+        $element.attr("style", "display:block");
+    };
+    this.hide = function() {
+        $element.attr("style", "display:none");
+    };
 
-        this.show = function() {
-          $element.attr("style","display:block");
-        };
-        this.hide = function() {
-          $element.attr("style","display:none");
-        };
+    $scope.isComplete = false;
+   
 
-        $scope.isComplete = false;
+})
 
-    })
+.controller("ChoiceController", function($scope, $attrs, $element) {
+    var choiceName = Object.keys($attrs.$attr)[0];
+    // $scope.choicesOnPage[choiceName] = this;
+    $scope.$parent.choices[choiceName] = choiceName;
 
-    .controller("ChoiceController",function($scope,$attrs,$element) {
-      var choiceName = Object.keys($attrs.$attr)[0];
-      // $scope.choicesOnPage[choiceName] = this;
-
-      angular.element($element).on("click",function(){
+    angular.element($element).on("click", function() {
         $scope.$parent.isComplete = true;
-        // debugger;
-        $scope.$parent.choices[choiceName] = true;
-        // debugger;
+        $scope.$parent.decisions[choiceName] = choiceName;
         $scope.$apply();
-      })
-    })
+    });
 
-    .controller("EventController", function($scope, $attrs) {
-      var events = Object.keys($attrs.$attr);
-      var isNegative = false;
-      if (events[0] === "clear") {
+    $scope.$watch("isComplete", function() {
+        if ($scope.isComplete) {
+            console.log("I'm complete");
+            $element.attr("style", "display:none");
+
+        }
+    }, true);
+})
+
+.controller("EventController", function($scope, $attrs) {
+    var events = Object.keys($attrs.$attr);
+    var isNegative = false;
+    if (events[0] === "clear") {
         isNegative = true;
         events.shift();
-      };
+    };
 
-      if (!isNegative) {
+    if (!isNegative) {
         $scope.events[event] = event;
-      } else {
+    } else {
         delete $scope.events[event];
-      }
+    }
 
-      // eventService[(!isNegative) ? "add" : "remove"](events[0]);
-    })
-  
+    // eventService[(!isNegative) ? "add" : "remove"](events[0]);
+})
 </script>
 <style>
 page,
 story,
 choice {
     display: block;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 choice {
     display: block;
@@ -168,12 +178,12 @@ choice {
     cursor: pointer;
 }
 choice:hover {
-    border-color: #666 #aaa #bbb #888;
-    border-width: 4px 3px 3px 4px;
+    /*border-color: #666 #aaa #bbb #888;*/
+    /*border-width: 4px 3px 3px 4px;*/
     color: #000;
 }
 page {
-    /*display: none;*/
+    display: none;
 }
 page:first-child {
     display: block;
