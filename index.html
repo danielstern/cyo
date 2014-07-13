@@ -1,9 +1,7 @@
 <html>
 <title>CYO - The Choose Your Own Adventure Framework</title>
-<script src='lib/angular/angular.min.js'></script>
-<script src='lib/underscore.js'></script>
-<script src='lib/underscore/underscore.string.js'></script>
 <!-- <script src='lib/jquery/dist/jquery-2.0.3.js'></script> -->
+<script src='lib/angular/angular.min.js'></script>
 <script src='js/cyo.js'></script>
 
 
@@ -12,12 +10,13 @@
 
     <story>
         <page intro>
-          {{quoi}}
+            {{isComplete}}
             Wow! What a great new format.
             <choice go>Time to go!</choice>
             <choice stay>Time to stay!</choice>
         </page>
         <page go>
+          {{complete}}
             Ho ho! Now I go!
             <event went></event>
             <choice next-zone>The next zone?</choice>
@@ -26,12 +25,12 @@
             Hey hey! Think I'll stay!
             <choice next-zone>The next zone, then.</choice>
         </page>
-        <page next-zone>
+        <!-- <page next-zone>
             You arrive in the next zone.
             <condition went>
                 Glad I went.
             </condition>
-        </page>
+        </page> -->
     </story>
 
 
@@ -47,6 +46,11 @@ angular.module("cyo2", [])
     .directive("page", function() {
         return {
             restrict: "EA",
+            scope: {
+              pages:"&",
+              events:"&",
+              choices:"&"
+            },
             controller: "PageController",
         }
     })
@@ -56,40 +60,69 @@ angular.module("cyo2", [])
             controller: "EventController",
         }
     })
+    .directive("choice", function() {
+        return {
+            restrict: "EA",
+            controller: "ChoiceController",
+        }
+    })
 
 
     .controller("StoryController", function($scope) {
-        $scope.events = [];
+        $scope.events = {};
         $scope.pages = {};
+        $scope.choices = {};
+
         $scope.registerPage = function(name,controller) {
-            $scope.pages[name] = controller;
+            
             controller.hide();
         };
 
         $scope.$watch("pages",function(){
-          console.log("pages changed");
-          // $scope.pages.forEach(function(page,title){
-            // if (title == "intro") page.show();
-          // })
-
           for (var title in $scope.pages) {
             var page = $scope.pages[title];
             if (title == "intro") page.show();
           }
         })
+
+        // $scope.$watch()
     })
 
     .controller("PageController", function($scope, $attrs,$element) {
+ 
+        $scope.choicesOnPage = {};
+
         var pageName = Object.keys($attrs.$attr)[0];
+
+        $scope.pages[pageName] = this;
+
         this.show = function() {
           $element.attr("style","display:block");
         };
         this.hide = function() {
           $element.attr("style","display:none");
+        };
+
+        $scope.isComplete = false;
+
+        $scope.finishPage = function() {
+          console.log("choices on page?",$scope.choicesOnPage)
+
         }
-        $scope.registerPage(pageName,this);
+
     })
-    .controller("EventController", function($scope, eventService,$attrs) {
+
+    .controller("ChoiceController",function($scope,$attrs,$element) {
+      var choiceName = Object.keys($attrs.$attr)[0];
+      $scope.choicesOnPage[choiceName] = this;
+
+      angular.element($element).on("click",function(){
+        $scope.choices[choiceName] = this;
+        $scope.finishPage();
+      })
+    })
+
+    .controller("EventController", function($scope, $attrs) {
       var events = Object.keys($attrs.$attr);
       var isNegative = false;
       if (events[0] === "clear") {
@@ -97,20 +130,15 @@ angular.module("cyo2", [])
         events.shift();
       };
 
-      eventService[(!isNegative) ? "add" : "remove"](events[0]);
-    })
-    
-    .service("eventService", function() {
-      this.events = {};
-
-      this.add = function(event) {
-        this.events[event] = event;
-      };
-
-      this.remove = function(event) {
-        delete this.events[event];
+      if (!isNegative) {
+        $scope.events[event] = event;
+      } else {
+        delete $scope.events[event];
       }
+
+      // eventService[(!isNegative) ? "add" : "remove"](events[0]);
     })
+  
 </script>
 <style>
 page,
