@@ -12,6 +12,7 @@
 
     <story>
         <page intro>
+          {{quoi}}
             Wow! What a great new format.
             <choice go>Time to go!</choice>
             <choice stay>Time to stay!</choice>
@@ -64,11 +65,11 @@ angular.module("cyo2", [])
             $scope.pages[name] = controller;
             controller.show();
         };
-
-
     })
+
     .controller("PageController", function($scope, $attrs,$element) {
         var pageName = Object.keys($attrs.$attr)[0];
+        $scope.quoi = "quoi";
         this.show = function() {
           $element.attr("style","display:block");
         };
@@ -89,6 +90,7 @@ angular.module("cyo2", [])
     })
     
     .service("eventService", function() {
+      // wont work, is a singleton. need factory??
       this.events = {};
 
       this.add = function(event) {
