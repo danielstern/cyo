@@ -19,6 +19,19 @@
       <page go>
         Ho ho! 
         Now I go!
+        <event went></event>
+        <choice next-zone>The next zone?</choice>
+      </page>
+      <page stay>
+        Hey hey!
+        Think I'll stay!
+        <choice next-zone>The next zone, then.</choice>
+      </page>
+      <page next-zone>
+        You arrive in the next zone.
+        <condition went>
+          Glad I went.
+        </condition>
       </page>
     </story>
         
@@ -29,30 +42,40 @@
   .directive("story",function(){
     return {
       restrict: "EA",
-      controller: "storyController",
+      controller: "StoryController",
     }
   })
   .directive("page",function(){
     return {
       restrict: "EA",
       controller:"PageController",
-      link: function(scope, elem,attr,controllers) {
-        console.log("scopes init...",controllers,elem.parent().controller());
+    }
+  })
+  .directive("event",function(){
+    return {
+      restrict: "EA",
+      controller:"EventController",
+      link: function(scope, elem, attr,ctrls) {
+        console.log("event init...",attr);
+        
       }
     }
   })
-  .controller("storyController",function($scope){
-    console.log("its a me! scopio!",$scope);
-    $scope.story = "muddledoo";
-    $scope.register = function() {
-      console.log("someone registered");
+  .controller("StoryController",function($scope){
+    $scope.events = [];
+    $scope.registerPage = function() {
+      console.log("someone registered a page");
     }
   })
   .controller("PageController",function($scope){
-    console.log("page controller init",$scope);
-    $scope.register();
-
-
+    $scope.registerPage();
+    $scope.registerChoice = function() {
+    }
+  })
+  .controller("EventController",function($scope){
+    $scope.registerPage();
+    $scope.registerChoice = function() {
+    }
   })
 </script>
 <style>
@@ -86,7 +109,7 @@
   }
 
   page {
-    display: none;
+    /*display: none;*/
   }
 
   page:first-child {
