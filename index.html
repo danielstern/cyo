@@ -63,13 +63,24 @@ angular.module("cyo2", [])
         $scope.pages = {};
         $scope.registerPage = function(name,controller) {
             $scope.pages[name] = controller;
-            controller.show();
+            controller.hide();
         };
+
+        $scope.$watch("pages",function(){
+          console.log("pages changed");
+          // $scope.pages.forEach(function(page,title){
+            // if (title == "intro") page.show();
+          // })
+
+          for (var title in $scope.pages) {
+            var page = $scope.pages[title];
+            if (title == "intro") page.show();
+          }
+        })
     })
 
     .controller("PageController", function($scope, $attrs,$element) {
         var pageName = Object.keys($attrs.$attr)[0];
-        $scope.quoi = "quoi";
         this.show = function() {
           $element.attr("style","display:block");
         };
@@ -90,7 +101,6 @@ angular.module("cyo2", [])
     })
     
     .service("eventService", function() {
-      // wont work, is a singleton. need factory??
       this.events = {};
 
       this.add = function(event) {
