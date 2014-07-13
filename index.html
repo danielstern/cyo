@@ -9,22 +9,24 @@
     <h1>CYO2</h1>
 
     <story>
+        {{choices}}
+        <!-- {{events}} -->
         <page intro>
-            {{isComplete}}
+            <!-- {{isComplete}} -->
             Wow! What a great new format.
             <choice go>Time to go!</choice>
             <choice stay>Time to stay!</choice>
         </page>
         <page go>
-          {{complete}}
+             <!-- {{isComplete}} -->
             Ho ho! Now I go!
             <event went></event>
             <choice next-zone>The next zone?</choice>
         </page>
-        <page stay>
+       <!--  <page stay>
             Hey hey! Think I'll stay!
             <choice next-zone>The next zone, then.</choice>
-        </page>
+        </page> -->
         <!-- <page next-zone>
             You arrive in the next zone.
             <condition went>
@@ -46,11 +48,7 @@ angular.module("cyo2", [])
     .directive("page", function() {
         return {
             restrict: "EA",
-            scope: {
-              pages:"&",
-              events:"&",
-              choices:"&"
-            },
+            scope: "&",
             controller: "PageController",
         }
     })
@@ -63,6 +61,7 @@ angular.module("cyo2", [])
     .directive("choice", function() {
         return {
             restrict: "EA",
+            scope: "=",
             controller: "ChoiceController",
         }
     })
@@ -85,15 +84,21 @@ angular.module("cyo2", [])
           }
         })
 
+        $scope.$watch("choices",function(){
+            console.log("choices change...");
+          for (var choiceName in $scope.choices) {
+            $scope.pages[choiceName].show();
+          }
+        })
+
         // $scope.$watch()
     })
 
     .controller("PageController", function($scope, $attrs,$element) {
  
-        $scope.choicesOnPage = {};
+        // $scope.choicesOnPage = {};
 
         var pageName = Object.keys($attrs.$attr)[0];
-
         $scope.pages[pageName] = this;
 
         this.show = function() {
@@ -105,20 +110,18 @@ angular.module("cyo2", [])
 
         $scope.isComplete = false;
 
-        $scope.finishPage = function() {
-          console.log("choices on page?",$scope.choicesOnPage)
-
-        }
-
     })
 
     .controller("ChoiceController",function($scope,$attrs,$element) {
       var choiceName = Object.keys($attrs.$attr)[0];
-      $scope.choicesOnPage[choiceName] = this;
+      // $scope.choicesOnPage[choiceName] = this;
 
       angular.element($element).on("click",function(){
-        $scope.choices[choiceName] = this;
-        $scope.finishPage();
+        $scope.$parent.isComplete = true;
+        // debugger;
+        $scope.$parent.choices[choiceName] = true;
+        // debugger;
+        $scope.$apply();
       })
     })
 
@@ -170,7 +173,7 @@ choice:hover {
     color: #000;
 }
 page {
-    display: none;
+    /*display: none;*/
 }
 page:first-child {
     display: block;
