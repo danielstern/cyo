@@ -10,10 +10,10 @@
 
     <story>
         <!-- {{choices}} -->
-        <!-- {{events}} -->
+        <!-- {{storyEvents}} -->
         <page intro>
-            <!-- {{isComplete}} -->
             Wow! What a great new format.
+            <event story-started></event>
             <choice go>Time to go!</choice>
             <choice stay>Time to stay!</choice>
         </page>
@@ -23,15 +23,17 @@
             <event went></event>
             <choice next-zone>The next zone?</choice>
         </page>
-         <page stay>
+        <page stay>
             Hey hey! Think I'll stay!
             <choice next-zone>The next zone, then.</choice>
         </page>
         <page next-zone>
             You arrive in the next zone.
+            <!-- <img src="http://i.imgur.com/FmUAOsH.jpg" width="500px"> -->
             <condition went>
                 Glad I went.
             </condition>
+            <choice unknown-place>... but what about the Unknown Place?</choice>
         </page>
     </story>
 
@@ -60,22 +62,28 @@ angular.module("cyo2", [])
     })
     .directive("choice", function() {
         return {
-            restrict: "EA",
+            restrict: "EAC",
             scope: "=",
             controller: "ChoiceController",
         }
     })
+    .directive("condition", function() {
+        return {
+            restrict: "EA",
+            scope: "=",
+            controller: "ConditionController",
+        }
+    })
 
 
-.controller("StoryController", function($scope) {
-    $scope.events = {};
+.controller("StoryController", function($scope, $element) {
+    $scope.storyEvents = {};
     $scope.pages = {};
     $scope.choices = {};
 
     $scope.decisions = {};
 
     $scope.registerPage = function(name, controller) {
-
         controller.hide();
     };
 
@@ -88,37 +96,66 @@ angular.module("cyo2", [])
 
     $scope.$watch("choices", function() {
         for (var choiceName in $scope.choices) {
-            // $scope.pages[choiceName].show();
+            if (!$scope.pages[choiceName]) {
+                console.warn("cant find page for,", choiceName);
+            }
         }
     }, true);
 
     $scope.$watch("decisions", function() {
+
         for (var choiceName in $scope.decisions) {
+            if (!$scope.pages[choiceName]) {
+                $element.append("cant find this");
+                return;
+            }
             $scope.pages[choiceName].show();
         }
-    }, true)
+    }, true);
+})
+
+.controller("ConditionController", function($scope, $element, $attrs) {
+    var condition = Object.keys($attrs.$attr);
+    var isNegative = false;
+    if (condition[0] === "unless" || condition[0] === "not") {
+        isNegative = true;
+        storyEvents.shift();
+    };
+
+    $scope.$watch("storyEvents", function() {
+        console.log('an event happened', $scope.storyEvents);
+    })
+
 })
 
 .controller("PageController", function($scope, $attrs, $element) {
 
     var pageName = Object.keys($attrs.$attr)[0];
+    var events = $element.find('event').scope();
+
     $scope.pages[pageName] = this;
 
     this.show = function() {
         $element.attr("style", "display:block");
+        // console.log("Showing",events);
+        // events.forEach(function(_event){
+          // console.log('activating,',_event);
+            // _event.activate();
+        // })
     };
     this.hide = function() {
         $element.attr("style", "display:none");
     };
 
+    console.log();
+
     $scope.isComplete = false;
-   
+
 
 })
 
 .controller("ChoiceController", function($scope, $attrs, $element) {
     var choiceName = Object.keys($attrs.$attr)[0];
-    // $scope.choicesOnPage[choiceName] = this;
     $scope.$parent.choices[choiceName] = choiceName;
 
     angular.element($element).on("click", function() {
@@ -137,20 +174,26 @@ angular.module("cyo2", [])
 })
 
 .controller("EventController", function($scope, $attrs) {
-    var events = Object.keys($attrs.$attr);
+    var storyEvent = Object.keys($attrs.$attr);
     var isNegative = false;
-    if (events[0] === "clear") {
+    if (storyEvent[0] === "clear") {
         isNegative = true;
-        events.shift();
+        storyEvent.shift();
     };
 
-    if (!isNegative) {
-        $scope.events[event] = event;
-    } else {
-        delete $scope.events[event];
+    this.isEvent = true;
+
+    this.activate = function() {
+      if (!isNegative) {
+          $scope.storyEvents[storyEvent] = storyEvent;
+      } else {
+          delete $scope.storyEvents[storyEvent];
+      }
     }
 
-    // eventService[(!isNegative) ? "add" : "remove"](events[0]);
+    
+
+    // storyEventservice[(!isNegative) ? "add" : "remove"](storyEvents[0]);
 })
 </script>
 <style>
