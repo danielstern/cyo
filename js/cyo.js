@@ -23,20 +23,20 @@ angular.module("cyo", [])
     }
 })
 
-// .directive("event", function() {
-//     return {
-//         restrict: "EA",
-//         scope: true,
-//         controller: "EventController",
-//     }
-// })
+.directive("event", function() {
+    return {
+        restrict: "EA",
+        scope: true,
+        controller: "EventController",
+    }
+})
 
-// .directive("condition", function() {
-//     return {
-//         restrict: "EA",
-//         controller: "ConditionController",
-//     }
-// })
+.directive("condition", function() {
+    return {
+        restrict: "EA",
+        controller: "ConditionController",
+    }
+})
 
 
 .controller("StoryController", function($scope, $element) {
@@ -47,14 +47,15 @@ angular.module("cyo", [])
 
 .controller("PageController", function($scope, $attrs, $element) {
 
-    var pageName = Object.keys($attrs.$attr)[0];
+    $scope.pageName = Object.keys($attrs.$attr)[0];
     $scope.localEvents = {};
     $scope.localConditions = {};
     $scope.isComplete = false;
 
     $scope.$watch("decisions", function() {
-        if ($scope.decisions.indexOf(pageName) > -1) {
+        if ($scope.decisions.indexOf($scope.pageName) > -1) {
             $element.attr("style", "display:block");
+
             for (_event in $scope.localEvents) {
                 $scope.localEvents[_event].activate();
             }
@@ -77,3 +78,54 @@ angular.module("cyo", [])
         }
     }, true);
 })
+
+
+.controller("EventController", function($scope, $attrs) {
+    var storyEvent = Object.keys($attrs.$attr);
+    var isNegative = false;
+    if (storyEvent[0] === "clear") {
+        isNegative = true;
+        storyEvent.shift();
+    };
+
+    var watchman = $scope.$watch("decisions", function() {
+        if ($scope.decisions.indexOf($scope.pageName) > -1) {
+            console.log("Activating this event", storyEvent, !isNegative);
+            if (!isNegative) {
+                $scope.storyEvents.push(storyEvent[0]);
+            } else {
+                delete $scope.storyEvents[storyEvent[0]];
+            }
+
+            watchman();
+        }
+    }, true);
+})
+
+.controller("ConditionController", function($scope, $element, $attrs) {
+    $element.attr("style", "display:none");
+    var condition = Object.keys($attrs.$attr);
+    var isNegative = false;
+
+    if (condition[0] === "unless" || condition[0] === "not") {
+        isNegative = true;
+        condition.shift();
+    };
+
+    var watchman = $scope.$watch("decisions", function() {
+        if ($scope.decisions.indexOf($scope.pageName) > -1) {
+            console.log("Activating this condition", condition);
+            if ($scope.storyEvents.indexOf(condition[0]) > -1) {
+                if (!isNegative) {
+                    $element.attr("style", "display:block");
+                }
+            } else {
+                if (isNegative) {
+                    $element.attr("style", "display:block");
+                }
+            }
+
+            watchman();
+        }
+    }, true);
+});
