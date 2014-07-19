@@ -1,7 +1,6 @@
 <html>
 <title>CYO - The Choose Your Own Adventure Framework</title>
-<!-- <script src='lib/jquery/dist/jquery-2.0.3.js'></script> -->
-<script src='lib/angular/angular.min.js'></script>
+<script src='bower_components/angular/angular.min.js'></script>
 <script src='js/cyo.js'></script>
 
 
@@ -33,7 +32,10 @@
             <condition went>
                 Glad I went.
             </condition>
-            <choice unknown-place>... but what about the Unknown Place?</choice>
+            <condition not went>
+                Glad I stayed.
+            </condition>
+            <choice unknown-place>... the Unknown Place?</choice>
         </page>
     </story>
 
@@ -50,27 +52,28 @@ angular.module("cyo2", [])
     .directive("page", function() {
         return {
             restrict: "EA",
-            scope: "&",
+            scope: true,
             controller: "PageController",
         }
     })
     .directive("event", function() {
         return {
             restrict: "EA",
+            scope: true,
             controller: "EventController",
         }
     })
     .directive("choice", function() {
         return {
             restrict: "EAC",
-            scope: "=",
+            // scope: "=",
             controller: "ChoiceController",
         }
     })
     .directive("condition", function() {
         return {
             restrict: "EA",
-            scope: "=",
+            // scope: "=",
             controller: "ConditionController",
         }
     })
@@ -97,7 +100,7 @@ angular.module("cyo2", [])
     $scope.$watch("choices", function() {
         for (var choiceName in $scope.choices) {
             if (!$scope.pages[choiceName]) {
-                console.warn("cant find page for,", choiceName);
+                // console.warn("cant find page for,", choiceName);
             }
         }
     }, true);
@@ -106,7 +109,7 @@ angular.module("cyo2", [])
 
         for (var choiceName in $scope.decisions) {
             if (!$scope.pages[choiceName]) {
-                $element.append("cant find this");
+                $element.append("Fatal error: can't find chapter: " + choiceName);
                 return;
             }
             $scope.pages[choiceName].show();
@@ -115,52 +118,51 @@ angular.module("cyo2", [])
 })
 
 .controller("ConditionController", function($scope, $element, $attrs) {
+    $element.attr("style", "display:none");
     var condition = Object.keys($attrs.$attr);
     var isNegative = false;
     if (condition[0] === "unless" || condition[0] === "not") {
         isNegative = true;
-        storyEvents.shift();
+        condition.shift();
     };
 
-    $scope.$watch("storyEvents", function() {
-        console.log('an event happened', $scope.storyEvents);
-    })
-
+    $scope.$watch('storyEvents',function(){
+        console.log('story events changed',$scope.storyEvents);
+        for (key in $scope.storyEvents) {
+            if (key == condition) $element.attr("style", "display:block");
+        }
+    },true);
 })
 
 .controller("PageController", function($scope, $attrs, $element) {
 
     var pageName = Object.keys($attrs.$attr)[0];
-    var events = $element.find('event').scope();
+    $scope.localEvents = {};
 
     $scope.pages[pageName] = this;
 
     this.show = function() {
         $element.attr("style", "display:block");
-        // console.log("Showing",events);
-        // events.forEach(function(_event){
-          // console.log('activating,',_event);
-            // _event.activate();
-        // })
+        for (_event in $scope.localEvents) {
+            $scope.localEvents[_event].activate();
+        }
     };
+
     this.hide = function() {
         $element.attr("style", "display:none");
     };
 
-    console.log();
-
     $scope.isComplete = false;
-
 
 })
 
 .controller("ChoiceController", function($scope, $attrs, $element) {
     var choiceName = Object.keys($attrs.$attr)[0];
-    $scope.$parent.choices[choiceName] = choiceName;
+    $scope.choices[choiceName] = choiceName;
 
     angular.element($element).on("click", function() {
-        $scope.$parent.isComplete = true;
-        $scope.$parent.decisions[choiceName] = choiceName;
+        $scope.isComplete = true;
+        $scope.decisions[choiceName] = choiceName;
         $scope.$apply();
     });
 
@@ -181,19 +183,16 @@ angular.module("cyo2", [])
         storyEvent.shift();
     };
 
-    this.isEvent = true;
+    $scope.localEvents[storyEvent] = this;
 
     this.activate = function() {
-      if (!isNegative) {
-          $scope.storyEvents[storyEvent] = storyEvent;
-      } else {
-          delete $scope.storyEvents[storyEvent];
-      }
+        if (!isNegative) {
+            $scope.storyEvents[storyEvent] = this;
+        } else {
+            delete $scope.storyEvents[storyEvent];
+        }
     }
 
-    
-
-    // storyEventservice[(!isNegative) ? "add" : "remove"](storyEvents[0]);
 })
 </script>
 <style>
@@ -201,24 +200,12 @@ page,
 story,
 choice {
     display: block;
-    /*border: 1px solid black;*/
 }
 choice {
-    display: block;
-    border-style: solid;
-    border-color: #bbb #888 #666 #aaa;
-    border-width: 3px 4px 4px 3px;
-    width: 9em;
-    margin: 5px;
-    height: 2em;
-    background: #ccc;
-    color: #333;
-    line-height: 2;
-    text-align: center;
-    text-decoration: none;
-    font-weight: 900;
-    transition: 0.2s all;
-    cursor: pointer;
+    border: 1px solid black;
+    -webkit-appearance: button;
+    display: inline;
+    padding: 2px;
 }
 choice:hover {
     /*border-color: #666 #aaa #bbb #888;*/
