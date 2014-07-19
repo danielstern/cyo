@@ -2,33 +2,35 @@
 <title>CYO - The Choose Your Own Adventure Framework</title>
 <script src='bower_components/angular/angular.min.js'></script>
 <script src='js/cyo.js'></script>
+<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
 
 
-<body class='container' ng-app="cyo2">
-    <h1>CYO2</h1>
 
-    <story>
+<body ng-app="cyo" class='container'>
+    <h1>CYO</h1>
+
+    <story >
         <!-- {{choices}} -->
+        <h3>Example 1: A Little of Everything</h3>
+
         <!-- {{storyEvents}} -->
         <page intro>
-            Wow! What a great new format.
-            <event story-started></event>
-            <choice go>Time to go!</choice>
-            <choice stay>Time to stay!</choice>
+            Welcome to CYO! This is a page.
+            <button choice go>Let's go.</button>
+            <button choice stay>I would prefer to stay here...</button>
         </page>
         <page go>
             <!-- {{isComplete}} -->
             Ho ho! Now I go!
             <event went></event>
-            <choice next-zone>The next zone?</choice>
+            <button choice next-zone>The next zone?</button>
         </page>
         <page stay>
             Hey hey! Think I'll stay!
             <condition story-started>
                 This will always appear.
-
             </condition>
-            <choice next-zone>The next zone, then.</choice>
+            <button choice next-zone>The next zone, then.</button>
         </page>
         <page next-zone>
             You arrive in the next zone.
@@ -39,25 +41,19 @@
             <condition not went>
                 Glad I stayed.
             </condition>
-            <choice unknown-place>... the Unknown Place?</choice>
+            <button choice unknown-place>... the Unknown Place?</button>
         </page>
     </story>
 
 
-
 </body>
-
-<script>
-angular.module("cyo2", ['cyo']);
-    
-</script>
 <style>
 
 choice {
     border: 1px solid black;
     -webkit-appearance: button;
     max-width: 250px;
-    display: inline-block;
+    display: block;
     padding: 0.3rem;
 }
 </style>

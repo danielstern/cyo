@@ -41,6 +41,7 @@ angular.module("cyo", [])
 .controller("StoryController", function($scope, $element) {
     $scope.storyEvents = [];
     $scope.choices = [];
+    $scope.pages = [];
     $scope.decisions = ['intro'];
 })
 
@@ -48,7 +49,12 @@ angular.module("cyo", [])
 
     $element.css("display", "none");
 
-    $scope.pageName = Object.keys($attrs.$attr)[0];
+    var pageName = Object.keys($attrs.$attr);
+    if (pageName[0] == "page") pageName.shift();
+
+    $scope.pageName = pageName[0];
+    $scope.pages.push(pageName[0]);
+
     $scope.isComplete = false;
 
     $scope.$watch("decisions", function() {
@@ -60,13 +66,22 @@ angular.module("cyo", [])
 
 .controller("ChoiceController", function($scope, $attrs, $element) {
 
-    var choiceName = Object.keys($attrs.$attr)[0];
+    var choiceName = Object.keys($attrs.$attr);
+    if (choiceName[0] === "choice") choiceName.shift();
 
     angular.element($element).on("click", function() {
         $scope.isComplete = true;
-        $scope.decisions.push(choiceName);
+        $scope.decisions.push(choiceName[0]);
         $scope.$apply();
     });
+
+    $scope.$watch("pages", function() {
+        if ($scope.pages.indexOf(choiceName[0]) == -1) {
+        	console.error("A choice has no corresponding page,",choiceName[0]);
+            $element.css("border", "2px solid red");
+            $element.css("pointer-events", "none");
+        }
+    }, true);
 
     $scope.$watch("isComplete", function() {
         if ($scope.isComplete) {
@@ -87,7 +102,7 @@ angular.module("cyo", [])
     var watchman = $scope.$watch("decisions", function() {
         if ($scope.decisions.indexOf($scope.pageName) > -1) {
             if ($scope.isCondition && !$scope.conditionValid) {
-                console.log("this is in a condition that is not active");
+                watchman();
                 return;
             }
             console.log("Activating this event", storyEvent, !isNegative);

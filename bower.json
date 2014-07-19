@@ -1,0 +1,22 @@
+{
+  "name": "cyo",
+  "version": "0.0.0",
+  "homepage": "https://github.com/danielstern/cyo",
+  "description": "a choose your own adventure module",
+  "main": "js/cyo.js",
+  "authors": [
+    "danielstern"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.20",
+    "bootstrap": "~3.2.0"
+  }
+}
