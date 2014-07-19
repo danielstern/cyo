@@ -24,6 +24,9 @@
         </page>
         <page stay>
             Hey hey! Think I'll stay!
+            <condition story-started>
+                This will always appear.
+            </condition>
             <choice next-zone>The next zone, then.</choice>
         </page>
         <page next-zone>
@@ -40,160 +43,12 @@
     </story>
 
 
+
 </body>
+
 <script>
-angular.module("cyo2", [])
-    .directive("story", function() {
-        return {
-            restrict: "EA",
-            controller: "StoryController",
-        }
-    })
-    .directive("page", function() {
-        return {
-            restrict: "EA",
-            scope: true,
-            controller: "PageController",
-        }
-    })
-    .directive("event", function() {
-        return {
-            restrict: "EA",
-            scope: true,
-            controller: "EventController",
-        }
-    })
-    .directive("choice", function() {
-        return {
-            restrict: "EAC",
-            // scope: "=",
-            controller: "ChoiceController",
-        }
-    })
-    .directive("condition", function() {
-        return {
-            restrict: "EA",
-            // scope: "=",
-            controller: "ConditionController",
-        }
-    })
-
-
-.controller("StoryController", function($scope, $element) {
-    $scope.storyEvents = {};
-    $scope.pages = {};
-    $scope.choices = {};
-
-    $scope.decisions = {};
-
-    $scope.registerPage = function(name, controller) {
-        controller.hide();
-    };
-
-    $scope.$watch("pages", function() {
-        for (var title in $scope.pages) {
-            var page = $scope.pages[title];
-            if (title == "intro") page.show();
-        }
-    });
-
-    $scope.$watch("choices", function() {
-        for (var choiceName in $scope.choices) {
-            if (!$scope.pages[choiceName]) {
-                // console.warn("cant find page for,", choiceName);
-            }
-        }
-    }, true);
-
-    $scope.$watch("decisions", function() {
-
-        for (var choiceName in $scope.decisions) {
-            if (!$scope.pages[choiceName]) {
-                $element.append("Fatal error: can't find chapter: " + choiceName);
-                return;
-            }
-            $scope.pages[choiceName].show();
-        }
-    }, true);
-})
-
-.controller("ConditionController", function($scope, $element, $attrs) {
-    $element.attr("style", "display:none");
-    var condition = Object.keys($attrs.$attr);
-    var isNegative = false;
-    if (condition[0] === "unless" || condition[0] === "not") {
-        isNegative = true;
-        condition.shift();
-    };
-
-    $scope.$watch('storyEvents',function(){
-        console.log('story events changed',$scope.storyEvents);
-        for (key in $scope.storyEvents) {
-            if (key == condition) $element.attr("style", "display:block");
-        }
-    },true);
-})
-
-.controller("PageController", function($scope, $attrs, $element) {
-
-    var pageName = Object.keys($attrs.$attr)[0];
-    $scope.localEvents = {};
-
-    $scope.pages[pageName] = this;
-
-    this.show = function() {
-        $element.attr("style", "display:block");
-        for (_event in $scope.localEvents) {
-            $scope.localEvents[_event].activate();
-        }
-    };
-
-    this.hide = function() {
-        $element.attr("style", "display:none");
-    };
-
-    $scope.isComplete = false;
-
-})
-
-.controller("ChoiceController", function($scope, $attrs, $element) {
-    var choiceName = Object.keys($attrs.$attr)[0];
-    $scope.choices[choiceName] = choiceName;
-
-    angular.element($element).on("click", function() {
-        $scope.isComplete = true;
-        $scope.decisions[choiceName] = choiceName;
-        $scope.$apply();
-    });
-
-    $scope.$watch("isComplete", function() {
-        if ($scope.isComplete) {
-            console.log("I'm complete");
-            $element.attr("style", "display:none");
-
-        }
-    }, true);
-})
-
-.controller("EventController", function($scope, $attrs) {
-    var storyEvent = Object.keys($attrs.$attr);
-    var isNegative = false;
-    if (storyEvent[0] === "clear") {
-        isNegative = true;
-        storyEvent.shift();
-    };
-
-    $scope.localEvents[storyEvent] = this;
-
-    this.activate = function() {
-        if (!isNegative) {
-            $scope.storyEvents[storyEvent] = this;
-        } else {
-            delete $scope.storyEvents[storyEvent];
-        }
-    }
-
-})
+angular.module("cyo2", ['cyo']);
+    
 </script>
 <style>
 page,
