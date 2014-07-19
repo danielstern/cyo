@@ -3,6 +3,7 @@ angular.module("cyo", [])
 .directive("story", function() {
     return {
         restrict: "EA",
+        scope: true,
         controller: "StoryController",
     }
 })
@@ -47,12 +48,13 @@ angular.module("cyo", [])
 
 .controller("PageController", function($scope, $attrs, $element) {
 
-    $element.css("display", "none");
+    if ($scope.pages.length) $element.css("display", "none");
 
     var pageName = Object.keys($attrs.$attr);
     if (pageName[0] == "page") pageName.shift();
 
     $scope.pageName = pageName[0];
+
     $scope.pages.push(pageName[0]);
 
     $scope.isComplete = false;

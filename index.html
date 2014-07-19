@@ -8,35 +8,43 @@
 
 <body ng-app="cyo" class='container'>
     <h1>CYO</h1>
+    <h2>About</h2>
+    <p>
+        CYO is a powerful markup language that is powered by Angular.js that requires no technical knowledge to use. It is ideal for forms, games and user experience.
+    </p>
 
-    <story >
+    <story>
         <!-- {{choices}} -->
         <h3>Example 1: A Little of Everything</h3>
 
         <!-- {{storyEvents}} -->
-        <page intro>
-            Welcome to CYO! This is a page.
+        <page>
+            <p>
+                Welcome to CYO! This is a page.
+            </p>
             <button choice go>Let's go.</button>
             <button choice stay>I would prefer to stay here...</button>
         </page>
         <page go>
             <!-- {{isComplete}} -->
-            Ho ho! Now I go!
+            <p>Ho ho! Now I go!</p>
             <event went></event>
             <button choice next-zone>The next zone?</button>
         </page>
         <page stay>
-            Hey hey! Think I'll stay!
+            <p>Hey hey! Think I'll stay!</p>
             <condition story-started>
                 This will always appear.
             </condition>
             <button choice next-zone>The next zone, then.</button>
         </page>
         <page next-zone>
-            You arrive in the next zone.
+            <p>
+                You arrive in the next zone.
+            </p>
             <condition went>
                 <event glad-went></event>
-                Glad I went.
+                <p>Glad I went.</p>
             </condition>
             <condition not went>
                 Glad I stayed.
@@ -45,16 +53,22 @@
         </page>
     </story>
 
+    <story>
+        <h2>A Game</h2>
+        <page intro>
+    </story>
+
 
 </body>
 <style>
-
-choice {
-    border: 1px solid black;
-    -webkit-appearance: button;
-    max-width: 250px;
+story {
     display: block;
-    padding: 0.3rem;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    font-size: 2rem;
+}
+page {
+    display: block;
 }
 </style>
 
