@@ -18,7 +18,6 @@ angular.module("cyo", [])
 .directive("choice", function() {
     return {
         restrict: "EAC",
-        // scope: "=",
         controller: "ChoiceController",
     }
 })
@@ -26,7 +25,7 @@ angular.module("cyo", [])
 .directive("event", function() {
     return {
         restrict: "EA",
-        scope: true,
+        // scope: true,
         controller: "EventController",
     }
 })
@@ -47,23 +46,20 @@ angular.module("cyo", [])
 
 .controller("PageController", function($scope, $attrs, $element) {
 
+    $element.css("display", "none");
+
     $scope.pageName = Object.keys($attrs.$attr)[0];
-    $scope.localEvents = {};
-    $scope.localConditions = {};
     $scope.isComplete = false;
 
     $scope.$watch("decisions", function() {
         if ($scope.decisions.indexOf($scope.pageName) > -1) {
-            $element.attr("style", "display:block");
-
-            for (_event in $scope.localEvents) {
-                $scope.localEvents[_event].activate();
-            }
+            $element.css("display", "block");
         }
     }, true);
 })
 
 .controller("ChoiceController", function($scope, $attrs, $element) {
+
     var choiceName = Object.keys($attrs.$attr)[0];
 
     angular.element($element).on("click", function() {
@@ -74,7 +70,7 @@ angular.module("cyo", [])
 
     $scope.$watch("isComplete", function() {
         if ($scope.isComplete) {
-            $element.attr("style", "display:none");
+            $element.css("display", "none");
         }
     }, true);
 })
@@ -90,6 +86,10 @@ angular.module("cyo", [])
 
     var watchman = $scope.$watch("decisions", function() {
         if ($scope.decisions.indexOf($scope.pageName) > -1) {
+            if ($scope.isCondition && !$scope.conditionValid) {
+                console.log("this is in a condition that is not active");
+                return;
+            }
             console.log("Activating this event", storyEvent, !isNegative);
             if (!isNegative) {
                 $scope.storyEvents.push(storyEvent[0]);
@@ -107,6 +107,8 @@ angular.module("cyo", [])
     var condition = Object.keys($attrs.$attr);
     var isNegative = false;
 
+    $scope.isCondition = true;
+
     if (condition[0] === "unless" || condition[0] === "not") {
         isNegative = true;
         condition.shift();
@@ -114,17 +116,13 @@ angular.module("cyo", [])
 
     var watchman = $scope.$watch("decisions", function() {
         if ($scope.decisions.indexOf($scope.pageName) > -1) {
-            console.log("Activating this condition", condition);
-            if ($scope.storyEvents.indexOf(condition[0]) > -1) {
-                if (!isNegative) {
-                    $element.attr("style", "display:block");
-                }
-            } else {
-                if (isNegative) {
-                    $element.attr("style", "display:block");
-                }
+            if ($scope.storyEvents.indexOf(condition[0]) > -1 && !isNegative) {
+                $scope.conditionValid = true;
+                $element.css("display", "block");
+            } else if ($scope.storyEvents.indexOf(condition[0]) == -1 && isNegative) {
+                $scope.conditionValid = true;
+                $element.css("display", "block");
             }
-
             watchman();
         }
     }, true);

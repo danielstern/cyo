@@ -3,3 +3,4 @@
 *.au
 assets/music/*
 bower_components
+node_modules

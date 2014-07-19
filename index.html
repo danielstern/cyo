@@ -26,6 +26,7 @@
             Hey hey! Think I'll stay!
             <condition story-started>
                 This will always appear.
+
             </condition>
             <choice next-zone>The next zone, then.</choice>
         </page>
@@ -33,6 +34,7 @@
             You arrive in the next zone.
             <!-- <img src="http://i.imgur.com/FmUAOsH.jpg" width="500px"> -->
             <condition went>
+                <event glad-went></event>
                 Glad I went.
             </condition>
             <condition not went>
@@ -51,29 +53,15 @@ angular.module("cyo2", ['cyo']);
     
 </script>
 <style>
-page,
-story,
-choice {
-    display: block;
-}
+
 choice {
     border: 1px solid black;
     -webkit-appearance: button;
-    display: inline;
-    padding: 2px;
+    /*display: inline;*/
+    max-width: 250px;
+    display: inline-block;
+    padding: 0.3rem;
 }
-choice:hover {
-    /*border-color: #666 #aaa #bbb #888;*/
-    /*border-width: 4px 3px 3px 4px;*/
-    color: #000;
-}
-page {
-    display: none;
-}
-page:first-child {
-    display: block;
-}
-;
 </style>
 
 </html>
