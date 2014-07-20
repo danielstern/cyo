@@ -111,7 +111,8 @@ angular.module("cyo", [])
             if (!isNegative) {
                 $scope.storyEvents.push(storyEvent[0]);
             } else {
-                delete $scope.storyEvents[storyEvent[0]];
+                var index = $scope.storyEvents.indexOf(storyEvent[0]);
+                 $scope.storyEvents.splice(index, 1);
             }
 
             watchman();

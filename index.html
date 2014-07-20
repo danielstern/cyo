@@ -41,6 +41,7 @@
         <page next-zone>
             <p>
                 You arrive in the next zone.
+
             </p>
             <condition went>
                 <event glad-went></event>
@@ -49,13 +50,46 @@
             <condition not went>
                 Glad I stayed.
             </condition>
-            <button choice unknown-place>... the Unknown Place?</button>
+            <button choice unknown-place>An unwritten chapter...</button>
         </page>
     </story>
 
     <story>
         <h2>A Game</h2>
-        <page intro>
+        <page intro="">
+            <p>You're in a spooky forest.</p>
+            <p>"You'll never get out of here alive," says Smeemog, the grumpy dwarf.</p>
+            <p>"I'll show you who won't get out of here alive," you say, but deep down, you're worried he's right.</p>
+            <button choice stay-put="">Wait to get rescued</button>
+            <button choice look-around>We must explore this magic forest</button>
+        </page>
+        <page stay-put="">
+            <p>"We should wait here until we get rescued."</p>
+            <p>"Thought it might be snakes, or maybe a pit, but I never thought I'd be <i>bored</i> to death."</p>
+            <p>In the clearing of the forest, there are three rocks, a tree, and, in another tree, a preposterous-looking owl.</p>
+            <button choice="" investigate-rocks="">I ought to investigate these rocks</button>
+            <button choice="" check-tree-out>I want to check out this tree</button>
+            <button choice="" talk-to-owl>"Hey you! Owl! I'm talking to you."</button>
+        </page>
+        <page talk-to-owl="">
+            <p>For a while you talk to the owl. It seems to ignore you. Suddenly, it cocks its head towards a hollow in an old tree.</p>
+            <p>You reach inside, and pull out a mysterious wooden flute.</p>
+            <event got-flute=""></event>
+            <p>"Hmm, now I've seen everything".</p>
+        </page>
+        <page>
+            <condition not got-flute>
+                Oh no! If only I had gotten some kind of flute, everything would have gone really, really well.
+            </condition>
+            <p>
+                <p class="flute" id="myFlute">
+
+                </p>
+            </p>
+
+        </page>
+
+
     </story>
 
 
