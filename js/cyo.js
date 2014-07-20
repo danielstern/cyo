@@ -110,14 +110,14 @@ angular.module("cyo", [])
         }
     }, true);
 
-    $scope.$watch("completedPages",function(){
+    $scope.$watch("completedPages", function() {
         console.log('completed pages changed...')
         if ($scope.completedPages.indexOf($scope.pageName) > -1) {
             $element.css("display", "none");
         } else {
             $element.css("display", "inline-block");
-        }        
-    },true)
+        }
+    }, true)
 })
 
 .controller("RestartController", function($scope, $attrs, $element) {
@@ -127,10 +127,9 @@ angular.module("cyo", [])
             while (A.length > 0) {
                 A.pop();
             }
-        })
+        });
 
         $scope.$apply();
-        console.log("restarted",$scope);
     });
 })
 
@@ -143,29 +142,38 @@ angular.module("cyo", [])
         storyEvent.shift();
     };
 
-    var watchman = $scope.$watch("decisions", function() {
-        if ($scope.decisions.indexOf($scope.pageName) > -1) {
-            if ($scope.isCondition && !$scope.conditionValid) {
-                watchman();
-                return;
-            }
-            console.log("Activating this event", storyEvent, !isNegative);
-            if (!isNegative) {
-                $scope.storyEvents.push(storyEvent[0]);
-            } else {
-                var index = $scope.storyEvents.indexOf(storyEvent[0]);
-                $scope.storyEvents.splice(index, 1);
-            }
+    var activated = false;
 
-            watchman();
+    function activate() {
+        activated = true;
+        if ($scope.isCondition && !$scope.conditionValid) {
+            return;
+        };
+
+        console.info("Activating this event", storyEvent, !isNegative);
+
+        if (!isNegative) {
+            $scope.storyEvents.push(storyEvent[0]);
+        } else {
+            var index = $scope.storyEvents.indexOf(storyEvent[0]);
+            $scope.storyEvents.splice(index, 1);
+        };
+    }
+
+    $scope.$watch("decisions", function() {
+        if ($scope.decisions.indexOf($scope.pageName) > -1) {
+            activate();
+        } else {
+            activated = false;
         }
     }, true);
 })
 
 .controller("ConditionController", function($scope, $element, $attrs) {
-    $element.attr("style", "display:none");
+    $element.css("display", "none");
     var condition = Object.keys($attrs.$attr);
     var isNegative = false;
+    var activated = false;
 
     $scope.isCondition = true;
 
@@ -174,16 +182,23 @@ angular.module("cyo", [])
         condition.shift();
     };
 
-    var watchman = $scope.$watch("decisions", function() {
+    function activate() {
+        activated = true;
+        if ($scope.storyEvents.indexOf(condition[0]) > -1 && !isNegative) {
+            $scope.conditionValid = true;
+            $element.css("display", "block");
+        } else if ($scope.storyEvents.indexOf(condition[0]) == -1 && isNegative) {
+            $scope.conditionValid = true;
+            $element.css("display", "block");
+        }
+    }
+
+    $scope.$watch("decisions", function() {
         if ($scope.decisions.indexOf($scope.pageName) > -1) {
-            if ($scope.storyEvents.indexOf(condition[0]) > -1 && !isNegative) {
-                $scope.conditionValid = true;
-                $element.css("display", "block");
-            } else if ($scope.storyEvents.indexOf(condition[0]) == -1 && isNegative) {
-                $scope.conditionValid = true;
-                $element.css("display", "block");
-            }
-            watchman();
+            activate();
+        } else {
+            activated = false;
+            $element.css("display", "none");
         }
     }, true);
 });
