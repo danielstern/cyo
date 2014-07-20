@@ -82,7 +82,6 @@ angular.module("cyo", [])
     // $scope.isComplete = false;
 
     $scope.$watch("decisions", function() {
-        console.log("decisions changed...");
         if ($scope.decisions.indexOf($scope.pageName) > -1) {
             $element.css("display", "block");
         } else if (!$scope.isFirstPage) {
@@ -111,7 +110,6 @@ angular.module("cyo", [])
     }, true);
 
     $scope.$watch("completedPages", function() {
-        console.log('completed pages changed...')
         if ($scope.completedPages.indexOf($scope.pageName) > -1) {
             $element.css("display", "none");
         } else {
@@ -145,6 +143,7 @@ angular.module("cyo", [])
     var activated = false;
 
     function activate() {
+        if (activated) return;
         activated = true;
         if ($scope.isCondition && !$scope.conditionValid) {
             return;
@@ -183,6 +182,7 @@ angular.module("cyo", [])
     };
 
     function activate() {
+        if (activated) return;
         activated = true;
         if ($scope.storyEvents.indexOf(condition[0]) > -1 && !isNegative) {
             $scope.conditionValid = true;
