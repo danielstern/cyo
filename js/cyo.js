@@ -38,17 +38,39 @@ angular.module("cyo", [])
     }
 })
 
+.directive("restart", function() {
+    return {
+        restrict: "EA",
+        scope: true,
+        controller: "RestartController",
+    }
+})
+
 
 .controller("StoryController", function($scope, $element) {
+
     $scope.storyEvents = [];
     $scope.choices = [];
     $scope.pages = [];
+    $scope.completedPages = [];
     $scope.decisions = ['intro'];
+
+    // $scope. = function() {
+    // console.log("Init story...");
+    // }
+
+    // $scope.
+
+    // $scope.init();
 })
 
 .controller("PageController", function($scope, $attrs, $element) {
 
-    if ($scope.pages.length) $element.css("display", "none");
+    if ($scope.pages.length) {
+        $element.css("display", "none");
+    } else {
+        $scope.isFirstPage = true;
+    }
 
     var pageName = Object.keys($attrs.$attr);
     if (pageName[0] == "page") pageName.shift();
@@ -57,11 +79,14 @@ angular.module("cyo", [])
 
     $scope.pages.push(pageName[0]);
 
-    $scope.isComplete = false;
+    // $scope.isComplete = false;
 
     $scope.$watch("decisions", function() {
+        console.log("decisions changed...");
         if ($scope.decisions.indexOf($scope.pageName) > -1) {
             $element.css("display", "block");
+        } else if (!$scope.isFirstPage) {
+            $element.css("display", "none");
         }
     }, true);
 })
@@ -72,24 +97,41 @@ angular.module("cyo", [])
     if (choiceName[0] === "choice") choiceName.shift();
 
     angular.element($element).on("click", function() {
-        $scope.isComplete = true;
+        $scope.completedPages.push($scope.pageName);
         $scope.decisions.push(choiceName[0]);
         $scope.$apply();
     });
 
     $scope.$watch("pages", function() {
         if ($scope.pages.indexOf(choiceName[0]) == -1) {
-        	console.error("A choice has no corresponding page,",choiceName[0]);
+            console.error("A choice has no corresponding page,", choiceName[0]);
             $element.css("border", "2px solid red");
             $element.css("pointer-events", "none");
         }
     }, true);
 
-    $scope.$watch("isComplete", function() {
-        if ($scope.isComplete) {
+    $scope.$watch("completedPages",function(){
+        console.log('completed pages changed...')
+        if ($scope.completedPages.indexOf($scope.pageName) > -1) {
             $element.css("display", "none");
-        }
-    }, true);
+        } else {
+            $element.css("display", "inline-block");
+        }        
+    },true)
+})
+
+.controller("RestartController", function($scope, $attrs, $element) {
+
+    angular.element($element).on("click", function() {
+        [$scope.storyEvents, $scope.decisions, $scope.completedPages].forEach(function(A) {
+            while (A.length > 0) {
+                A.pop();
+            }
+        })
+
+        $scope.$apply();
+        console.log("restarted",$scope);
+    });
 })
 
 
@@ -112,7 +154,7 @@ angular.module("cyo", [])
                 $scope.storyEvents.push(storyEvent[0]);
             } else {
                 var index = $scope.storyEvents.indexOf(storyEvent[0]);
-                 $scope.storyEvents.splice(index, 1);
+                $scope.storyEvents.splice(index, 1);
             }
 
             watchman();

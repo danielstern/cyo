@@ -76,17 +76,17 @@
             <p>You reach inside, and pull out a mysterious wooden flute.</p>
             <event got-flute=""></event>
             <p>"Hmm, now I've seen everything".</p>
+            <button choice taunt-owl>I ought to taunt that preposterous owl.</button>
+            <button choice look-around>Let's get moving.</button>
         </page>
-        <page>
-            <condition not got-flute>
-                Oh no! If only I had gotten some kind of flute, everything would have gone really, really well.
-            </condition>
-            <p>
-                <p class="flute" id="myFlute">
-
-                </p>
-            </p>
-
+        <page taunt-owl>
+            <p>One thing about yourself that you know for sure - you hate owls/</p>
+            <p>"Hey! Owl! You're stupid-looking!"</p>
+            <p>The owl cocks its head at you bemusedly.</p>
+            <p>What a stupid owl, you laugh.</p>
+            <p>Suddenly, the owl swoops down and carries you off. It is a big owl indeed.</p>
+            <p><i>You are never seen again.</i></p>
+            <button restart>Play again?</button>
         </page>
 
 
