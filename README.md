@@ -8,54 +8,19 @@ CYO (Choose Your Own) is an extremely simple, but powerful, storytelling engine 
 
 Introduction
 ------------
-CYO uses Angular directives to create rich storytelling experiences with an extremely easy-to-remember syntax.
+CYO uses Angular directives to create rich storytelling experiences with an easy-to-remember syntax.
 
 
-Getting Started with CYO
---------------
-<!--
-## New!! Get Started Easy with Yeoman!
-Get started super easy using Yeoman.
+CYO 2.0 is Out!
+---------------
+- No more file loading
+--> CYO is now all written write in to your HTML. Way faster this way! No file directory structure required.
+- No dependencies!
+--> CYO only requires Angular to work
+- Added the restart directive
+--> Easily restart stories
 
-```node
-npm install yeoman;
-npm install -g generator-cyo;
-yo cyo;
-// answer the questions and enjoy!
-```
-
-#### Creating pages with the CYO generator
-
-```
-// in the app directory
-yo cyo:chapter my-chapter
-// ta-da!
-```
-
-### The Alternate Way
--->
-- Clone this repository
-- Open an example you like
-- Delete every file in `story/` except `intro.html`
-- Start writing your own story, starting with `intro.html`
-
-###More Detailed Instructions:
-
-All you need to do to get started with CYO is require the module in your Angular app.
-
-```html
-<body ng-app="gameApp">
-</body>
-<script src='lib/angular/angular.min.js'></script>
-<script src='js/cyo.js'></script>
-<script>
-	angular.module('gameApp', ['cyo'])
-</script>
-
-<!-- You are good to go -->
-```
-
-Requiring the CYO module gives you access to all the directives necessary to make your own adventure. These modules are detailed below.
+Full getting started details available at.
 
 <a target="_new" href="http://danielstern.github.io/cyo/">Full getting started details are available at the project page.</a>
 
@@ -71,28 +36,14 @@ The story tag initializes your story by pointing to your first chapter.
 You initialize your CYO with a simple `story` tag.
 
 ```html
-<story intro />
-<!-- points to story/intro.html -->
+<story></story>
+And a splendid story it will be.
 ```
 
-Alternatively,
+This element has to contain all the other elements. You can have multiple stories on a single page.
 
-```html
-<story url="intro" />
-```
-
-This tag tells the program to find the first chapter of your story at `story/intro.html`. There's not a lot to the `story` tag.
-
-###Chapter
-You normally do not need to make `chapter` tags, as they are created automatically by `story`. However, they can be used anywhere just like a `story` tag.
-
-This can be used, for example, to include multiple `html` files as one chapter.
-
-```html
-<chapter enter-the-spooky-house />
-```
-
-Chapter tags point to html files. Those files have the following basic makeup:
+###Page
+Pages are hidden automatically and appear when choices are pressed.
 
 ```html
 <page>
@@ -103,41 +54,22 @@ Chapter tags point to html files. Those files have the following basic makeup:
 </page>
 ```
 
-Thanks to [btford] and [showdown], chapters can be written in markdown (JOY!) by including the `<md>` tag and requiring the btford markdown module (this is already set up in the examples.)
-
-```html
-<page>
-	<md>
-		You see a grizzled old man tending a hearth.
-
-		*Something doesn't feel right here.*
-	</md>
-</page>
-```
-
 ### Choice
 
-Choices make up the bread and butter of the interactive storytelling process. They are mercifully simple to execute.
+Choices make up the bread and butter of the interactive storytelling process. Clicking a choice will reveal the corresponding page.
 
 ```html
 <page>
-	<md>
-		You see a fork in the path. 
-
-		*Hmm... should I go left or right?*
-	</md>
+		<p>You see a fork in the path. </p>
+		<p>*Hmm... should I go left or right?*</p>
 	<choice go-left>Guess I'll go left.</choice>
 	<choice go-right>Right, definitely right.</choice>
 </page>
 ```
 
-Choices look like buttons. When you click one, it automatically loads the chapter. `go-left` would load the file `story/go-left.html` and so-on. 
-
-Choice tags and other tags have to go outside `<md>` blocks.
-
 ### Event
 
-Events allow you to remember something special happening, for use later in your story. They are once again very simple to use.
+Events allow you to remember something special happening, for use later in your story.
 
 ```html
 <p>You find a flashlight.</p>
@@ -216,18 +148,7 @@ And, inside `story/the-eight-sided-room.html`
 </page>
 ```
 
-##Pages
-*Wherein a long story is broken into manageable pieces and loaded one at a time.*
-
-Your story is broken up into pages which are all represented by individual html files. The structure of your adventure might look like this
-
-```
-index.html
-story/
-  intro.html
-  go-to-school.html
-  stay-home-today.html
-```
+##Example
 
 The markup of your typical page looks like this.
 
@@ -292,10 +213,6 @@ The markup of your typical page looks like this.
 <choice page='"go-with-jake"'>Go with Jake</choice>
 </page>
 ```
-
-The whole page needs to be within a `<page>` tag. Other than that, it is just normal HTML and can include pictures, Flash, angular directives and whatever.
-
-All pages are loaded at runtime when the user clicks a choice directive.
 
 Once you click a choice, all the other choices on the page disappear.
 
