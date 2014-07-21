@@ -4,6 +4,9 @@
 <script src='js/cyo.js'></script>
 <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
 
+<link href="lib/prism.css" rel="stylesheet" />
+<script src="lib/prism.js"></script>
+
 
 
 <body ng-app="cyo" class='container'>
@@ -12,55 +15,139 @@
     <p>
         CYO is a powerful markup language that is powered by Angular.js that requires no technical knowledge to use. It is ideal for forms, games and user experience.
     </p>
+    <p>CYO can be used to make...
+        <ul>
+            <li>Games</li>
+            <li>Questionnaires</li>
+            <li>Sales Materials</li>
+            <li>Much More</li>
+        </ul>
+    </p>
 
     <story>
-        <!-- {{choices}} -->
-        <h3>Example 1: A Little of Everything</h3>
+        <h2>CYO's Sale Pitch</h2>
 
-        <!-- {{storyEvents}} -->
         <page>
             <p>
-                Welcome to CYO! This is a page.
+                CYO is not really a library. It's more like a new language build with interactivity in mind.
             </p>
-            <button choice go>Let's go.</button>
-            <button choice stay>I would prefer to stay here...</button>
-        </page>
-        <page go>
-            <!-- {{isComplete}} -->
-            <p>Ho ho! Now I go!</p>
-            <event went></event>
-            <button choice next-zone>The next zone?</button>
-        </page>
-        <page stay>
-            <p>Hey hey! Think I'll stay!</p>
-            <condition story-started>
-                This will always appear.
-            </condition>
-            <button choice next-zone>The next zone, then.</button>
-        </page>
-        <page next-zone>
             <p>
-                You arrive in the next zone.
-
+                How does CYO benefit YOU?
             </p>
-            <condition went>
-                <event glad-went></event>
-                <p>Glad I went.</p>
+            <button choice designer>I'm a designer</button>
+            <button choice storyteller>I'm a storyteller</button>
+            <button choice developer>I'm a developer</button>
+        </page>
+        <page designer>
+            <p>CYO is used to add interactivity to any web page with zero programming required. Write interactive scenarios with intuitive markup instead, then add CSS to it.</p>
+            <event is-designer></event>
+            <button choice what-is>But what <i>is</i> CYO?</button>
+        </page>
+        <page storyteller>
+            <p>CYO is a tool you can use to share your interactive stories on any modern device, including tablets and phones.</p>
+            <p>Write elaborate and exciting tales, full of interactivity, without learning any programming language.</p>
+            <event is-storyteller></event>
+            <button choice what-is>But what <i>is</i> CYO?</button>
+        </page>
+        <page developer>
+            <p>CYO is a super lightweight library, that has only Angular.js as a dependency.</p>
+            <p>CYO is open source, and uses all the best Angular.js best practices. It can cut the time you spend developing simple forms in half.</p>
+            <event is-developer></event>
+            <button choice what-is>But what <i>is</i> CYO?</button>
+        </page>
+        <page what-is>
+            <p>You're interacting with CYO right now.</p>
+            <p>This interactive questionnaire was written with simple markup. No code was needed. See the full markup below!</p>
+            <condition is-designer>
+                <p>We hope you start using CYO to speed up your designing and prototyping today!</p>
             </condition>
-            <condition not went>
-                Glad I stayed.
+            <condition is-developer>
+                <p>We hope you include CYO in your projects from now on! Don't forget to star the repository.</p>
             </condition>
-            <button choice unknown-place>An unwritten chapter...</button>
-            <button restart>Restart!</button>
-            <story>
-                <page>
-                    <p>A story within a story.</p>
-                    <p>Will you explore the spooky closet?</p>
-                </page>
-            </story>
+            <condition is-storyteller>
+                <p>We hope that CYO speeds up your storytelling process and lets you express the awesome stories you want to tell today!</p>
+            </condition>
+            <pre><code class='language-markup'>&lt;story&gt;
+  &lt;h2&gt;CYO's Sale Pitch&lt;/h2&gt;
+
+  &lt;page&gt;
+      &lt;p&gt;
+          CYO is not really a library. It's more like a new language build with interactivity in mind.
+      &lt;/p&gt;
+      &lt;p&gt;
+          How does CYO benefit YOU?
+      &lt;/p&gt;
+      &lt;button choice designer&gt;I'm a designer&lt;/button&gt;
+      &lt;button choice storyteller&gt;I'm a storyteller&lt;/button&gt;
+      &lt;button choice developer&gt;I'm a developer&lt;/button&gt;
+  &lt;/page&gt;
+  &lt;page designer&gt;
+      &lt;p&gt;CYO is used to add interactivity to any web page with zero programming required. Write interactive scenarios with intuitive markup instead, then add CSS to it.&lt;/p&gt;
+      &lt;event is-designer&gt;&lt;/event&gt;
+      &lt;button choice what-is&gt;But what &lt;i&gt;is&lt;/i&gt; CYO?&lt;/button&gt;
+  &lt;/page&gt;
+  &lt;page storyteller&gt;
+      &lt;p&gt;CYO is a tool you can use to share your interactive stories on any modern device, including tablets and phones.&lt;/p&gt;
+      &lt;p&gt;Write elaborate and exciting tales, full of interactivity, without learning any programming language.&lt;/p&gt;
+      &lt;event is-storyteller&gt;&lt;/event&gt;
+      &lt;button choice what-is&gt;But what &lt;i&gt;is&lt;/i&gt; CYO?&lt;/button&gt;
+  &lt;/page&gt;
+  &lt;page developer&gt;
+      &lt;p&gt;CYO is a super lightweight library, that has only Angular.js as a dependency.&lt;/p&gt;
+      &lt;p&gt;CYO is open source, and uses all the best Angular.js best practices. It can cut the time you spend developing simple forms in half.&lt;/p&gt;
+      &lt;event is-developer&gt;&lt;/event&gt;
+      &lt;button choice what-is&gt;But what &lt;i&gt;is&lt;/i&gt; CYO?&lt;/button&gt;
+  &lt;/page&gt;
+  &lt;page what-is&gt;
+      &lt;p&gt;You're interacting with CYO right now.&lt;/p&gt;
+      &lt;p&gt;This interactive questionnaire was written with simple markup. No code was needed. See the full markup below!&lt;/p&gt;
+      &lt;condition is-designer&gt;
+          &lt;p&gt;We hope you start using CYO to speed up your designing and prototyping today!&lt;/p&gt;
+      &lt;/condition&gt;
+      &lt;condition is-developer&gt;
+          &lt;p&gt;We hope you include CYO in your projects from now on! Don't forget to star the repository.&lt;/p&gt;
+      &lt;/condition&gt;
+      &lt;condition is-storyteller&gt;
+          &lt;p&gt;We hope that CYO speeds up your storytelling process and lets you express the awesome stories you want to tell today!&lt;/p&gt;
+      &lt;/condition&gt;
+   &lt;/page&gt;
+&lt;/story&gt;            </code>     </pre>
         </page>
     </story>
 
+<h2>Getting Started</h2>
+<p>If you're technical, getting started is simple. Just require the "CYO" module in your app and you'll have access to all the directives.</p>
+<p>If the last sentence made your head hurt, just copy the follow boilerplate into an empty HTML file, and it will work out of the box.</p>
+<pre><code class='markup'>&lt;doctype html&gt;
+&lt;script src=&quot;//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://raw.githubusercontent.com/danielstern/cyo/master/cyo.js&quot;&gt;&lt;/script&gt;
+&lt;story&gt;
+    &lt;h1&gt;CYO&lt;/h1&gt;
+&lt;/story&gt;</code></pre>
+
+    <h2>Markup</h2>
+    <h3>story</h3>
+    <p>This element contains all other CYO elements. Start each story with one of these.</p>
+    <!-- <pre><code class='language-markup'>&lt;story&gt;
+    . . . so much great stuff
+&lt;/story&gt;        </code>    </pre> -->
+
+    <h3>page</h3>
+    <p>This element will appear only if a choice with the same name as it is clicked.</p>
+
+    <h3>choice</h3>
+    <p>These buttons will turn on a page. When you click one, the other choices on the page disappear.</p>
+
+    <h3>event</h3>
+    <p>This invisible element will reveal condition elements that appear later with the same name.</p>
+
+    <h3>condition</h3>
+    <p>This element is hidden by default, but will appear if the matching condition is revealed.</p>
+
+    <h3>restart</h3>
+    <p>This button will reset the story the contains it.</p>
+    
+    <h2>Examples</h2>
     <story>
         <h2>A Game</h2>
         <page intro="">
@@ -136,6 +223,86 @@
             <button restart>Play again?</button>
         </page>
     </story>
+
+
+    <h4>The Markup for Story</h4>
+    <section class='language-markup'>
+        <pre><code>&lt;story&gt;
+  &lt;h2&gt;A Game&lt;/h2&gt;
+  &lt;page intro&gt;
+      &lt;p&gt;You're in a spooky forest.&lt;/p&gt;
+      &lt;p&gt;&quot;You'll never get out of here alive,&quot; says Smeemog, the grumpy dwarf.&lt;/p&gt;
+      &lt;p&gt;&quot;I'll show you who won't get out of here alive,&quot; you say, but deep down, you're worried he's right.&lt;/p&gt;
+      &lt;button choice stay-put&gt;Wait to get rescued&lt;/button&gt;
+      &lt;button choice look-around&gt;We must explore this magic forest&lt;/button&gt;
+  &lt;/page&gt;
+  &lt;page stay-put&gt;
+      &lt;p&gt;&quot;We should wait here until we get rescued.&quot;&lt;/p&gt;
+      &lt;p&gt;&quot;Thought it might be snakes, or maybe a pit, but I never thought I'd be &lt;i&gt;bored&lt;/i&gt; to death.&quot;&lt;/p&gt;
+      &lt;p&gt;In the clearing of the forest, there are three rocks, a tree, and, in another tree, a preposterous-looking owl.&lt;/p&gt;
+      &lt;button choice investigate-rocks&gt;I ought to investigate these rocks&lt;/button&gt;
+      &lt;button choice check-tree-out&gt;I want to check out this tree&lt;/button&gt;
+      &lt;button choice talk-to-owl&gt;&quot;Hey you! Owl! I'm talking to you.&quot;&lt;/button&gt;
+  &lt;/page&gt;
+  &lt;page talk-to-owl&gt;
+      &lt;p&gt;For a while you talk to the owl. It seems to ignore you. Suddenly, it cocks its head towards a hollow in an old tree.&lt;/p&gt;
+      &lt;p&gt;You reach inside, and pull out a mysterious wooden flute.&lt;/p&gt;
+      &lt;event got-flute&gt;&lt;/event&gt;
+      &lt;p&gt;&quot;Hmm, now I've seen everything&quot;.&lt;/p&gt;
+      &lt;button choice taunt-owl&gt;I ought to taunt that preposterous owl.&lt;/button&gt;
+      &lt;button choice look-around&gt;Let's get moving.&lt;/button&gt;
+  &lt;/page&gt;
+  &lt;page taunt-owl&gt;
+      &lt;p&gt;One thing about yourself that you know for sure - you hate owls/&lt;/p&gt;
+      &lt;p&gt;&quot;Hey! Owl! You're stupid-looking!&quot;&lt;/p&gt;
+      &lt;p&gt;The owl cocks its head at you bemusedly.&lt;/p&gt;
+      &lt;p&gt;What a stupid owl, you laugh.&lt;/p&gt;
+      &lt;p&gt;Suddenly, the owl swoops down and carries you off. It is a big owl indeed.&lt;/p&gt;
+      &lt;p&gt;&lt;i&gt;You are never seen again.&lt;/i&gt;
+      &lt;/p&gt;
+      &lt;button restart&gt;Play again?&lt;/button&gt;
+  &lt;/page&gt;
+  &lt;page investigate-rocks&gt;
+      &lt;p&gt;You walk up to the pile of rocks.&lt;/p&gt;
+      &lt;p&gt;It's just a pile of rocks, you think.&lt;/p&gt;
+      &lt;button choice look-around&gt;Let's get out of here.&lt;/button&gt;
+  &lt;/page&gt;
+  &lt;page check-tree-out&gt;
+      &lt;p&gt;You walk up to the tree. You reckon it to be mighty old. Maybe a bazillion years or more. You notice a strange carving on the tree.&lt;/p&gt;
+      &lt;p&gt;The carving depicts a great monster, twenty feet tall or more.&lt;/p&gt;
+      &lt;p&gt;&quot;Pshh. A huge monster, have you ever heard anything so ridiculous, Smeemog? ... Smee?&quot;&lt;/p&gt;
+      &lt;p&gt;You turn around, but in fact Smeemog has been eaten by a giant monster.&lt;/p&gt;
+      &lt;p&gt;The monster devours you as you beg for mercy.&lt;/p&gt;
+      &lt;button restart&gt;Play again?&lt;/button&gt;
+  &lt;/page&gt;
+  &lt;page look-around&gt;
+      &lt;p&gt;&quot;Let's get out of here,&quot; you say to the dwarf.&lt;/p&gt;
+      &lt;p&gt;&quot;Fool!&quot; He shouts. &quot;Fool!&quot; But he follows anyways.&lt;/p&gt;
+      &lt;p&gt;After a short time, you see a bridge and, on the other side, the exit of the woods.&lt;/p&gt;
+      &lt;p&gt;As you are crossing, a fearsome troll climbs out from under the bridge.&lt;/p&gt;
+      &lt;p&gt;&quot;Who dare to cross me bridge?&quot; he bellows.&lt;/p&gt;
+      &lt;button choice introduce&gt;Introduce yourself.&lt;/button&gt;
+      &lt;condition got-flute&gt;
+          &lt;button choice play-flute&gt;Play the flute.&lt;/button&gt;
+      &lt;/condition&gt;
+  &lt;/page&gt;
+  &lt;page play-flute&gt;
+      &lt;p&gt;You play the flute, and the troll disappears in a cloud of smoke.&lt;/p&gt;
+      &lt;p&gt;&quot;I'll get you, Owl!&quot; he curses.&lt;/p&gt;
+      &lt;p&gt;You and Smeemog escape the forest safely.&lt;/p&gt;
+      &lt;p&gt;&lt;i&gt;You win!&lt;/i&gt;
+      &lt;/p&gt;
+      &lt;button restart&gt;Play again?&lt;/button&gt;
+  &lt;/page&gt;
+  &lt;page introduce&gt;
+      &lt;p&gt;&quot;It is we,&quot; you say.&lt;/p&gt;
+      &lt;p&gt;&quot;I care not who ye are! I demand yer bones as payment for trespassin'.&quot;&lt;/p&gt;
+      &lt;p&gt;&lt;i&gt;You're boned!&lt;/i&gt;
+      &lt;/p&gt;
+      &lt;button restart&gt;Play again?&lt;/button&gt;
+  &lt;/page&gt;
+&lt;/story&gt;        </code>    </pre>
+    </section>
     <story>
         <page>
             <h2>Troubleshooting</h2>
@@ -172,7 +339,44 @@
             <button restart>Try Again?</button>
         </page>
     </story>
-
+    <h3>Markup for Troubleshooting</h3>
+<pre><code class='language-markup'>&lt;story&gt;
+    &lt;page&gt;
+        &lt;h2&gt;Troubleshooting&lt;/h2&gt;
+        &lt;p&gt;Thanks for using our product! Let us help you troubleshoot.&lt;/p&gt;
+        &lt;p&gt;Are you using the latest version of our software?&lt;/p&gt;
+        &lt;button choice using-new-software&gt;I'm using the latest version.&lt;/button&gt;
+        &lt;button choice using-old-software&gt;I'm not using the latest version of the software.&lt;/button&gt;
+    &lt;/page&gt;
+    &lt;page using-old-software&gt;
+        &lt;p&gt;
+            Please update to the latest version of the software.
+        &lt;/p&gt;
+        &lt;button choice problem-fixed&gt;My problem has been solved.&lt;/button&gt;
+        &lt;button choice using-new-software&gt;That didn't help.&lt;/button&gt;
+    &lt;/page&gt;
+    &lt;page using-new-software&gt;
+        &lt;p&gt;
+            Do you have a dedicated graphics card?
+        &lt;/p&gt;
+        &lt;button choice email-support&gt;I have a dedicated graphics card.&lt;/button&gt;
+        &lt;button choice no-card&gt;I don't have a dedicated graphics card.&lt;/button&gt;
+    &lt;/page&gt;
+    &lt;page no-card&gt;
+        &lt;p&gt;Please disable &quot;Use Hardware Acceleration&quot; in Options &gt; Graphics.&lt;/p&gt;
+        &lt;button choice problem-fixed&gt;My problem has been solved.&lt;/button&gt;
+        &lt;button choice email-support&gt;That didn't help.&lt;/button&gt;
+    &lt;/page&gt;
+    &lt;page email-support&gt;
+        &lt;p&gt;Please e-mail technical support with a description of your problem and we'll get back to you within 24 hours.&lt;/p&gt;
+        &lt;button restart&gt;Try Again?&lt;/button&gt;
+    &lt;/page&gt;
+    &lt;page problem-fixed&gt;
+        &lt;p&gt;Thanks for using our product!&lt;/p&gt;
+        &lt;button restart&gt;Try Again?&lt;/button&gt;
+    &lt;/page&gt;
+&lt;/story&gt;
+</pre></code>
 
 </body>
 <style>
@@ -181,6 +385,7 @@ story {
     padding: 2rem;
     border: 1px solid #ddd;
     font-size: 2rem;
+    margin: 2rem;
 }
 page {
     display: block;
