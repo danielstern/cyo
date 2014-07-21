@@ -2,5 +2,5 @@
 *.mp3
 *.au
 assets/music/*
-bower_components
+
 node_modules
