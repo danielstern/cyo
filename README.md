@@ -209,8 +209,8 @@ The markup of your typical page looks like this.
 </p>
 <!-- This page ends with two choices thereby allowing the story to go on
  as a new page is loaded. -->
-<choice page='"go-with-brad"'>Go with Brad</choice>
-<choice page='"go-with-jake"'>Go with Jake</choice>
+<choice go-with-brad>Go with Brad</choice>
+<choice go-with-jake>Go with Jake</choice>
 </page>
 ```
 
