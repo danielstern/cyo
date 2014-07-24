@@ -37,8 +37,9 @@ The story tag initializes your story by pointing to your first chapter.
 You initialize your CYO with a simple `story` tag.
 
 ```html
-<story></story>
+<story>
 And a splendid story it will be.
+</story>
 ```
 
 This element has to contain all the other elements. You can have multiple stories on a single page.
@@ -74,7 +75,7 @@ Events allow you to remember something special happening, for use later in your 
 
 ```html
 <p>You find a flashlight.</p>
-<event found-flashlight />
+<event found-flashlight></event>
 ```
 
 `event` tags are powerful tools that are automatically remembered for the whole story. They can change what the user sees and what choices they have when used in conjunction with the equally simple `condition` tag.
@@ -104,16 +105,16 @@ You can reverse a condition to its negative by adding the word `not`
 </p>
 <choice go-home>These guys are closed.</choice>
 <condition not pocket-knife-broke>
-	<md>
+         <p>
 		"Don't worry... we can use my trusty pocket knife!"
-
+         <p></p>
 		"Don't you mean your *rusty* pocket knife?"
-	</md>
+         </p>
 	<choice break-lock>Looks like they're not closed after all.</choice>
 </condition>
 ```
-
-Often you will want to nest just a single `<choice>` tag in a `condition`. For that, you can use the following shortcut:
+<!--
+Often you will want to nest just a single `choice` tag in a `condition`. For that, you can use the following shortcut:
 
 ```html
 <choice use-the-wand condition="found-wand">Abra-cadaver!</choice>
@@ -126,6 +127,7 @@ The condition shortcut can also be turned into its negative with `unless`:
 ```html
 <choice use-the-wand unless condition="lost-wand">Alakablam!</choice>
 ```
+
 
 ### Crossroad
 
@@ -148,7 +150,7 @@ And, inside `story/the-eight-sided-room.html`
 	<choice go-upstairs>Go upstairs</choice>
 </page>
 ```
-
+-->
 ##Example
 
 The markup of your typical page looks like this.
