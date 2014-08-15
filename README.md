@@ -21,8 +21,6 @@ CYO 2.0 is Out!
 - Added the restart directive
 --> Easily restart stories
 
-Full getting started details available at.
-
 <a target="_new" href="http://danielstern.github.io/cyo/">Full getting started details are available at the project page.</a>
 
 The Characters
