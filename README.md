@@ -15,7 +15,7 @@ CYO uses Angular directives to create rich storytelling experiences with an easy
 CYO 2.0 is Out!
 ---------------
 - No more file loading
---> CYO is now all written write in to your HTML. Way faster this way! No file directory structure required.
+--> CYO is now all written right in to your HTML. Way faster this way! No file directory structure required.
 - No dependencies!
 --> CYO only requires Angular to work
 - Added the restart directive
