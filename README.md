@@ -29,7 +29,7 @@ The Characters
 
 You can use these tools freely in your project to create your own interactive story adventure.
 
-###Story
+### Story
 The story tag initializes your story by pointing to your first chapter.
 
 You initialize your CYO with a simple `story` tag.
@@ -42,7 +42,7 @@ And a splendid story it will be.
 
 This element has to contain all the other elements. You can have multiple stories on a single page.
 
-###Page
+### Page
 Pages are hidden automatically and appear when choices are pressed.
 
 ```html
@@ -149,7 +149,7 @@ And, inside `story/the-eight-sided-room.html`
 </page>
 ```
 -->
-##Example
+## Example
 
 The markup of your typical page looks like this.
 
