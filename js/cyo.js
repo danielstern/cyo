@@ -1,220 +1,204 @@
 angular.module("cyo", [])
 
-//only if you are using >angularjs >1.5 components
-//export default angular.module('cyo', [])
-
-    .directive("story", function() {
-      return {
+.directive("story", function() {
+    return {
         restrict: "EA",
         scope: true,
         controller: "StoryController",
-      }
-    })
+    }
+})
 
-    .directive("page", function() {
-      return {
+.directive("page", function() {
+    return {
         restrict: "EA",
         scope: true,
         controller: "PageController",
-      }
-    })
+    }
+})
 
-    .directive("choice", function() {
-      return {
+.directive("choice", function() {
+    return {
         restrict: "EAC",
         controller: "ChoiceController",
-      }
-    })
+    }
+})
 
-    .directive("event", function() {
-      return {
+.directive("event", function() {
+    return {
         restrict: "EA",
         // scope: true,
         controller: "EventController",
-      }
-    })
+    }
+})
 
-    .directive("condition", function() {
-      return {
+.directive("condition", function() {
+    return {
         restrict: "EA",
         controller: "ConditionController",
-      }
-    })
+    }
+})
 
-    .directive("restart", function() {
-      return {
+.directive("restart", function() {
+    return {
         restrict: "EA",
         scope: true,
         controller: "RestartController",
-      }
-    })
+    }
+})
 
-    .controller("StoryController", function($scope, $element, $localStorage) {
-      $scope.storyEvents = [];
-      $scope.choices = [];
-      $scope.pages = [];
-      $scope.completedPages = [];
-      $scope.decisions = ['intro'];
 
-      if($localStorage.get("storyEvents") != null){
-        $scope.storyEvents = JSON.parse($localStorage.get("storyEvents"));
-      }
-      if($localStorage.get("completedPages") != null){
-        $scope.completedPages = JSON.parse($localStorage.get("completedPages"));
-      }
-      if($localStorage.get("decisions") != null){
-        $scope.decisions = JSON.parse($localStorage.get("decisions"));
-      }
-    })
+.controller("StoryController", function($scope, $element) {
 
-    .controller("PageController", function($scope, $attrs, $element, $localStorage) {
+    $scope.storyEvents = [];
+    $scope.choices = [];
+    $scope.pages = [];
+    $scope.completedPages = [];
+    $scope.decisions = ['intro'];
 
-      if ($scope.pages.length) {
+    // $scope. = function() {
+    // console.log("Init story...");
+    // }
+
+    // $scope.
+
+    // $scope.init();
+})
+
+.controller("PageController", function($scope, $attrs, $element) {
+
+    if ($scope.pages.length) {
         $element.css("display", "none");
-      } else {
+    } else {
         $scope.isFirstPage = true;
-      }
+    }
 
-      var pageName = Object.keys($attrs.$attr);
-      if (pageName[0] == "page") pageName.shift();
+    var pageName = Object.keys($attrs.$attr);
+    if (pageName[0] == "page") pageName.shift();
 
-      $scope.pageName = pageName[0];
-      $scope.pages.push(pageName[0]);
+    $scope.pageName = pageName[0];
 
-      $scope.$watch("decisions", function() {
+    $scope.pages.push(pageName[0]);
+
+    // $scope.isComplete = false;
+
+    $scope.$watch("decisions", function() {
         if ($scope.decisions.indexOf($scope.pageName) > -1) {
-          $element.css("display", "block");
+            $element.css("display", "block");
         } else if (!$scope.isFirstPage) {
-          $element.css("display", "none");
+            $element.css("display", "none");
         }
-      }, true);
-    })
+    }, true);
+})
 
-    .controller("ChoiceController", function($scope, $attrs, $element, $localStorage,$anchorScroll,$location) {
+.controller("ChoiceController", function($scope, $attrs, $element) {
 
-      var choiceName = Object.keys($attrs.$attr);
-      if (choiceName[0] === "choice") choiceName.shift();
+    var choiceName = Object.keys($attrs.$attr);
+    if (choiceName[0] === "choice") choiceName.shift();
 
-      angular.element($element).on("click", function() {
-
+    angular.element($element).on("click", function() {
         $scope.completedPages.push($scope.pageName);
         $scope.decisions.push(choiceName[0]);
-
         $scope.$apply();
+    });
 
-
-        $localStorage.put("completedPages",JSON.stringify($scope.completedPages));
-        $localStorage.put("decisions",JSON.stringify($scope.decisions));
-
-        //Go to the bottom of the history
-        //if <a id="bottom-scroll" name="bottom"></a> is in the bottom of the history
-        //$location.hash('bottom');
-        //$anchorScroll();
-      });
-
-      $scope.$watch("pages", function() {
+    $scope.$watch("pages", function() {
         if ($scope.pages.indexOf(choiceName[0]) == -1) {
-          console.error("A choice has no corresponding page,", choiceName[0]);
-          $element.css("border", "2px solid red");
-          $element.css("pointer-events", "none");
+            console.error("A choice has no corresponding page,", choiceName[0]);
+            $element.css("border", "2px solid red");
+            $element.css("pointer-events", "none");
         }
-      }, true);
+    }, true);
 
-      $scope.$watch("completedPages", function() {
+    $scope.$watch("completedPages", function() {
         if ($scope.completedPages.indexOf($scope.pageName) > -1) {
-          $element.css("display", "none");
+            $element.css("display", "none");
         } else {
-          $element.css("display", "inline-block");
+            $element.css("display", "inline-block");
         }
-      }, true)
-    })
+    }, true)
+})
 
-    .controller("RestartController", function($scope, $attrs, $element) {
-      angular.element($element).on("click", function() {
+.controller("RestartController", function($scope, $attrs, $element) {
+
+    angular.element($element).on("click", function() {
         [$scope.storyEvents, $scope.decisions, $scope.completedPages].forEach(function(A) {
-          while (A.length > 0) {
-            A.pop();
-          }
+            while (A.length > 0) {
+                A.pop();
+            }
         });
 
         $scope.$apply();
-      });
-    })
+    });
+})
 
 
-    .controller("EventController", function($scope, $attrs, $localStorage) {
-      var storyEvent = Object.keys($attrs.$attr);
-      var isNegative = false;
-      if (storyEvent[0] === "clear") {
+.controller("EventController", function($scope, $attrs) {
+    var storyEvent = Object.keys($attrs.$attr);
+    var isNegative = false;
+    if (storyEvent[0] === "clear") {
         isNegative = true;
         storyEvent.shift();
-      };
+    };
 
-      var activated = false;
+    var activated = false;
 
-      function activate() {
+    function activate() {
         if (activated) return;
         activated = true;
         if ($scope.isCondition && !$scope.conditionValid) {
-          return;
+            return;
         };
 
-        console.info("Activating this event", storyEvent[0], !isNegative);
+        console.info("Activating this event", storyEvent, !isNegative);
 
         if (!isNegative) {
-          $scope.storyEvents.push((storyEvent[0]));
-          $localStorage.put("storyEvents",JSON.stringify($scope.storyEvents));
+            $scope.storyEvents.push(storyEvent[0]);
         } else {
-          var index = $scope.storyEvents.indexOf(storyEvent[0]);
-          $scope.storyEvents.splice(index, 1);
+            var index = $scope.storyEvents.indexOf(storyEvent[0]);
+            $scope.storyEvents.splice(index, 1);
         };
+    }
 
-      }
-
-      $scope.$watch("decisions", function() {
+    $scope.$watch("decisions", function() {
         if ($scope.decisions.indexOf($scope.pageName) > -1) {
-          activate();
+            activate();
         } else {
-          activated = false;
+            activated = false;
         }
-      }, true);
-    })
+    }, true);
+})
 
-    .controller("ConditionController", function($scope, $element, $attrs) {
-      $element.css("display", "none");
-      var condition = Object.keys($attrs.$attr);
-      var isNegative = false;
-      var activated = false;
-      $scope.isCondition = true;
+.controller("ConditionController", function($scope, $element, $attrs) {
+    $element.css("display", "none");
+    var condition = Object.keys($attrs.$attr);
+    var isNegative = false;
+    var activated = false;
 
-      if (condition[0] === "unless" || condition[0] === "not") {
+    $scope.isCondition = true;
+
+    if (condition[0] === "unless" || condition[0] === "not") {
         isNegative = true;
         condition.shift();
-      };
+    };
 
-      function activate() {
+    function activate() {
         if (activated) return;
         activated = true;
         if ($scope.storyEvents.indexOf(condition[0]) > -1 && !isNegative) {
-          $scope.conditionValid = true;
-          $element.css("display", "block");
+            $scope.conditionValid = true;
+            $element.css("display", "block");
         } else if ($scope.storyEvents.indexOf(condition[0]) == -1 && isNegative) {
-          $scope.conditionValid = true;
-          $element.css("display", "block");
+            $scope.conditionValid = true;
+            $element.css("display", "block");
         }
-      }
+    }
 
-      $scope.$watch("decisions", function() {
+    $scope.$watch("decisions", function() {
         if ($scope.decisions.indexOf($scope.pageName) > -1) {
-          activate();
+            activate();
         } else {
-          activated = false;
-          $element.css("display", "none");
+            activated = false;
+            $element.css("display", "none");
         }
-      }, true);
-    });
-
-//only if you are using >angularjs >1.5 components
-//.name
-
-
+    }, true);
+});
