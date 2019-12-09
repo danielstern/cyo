@@ -1,0 +1,1 @@
+export function getName (element : HTMLElement) : string { return element.attributes[0].nodeName };

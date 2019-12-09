@@ -1,0 +1,17 @@
+{
+  "name": "cyo-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "http-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "http-server": "^0.12.0",
+    "typescript": "^3.7.3"
+  }
+}
