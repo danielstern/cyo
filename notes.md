@@ -1,7 +1,7 @@
 #TODO
 
-1. Add basic directives (page, storym choice, event)
-2. use typescript?
+1. Add basic directives (page, storym choice, event) [OOOO--]
+#2. use typescript? NO
 3. adapt existing documentation
 4. publish to existing repo
 
@@ -18,6 +18,7 @@
     
 }
 4.???
+4.5: nice
 5. profit
 
 # Additional features

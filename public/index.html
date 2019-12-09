@@ -3,13 +3,49 @@
     <story sample-story>
         
             <page the-start>
-                Hi.
+                <h3>
+                    I
+                </h3>
+                <p>
+                    It was a dark and stormy night...
+                </p>
+                
+                <choice the-next-part>Go to the next part</choice>
+                <choice secret-part>Heres a secret part</choice>
+                <choice part-three>Skip to part 3</choice>
+            </page>
+            <page secret-part>
+                <p>
+                    This is a secret part.
+                </p>
+                <event found-secret></event>
+                <choice the-next-part>Go to the next part</choice>
+                <choice part-three>Skip to part 3</choice>
             </page>
             <page the-next-part>
-                OK.
+                <h3>
+                    II
+                </h3>
+                <p>
+                    Some stuff happened.
+                </p>
+                <event visited-part-2/>
+                <condition not found-secret>
+                    You did NOT find the secret.
+                </condition>
+                <p>
+                    Oh wow.
+                </p>
+                <condition found-secret>
+                    <p>
+                        You DID find the secret, took the long path.
+                    </p>
+                    <event took-long-path></event>
+                    <choice the-start>Go back to the start only if you took the long path</choice>
+                </condition>
+                <choice part-three>You really got to go to part 3 now</choice>
             </page>
-            <page load-me.html/>
-            <page load-me-2.html/>
-        <script src="index.js"></script>
+            <page part-three.html/>
+        <script src="cyo.js"></script>
     </story>
 </body>

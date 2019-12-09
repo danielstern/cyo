@@ -1,3 +1,11 @@
+## Patch Notes
+- Version 3.1 is a huge update that completely revises CYO
+- CYO 3.1 is no longer dependent on angular.js - just copy the script tag (see Getting Started (ADD LINK?) and you're good to go
+- Improved performance all around 
+
+## Features
+- Supports both inline and externally loaded pages
+
 ## Getting started
 
 Getting started couldn't be easier! Just copy this script tag onto your document.
