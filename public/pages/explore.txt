@@ -1,0 +1,9 @@
+You venture deeper into the ruins. Huge blocks of granite on either side of you are inscribed with countless, somehow sinister images.
+
+To your left, you see a crumbling precipice. There's no way to see how far it goes without walking up to it.
+
+To your right, you see what seems to be a primitive mine cart. It's more of a sled, really. Anyways, it looks like the weight of a person in it will cause it to move.
+
+<choice precipice>Gaze over the precipice.</choice> 
+<choice sledge>Hop on the sledge!</choice> 
+<choice leave>You know, I think I'll leave after all.</choice>

@@ -30,3 +30,26 @@ CYO searches for the `<story>` tag.
 </story>
 ```
 
+## Configuration
+Limited configuration objects can be set per story by using an HTML tag.
+
+### Example
+```javascript
+<story the-aztec-ruins>
+    <pageDirectory pages/>
+    ...
+</story>
+```
+
+### Supported Configuration Settings
+
+| Name               | Effect                                     | Default | Example
+| -------------      |---------------                             | -----   |
+| `pageDirectory`    | Specifies where to look for external pages | ""      | <pageDirectory pages/>
+
+
+## Troubleshooting
+No one gets it perfect the first time!
+
+### Using the Console
+Open the Developer Console in Chrome by pressing F12. Helpful messages will appear in yellow indicating common mistakes like mismatched file names.

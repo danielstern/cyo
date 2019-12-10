@@ -1,0 +1,6 @@
+The sun begins to set on the balmy aztec jungle. A snake slithers past your ankle.
+
+You approach the entrance to the Lost Temple, a great cyclopian stone arch, roughly square in shape, leading down into a gloomy and forbidding darkness.
+
+<choice explore>Explore the ruins.</choice>
+<choice leave>Leave this accursed place.</choice>

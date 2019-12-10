@@ -1,51 +1,33 @@
 <body>
-    <h1>The story!</h1>
-    <story sample-story>
-        
-            <page the-start>
-                <h3>
-                    I
-                </h3>
-                <p>
-                    It was a dark and stormy night...
-                </p>
-                
-                <choice the-next-part>Go to the next part</choice>
-                <choice secret-part>Heres a secret part</choice>
-                <choice part-three>Skip to part 3</choice>
-            </page>
-            <page secret-part>
-                <p>
-                    This is a secret part.
-                </p>
-                <event found-secret></event>
-                <choice the-next-part>Go to the next part</choice>
-                <choice part-three>Skip to part 3</choice>
-            </page>
-            <page the-next-part>
-                <h3>
-                    II
-                </h3>
-                <p>
-                    Some stuff happened.
-                </p>
-                <event visited-part-2/>
-                <condition not found-secret>
-                    You did NOT find the secret.
-                </condition>
-                <p>
-                    Oh wow.
-                </p>
-                <condition found-secret>
-                    <p>
-                        You DID find the secret, took the long path.
-                    </p>
-                    <event took-long-path></event>
-                    <choice the-start>Go back to the start only if you took the long path</choice>
-                </condition>
-                <choice part-three>You really got to go to part 3 now</choice>
-            </page>
-            <page part-three.html/>
-        <script src="cyo.js"></script>
+    <h1>The Aztec Ruins</h1>
+
+    <story the-aztec-ruins>
+        <pageDirectory pages/>
+        <page>
+            <p>
+                The sun's starting to set, and you have no choice. It's time to head to the ruins.
+            </p>
+            <choice lets-go>Let's go</choice>
+        </page>
+        <page lets-go>
+            <p>
+                You walk through the jungle a short distance. A monkey hoots in a tree above you, playfully brandishing a kumquat. Not far off, you see what looks like a giant slab of pink granite.
+            </p>
+            <choice intro>Better have a look</choice>
+        </page>
+        <page intro.txt></page>
+        <page explore.txt></page>
+        <page leave.txt></page>
+        <page precipice.txt></page>
+        <page bridge.txt></page>
+        <page narrow-ledge.txt></page>
+        <page treasure-room.txt></page>
+        <page sledge.txt></page>
+        <page cart-leaves.txt></page>
+        <page cart-descends.txt></page>
+        <page treasure-room.txt></page>
+        <page bash-chest.txt></page>
+        <page unlock-chest.txt></page>
     </story>
+    <script src="cyo.js"></script>
 </body>

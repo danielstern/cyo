@@ -1,0 +1,10 @@
+You carefully walk up to the precipice.
+
+You imagined you would have seen something else. You imagined you would have seen <i>something</i>, because below you is a sheer drop, and beyond... nothing, just what seems like an endless fall.
+
+At your feet, you notice a rusty key. Might as well take it with you.
+<event get-key/>
+The only way across is a rickety old bridge. As you're about to step on its uncertain planks of time-corrupted mahogany, you notice a narrow ridge on your left, just wide enough, maybe, for a person to sidle across.
+
+<choice bridge>Cross the rickety bridge.</choice>
+<choice narrow-ledge>Try your luck with the narrow ledge.</choice>
