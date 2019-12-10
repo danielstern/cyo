@@ -14,7 +14,7 @@ CYO lets you create exciting adventures using nothing but HTML code!
 ## Patch Notes v3.1
 
 - Version 3.1 is a huge update that completely revises CYO - now way easier and simpler to use!
-- CYO 3.1 is no longer dependent on angular.js - just copy the script tag (see Getting Started (ADD LINK?) and you're good to go
+- CYO 3.1 is no longer dependent on angular.js - just copy the script tag [(see Getting Started)](https://github.com/danielstern/cyo/tree/master/example) and you're good to go
 - Improved performance all around 
 
 ## Getting Started
@@ -23,7 +23,9 @@ CYO lets you create exciting adventures using nothing but HTML code!
 
 Getting started couldn't be easier! Just copy this script tag onto your document.
 
-!!!INSERT-TAG-HERE!!!
+```html
+<script src="https://raw.githubusercontent.com/danielstern/cyo/master/cyo.js"></script>
+```
 
 Now you're ready to add `<story>`, `<page>` and `<choice>` tags to your web page!
 
