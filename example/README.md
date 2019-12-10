@@ -117,7 +117,6 @@ We'll also add a second page, and a choice on the first page that leads us to th
             <p>You stroll to the park. What a lovely day, you think! You feel terrific.</p>
         </page>
     </story>
-    <script src="https://raw.githubusercontent.com/danielstern/cyo/master/cyo.js"></script>
 </body>
 ```
 
@@ -137,7 +136,6 @@ Now we have a simple story, but it's not very interactive. Let's add a second ch
         <p>You decide to stay inside today and watch TV. After six hours of ramen noodles and daytime talk shows, you are in a state of bliss.</p>
     </page>
 </story>
-<script src="https://raw.githubusercontent.com/danielstern/cyo/master/cyo.js"></script>
 ```
 
 We now have the start of an interactive story. Try adding some more pages. Maybe the trip to the park takes an interesting turn when it starts to pour rain?
