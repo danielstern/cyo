@@ -186,7 +186,8 @@
                 name: utility.getMarker(pageElement),
                 choices: [],
                 events: [],
-                conditions:[]
+                conditions:[],
+                restarts:[]
 
             }
 
@@ -202,9 +203,7 @@
 
             feedback.verifyPage(pageData);
 
-            const choiceElements = pageData.element.getElementsByTagName("choice");
-
-            for (let choiceElement of choiceElements) {
+            for (let choiceElement of pageData.element.getElementsByTagName("choice")) {
 
                 const id = uid++;
                 choiceElement.setAttribute("id", id);
@@ -214,6 +213,20 @@
                     target: utility.getMarker(choiceElement),
                     element: choiceElement,
                     conditions: utility.getConditions(choiceElement)
+
+                }];
+
+            }
+
+            for (let restartElement of pageData.element.getElementsByTagName("restart")) {
+
+                const id = uid++;
+                restartElement.setAttribute("id", id);
+
+                pageData.restarts = [...pageData.choices, {
+
+                    element: restartElement,
+                    conditions: utility.getConditions(restartElement)
 
                 }];
 
@@ -306,26 +319,24 @@
                                             |___/ 
     */
 
-    async function drawPage(pageData, container, choiceHandler, flags){
+    async function drawPage(pageData, container, choiceHandler, flags, restartHandler){
 
         container.innerHTML += pageData.element.innerHTML;
-        // container.innerHTML += "<br>"
 
-        for (let choiceElement of container.getElementsByTagName("choice")) {
+        for (let element of [
 
-            choiceElement.style.display = "none";
-            console.log();
-            if (choiceElement.previousSibling.tagName == "BR") {
+            ...container.getElementsByTagName("choice"), 
+            ...container.getElementsByTagName("restart"), 
+            ...container.getElementsByTagName("condition")
 
-                choiceElement.previousSibling.style.display = "none";
+        ]) {
+
+            element.style.display = "none";
+            if (element.previousSibling.tagName == "BR") {
+
+                element.previousSibling.style.display = "none";
 
             }
-            
-        }
-
-        for (let conditionElement of container.getElementsByTagName("condition")) {
-
-            conditionElement.style.display = "none";
             
         }
 
@@ -357,6 +368,25 @@
                 });
             
             container.append(choiceElement);
+
+            }
+
+        }
+
+        
+        for (let restart of pageData.restarts) {
+
+            if (utility.conditionsFulfilled(restart.conditions, flags)) {
+
+                const restartElement = document.createElement("button");
+                restartElement.innerHTML = restart.element.innerHTML;
+                restartElement.addEventListener("click", async ()=>{
+
+                    await restartHandler();
+
+                });
+            
+            container.append(restartElement);
 
             }
 
@@ -414,6 +444,16 @@
             story.element.parentNode.append(story.container);
             story.element.parentNode.insertBefore(story.element, story.container);
 
+            const restartHandler = async () => {
+
+                console.log("RESTARTING THIS PUPPER");
+                story.flags = [];
+                story.container.innerHTML = "";
+                const targetPage = story.pages[0];
+                await drawPage(targetPage, story.container, choiceHandler, story.flags, restartHandler);
+
+            }
+
             const choiceHandler = async (choice) => {
 
                 for (let button of story.container.getElementsByTagName("button")) {
@@ -433,12 +473,12 @@
                     }            
 
                 }
-                await drawPage(targetPage, story.container, choiceHandler, story.flags);
+                await drawPage(targetPage, story.container, choiceHandler, story.flags, restartHandler);
 
             };
 
             const page = story.pages[0];
-            await drawPage(page, story.container, choiceHandler, story.flags);
+            await drawPage(page, story.container, choiceHandler, story.flags, restartHandler);
 
 
         }

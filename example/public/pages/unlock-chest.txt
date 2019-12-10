@@ -8,5 +8,7 @@ You gaze around in confusion only to realize too late that great stone slabs hav
 
 At least you will be in the company of kings.
 
-THE CURSE OF TENOCHITLAN CLAIMS ANOTHER
+THE CURSE OF TENOCHTITLAN CLAIMS ANOTHER
 THE END
+
+<restart>Try Again?</restart>

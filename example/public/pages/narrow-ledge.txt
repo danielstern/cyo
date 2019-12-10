@@ -6,5 +6,7 @@ It's not so narrow after all, and you are crossing it with ease, when a bright g
 
 You slip and tumble, pointlessly grasping at the slick, mocking limestone surface. You tumble down endlessly.
 
-TENOCHITLAN'S CURSE CLAIMS ANOTHER
+THE CURSE OF TENOCHTITLAN CLAIMS ANOTHER
 THE END
+
+<restart>Try Again?</restart>

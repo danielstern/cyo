@@ -16,5 +16,7 @@ You were far too distracted with your loot to notice.
 
 You try to flee from the creature, but you are too weighed down by your treasure. You are never seen again.
 
-THE CURSE CLAIMS ANOTHER
+THE CURSE OF TENOCHTITLAN CLAIMS ANOTHER
 THE END
+
+<restart>Try Again?</restart>
