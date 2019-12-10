@@ -1,0 +1,7 @@
+You slowly walk across the bridge. 
+
+It creaks and groans with thousands of years of disuse. Surely, no wooden structure of any sane design would be more than flakes of dust at the bottom of this black and reeking pit.
+
+Finally, you arrive on the other side. Your torchlight catches something in the distance - it appears to be gold!
+
+<choice treasure-room>Investigate the gold.</choice>

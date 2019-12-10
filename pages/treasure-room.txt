@@ -1,0 +1,20 @@
+This is it, you think, as you walk into the vast room.
+
+There are coins and rings, goblets and scepters piled high to the ceiling. Whoever this tomb belonged to was important.
+
+Next to an ancient stone sarcophagus, you see a glittering chest, locked tight.
+
+Despite the fact that you are surrounded my more riches than you could ever want, you are inexorably drawn to the chest.
+
+Everything in your mind tells you to run away, but you can't. Something is calling you - you MUST open the chest.
+
+<condition get-key>
+You remember you found a rusty key earlier.
+<choice unlock-chest>Try the key.</choice>
+</condition>
+
+<condition get-hammer>
+You remember the large, crude hammer you found just now.
+<choice bash-chest>Bash the chest! Bash it good!</choice>
+</condition>
+

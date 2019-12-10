@@ -1,0 +1,12 @@
+You decide to edge across the narrow ledge.
+
+It's not so narrow after all, and you are crossing it with ease, when a bright glimmer catches the corner of your eye.
+
+"Is that... gold?" you think, and turn to face it, forgetting that you are on a ridge of stone no more than a few feet wide.
+
+You slip and tumble, pointlessly grasping at the slick, mocking limestone surface. You tumble down endlessly.
+
+THE CURSE OF TENOCHTITLAN CLAIMS ANOTHER
+THE END
+
+<restart>Try Again?</restart>

@@ -1,0 +1,18 @@
+You raise the hammer above your head, and with a mighty swing, you shatter the chest into many small pieces.
+
+You see no treasure, only a strange, pulley-like contraption. You realize that this was a trap that would surely have been your doom.
+
+This frightful realization snaps you back to your senses. You realize that this tomb must drive men mad - just as the legends tell. 
+
+You rush headlong through a massive stone arch. You reach a narrow shaft with a crude ladder carved into the stone wall. 
+
+Quickly you climb, until finally you emerge from a hidden passage in the jungle.
+
+You don't have any treasure, but you escaped with your life. 
+
+What good is treasure anyways?
+
+YOU ESCAPED
+THE END
+
+<restart>Play Again!</restart>
