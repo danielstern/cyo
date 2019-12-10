@@ -55,7 +55,7 @@ Create a file called `index.html` with the following contents (more or less)
 ```html
 <body>
     <h1>
-        My Story
+        A Great Adventure
     </h1>
 </body>
 ```
@@ -106,7 +106,7 @@ We'll also add a second page, and a choice on the first page that leads us to th
 ```html
 <body>
     <h1>
-        My Story
+        A Great Adventure
     </h1>        
     <story a-great-adventure>
         <page intro>
@@ -159,7 +159,7 @@ Now, let's update our story to include our new page. Your final `index.html` pag
 ```html
 <body>
     <h1>
-        My Story
+        A Great Adventure
     </h1>   
     <story a-great-adventure>
         <page intro>
