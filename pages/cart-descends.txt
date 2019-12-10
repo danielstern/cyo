@@ -4,10 +4,8 @@ It gains tremendous speed and you can feel wind rushing against your face. It be
 
 Finally, it begins to ascend and your speed slows gradually until you are deposited in a large room of cyclopean vaulted basalt.
 
-You notice in the corner is a large hammer. You pick it up and take it with you.
-
-<event get-hammer/>
+You notice in the corner is a large hammer. You pick it up and take it with you. <event get-hammer/>
 
 Ahead of you, you see a large vault glimmering with... is that gold?
 
-<choice treasure-room>Walk towards the golden valut.
+<choice treasure-room>Walk towards the golden vault.
