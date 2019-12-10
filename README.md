@@ -217,8 +217,8 @@ Limited configuration objects can be set per story by using an HTML tag.
 ### Supported Configuration Settings
 
 | Name | Effect | Default | Example |
-| -------------      | --------------- | ----- | ---- |
-| `pageDirectory`    | Specifies where to look for external pages | ""      | <pageDirectory pages/>
+| -------------      | --------------- | ----- |
+| `pageDirectory`    | Specifies where to look for external pages | `""`      | 
 
 
 ## Troubleshooting
