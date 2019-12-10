@@ -22,7 +22,7 @@ CYO has no dependencies, but the example requires `express` to run. Install NPM 
 
 ```npm install```
 
-(https://nodejs.org/en/)[If you don't have Node.js, download it here.] You need it to run the example, but not necessarily to use CYO.
+[If you don't have Node.js, download it here.](https://nodejs.org/en/) You need it to run the example, but not necessarily to use CYO.
 
 ### 4: Run the example
 
@@ -38,7 +38,7 @@ OR
 
 The story is now visible at the following URL:
 
-(http://localhost:1337)[http://localhost:1337/];
+[http://localhost:1337/](http://localhost:1337)
 
 
 ## Step by Step Tutorial
