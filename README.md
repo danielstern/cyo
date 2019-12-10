@@ -1,4 +1,4 @@
-![cyo](https://raw.githubusercontent.com/danielstern/cyo/master/cyo-logo.png)
+![cyo](https://github.com/danielstern/cyo/raw/revert-10-master/cyo-logo.png)
 
 # CYO (Choose Your Own) is an extremely simple, but powerful, storytelling engine built JavaScript.
 
