@@ -79,7 +79,7 @@ The CYO script needs to be loaded on to your page for it work.
 Copy this tag into your HTML page,
 
 ```html
-<script src="https://raw.githubusercontent.com/danielstern/cyo/master/cyo.js"></script>
+<script src="https://danielstern.github.io/cyo/cyo.js"></script>
 ```
 
 Now, if you open your developer tools with `F12`, you should see a message saying that your page doesn't contain any story tags.
@@ -177,7 +177,7 @@ Now, let's update our story to include our new page. Your final `index.html` pag
         </page>
         <page get-pizza.txt></page>
     </story>
-    <script src="https://raw.githubusercontent.com/danielstern/cyo/master/cyo.js"></script>
+    <script src="https://danielstern.github.io/cyo/cyo.js"></script>
 </body>
 ```
 
