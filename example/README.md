@@ -104,16 +104,21 @@ We'll also add a second page, and a choice on the first page that leads us to th
 
 
 ```html
-<story a-great-adventure>
-    <page intro>
-        <p>You roll out of bed one day feeling great! You can tell it will be a great adventure!</p>
-        <choice go-to-park>Stroll to the park!</choice>
-    </page>
-    <page go-to-park>
-        <p>You stroll to the park. What a lovely day, you think! You feel terrific.</p>
-    </page>
-</story>
-<script src="https://raw.githubusercontent.com/danielstern/cyo/master/cyo.js"></script>
+<body>
+    <h1>
+        My Story
+    </h1>        
+    <story a-great-adventure>
+        <page intro>
+            <p>You roll out of bed one day feeling great! You can tell it will be a great adventure!</p>
+            <choice go-to-park>Stroll to the park!</choice>
+        </page>
+        <page go-to-park>
+            <p>You stroll to the park. What a lovely day, you think! You feel terrific.</p>
+        </page>
+    </story>
+    <script src="https://raw.githubusercontent.com/danielstern/cyo/master/cyo.js"></script>
+</body>
 ```
 
 Now we have a simple story, but it's not very interactive. Let's add a second choice on the first page which takes our protagonist on a completely different course, and add the corresponding page.
@@ -151,26 +156,31 @@ Put some text in it:
 Actually, you realize you're very hungry! You race off to the local pizza store and consume their whole supply.
 ```
 
-Now, let's update our story to include our new page.
+Now, let's update our story to include our new page. Your final `index.html` page should look like this.
 
 ```html
-<story a-great-adventure>
-    <page intro>
-        <p>You roll out of bed one day feeling great! You can tell it will be a great adventure!</p>
-        <choice go-to-park>Stroll to the park!</choice>
-        <choice stay-inside>Stay inside</choice>
-        <choice get-pizza>Get Pizza</choice>
-    </page>
-    <page go-to-park>
-        <p>You stroll to the park. What a lovely day, you think! You feel terrific.</p>
-        <choice get-pizza>Get Pizza</choice>
-    </page>
-     <page stay-inside>
-        <p>You decide to stay inside today and watch TV. After six hours of ramen noodles and daytime talk shows, you are in a state of bliss.</p>
-    </page>
-    <page get-pizza.txt></page>
-</story>
-<script src="https://raw.githubusercontent.com/danielstern/cyo/master/cyo.js"></script>
+<body>
+    <h1>
+        My Story
+    </h1>   
+    <story a-great-adventure>
+        <page intro>
+            <p>You roll out of bed one day feeling great! You can tell it will be a great adventure!</p>
+            <choice go-to-park>Stroll to the park!</choice>
+            <choice stay-inside>Stay inside</choice>
+            <choice get-pizza>Get Pizza</choice>
+        </page>
+        <page go-to-park>
+            <p>You stroll to the park. What a lovely day, you think! You feel terrific.</p>
+            <choice get-pizza>Get Pizza</choice>
+        </page>
+        <page stay-inside>
+            <p>You decide to stay inside today and watch TV. After six hours of ramen noodles and daytime talk shows, you are in a state of bliss.</p>
+        </page>
+        <page get-pizza.txt></page>
+    </story>
+    <script src="https://raw.githubusercontent.com/danielstern/cyo/master/cyo.js"></script>
+</body>
 ```
 
 Note how we need to add any pages we want to load externally to our HTML page, but they don't need to have anything inside. Also note how we created two different ways to get to our new pizza chapter (on the page `intro` and on the page `go to park`). Use this technique to create stories that branch and loop instead of proceeding linearly.
