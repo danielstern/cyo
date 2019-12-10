@@ -1,0 +1,11 @@
+{
+  "name": "cyo-example-story",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "node server"
+  },
+  "devDependencies": {
+    "express": "^4.17.1"
+  }
+}
