@@ -2,14 +2,14 @@
 
 # CYO (Choose Your Own) is an extremely simple, but powerful, storytelling engine built JavaScript.
 
-<a target="_new" href="http://danielstern.github.io/cyo/">Check Out the Project Page</a>
+## <a target="_new" href="http://danielstern.github.io/cyo/">Check Out the Project Page</a>
 
 
 ## Introduction
 
 CYO lets you create exciting adventures using nothing but HTML code!
 
-<a target="_new" href="http://danielstern.github.io/cyo/">Full getting started details are available at the project page.</a>
+<a target="_new" href="http://danielstern.github.io/cyo/">See how it works at the project page.</a>
 
 ## Patch Notes v3.1
 
@@ -29,7 +29,7 @@ Getting started couldn't be easier! Just copy this script tag onto your document
 
 Now you're ready to add `<story>`, `<page>` and `<choice>` tags to your web page!
 
-<a target="_new" href="http://danielstern.github.io/cyo/tutorial">Follow the tutorial to get started with your project.</a>
+[Follow the tutorial to get started with your project](https://github.com/danielstern/cyo/tree/master/example)
 
 
 ## The Characters
