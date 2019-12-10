@@ -10,4 +10,4 @@ You notice in the corner is a large hammer. You pick it up and take it with you.
 
 Ahead of you, you see a large vault glimmering with... is that gold?
 
-<choice treasure-room>Walk towards the golden valut.
+<choice treasure-room>Walk towards the golden vault.
