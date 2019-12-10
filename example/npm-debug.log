@@ -1,0 +1,38 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Users\\Daniel\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'test' ]
+2 info using npm@4.0.3
+3 info using node@v9.2.0
+4 verbose run-script [ 'pretest', 'test', 'posttest' ]
+5 info lifecycle cyo-example-story@1.0.0~pretest: cyo-example-story@1.0.0
+6 silly lifecycle cyo-example-story@1.0.0~pretest: no script for pretest, continuing
+7 info lifecycle cyo-example-story@1.0.0~test: cyo-example-story@1.0.0
+8 verbose lifecycle cyo-example-story@1.0.0~test: unsafe-perm in lifecycle true
+9 verbose lifecycle cyo-example-story@1.0.0~test: PATH: C:\Users\Daniel\AppData\Roaming\npm\node_modules\npm\bin\node-gyp-bin;E:\Projects\cyo-3\example\node_modules\.bin;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\ia32\mpirt;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\ia32\compiler;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\TortoiseGit\bin;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Users\Daniel\.windows-build-tools\python27;C:\Users\Daniel\AppData\Roaming\npm\node_modules\npm\bin\node-gyp-bin;C:\Users\Daniel\AppData\Roaming\npm\node_modules\windows-build-tools\node_modules\.bin;C:\Users\Daniel\AppData\Roaming\npm\node_modules\.bin;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\ia32\mpirt;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\ia32\compiler;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\Git\cmd;C:\Program Files (x86)\Skype\Phone\;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\TortoiseGit\bin;C:\Users\Daniel\AppData\Roaming\npm\;C:\Users\Daniel\AppData\Local\atom\bin;C:\Program Files\Heroku\bin;C:\Users\Daniel\AppData\Local\Programs\Microsoft VS Code\bin
+10 verbose lifecycle cyo-example-story@1.0.0~test: CWD: E:\Projects\cyo-3\example
+11 silly lifecycle cyo-example-story@1.0.0~test: Args: [ '/d /s /c', 'node server' ]
+12 silly lifecycle cyo-example-story@1.0.0~test: Returned: code: 3221225786  signal: null
+13 info lifecycle cyo-example-story@1.0.0~test: Failed to exec test script
+14 error Test failed.  See above for more details.
+15 verbose exit [ 1, true ]
+16 verbose stack Error: kill ENOSYS
+16 verbose stack     at Object._errnoException (util.js:1031:13)
+16 verbose stack     at process.kill (internal/process.js:173:18)
+16 verbose stack     at process.listener (C:\Users\Daniel\AppData\Roaming\npm\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:86:15)
+16 verbose stack     at process.emit (events.js:164:20)
+16 verbose stack     at processEmit (C:\Users\Daniel\AppData\Roaming\npm\node_modules\npm\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+16 verbose stack     at processEmit (C:\Users\Daniel\AppData\Roaming\npm\node_modules\npm\node_modules\npm-registry-client\node_modules\npmlog\node_modules\gauge\node_modules\signal-exit\index.js:146:32)
+16 verbose stack     at Signal.wrap.onsignal (internal/process.js:198:44)
+17 verbose cwd E:\Projects\cyo-3\example
+18 error Windows_NT 6.3.9600
+19 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\Daniel\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "test"
+20 error node v9.2.0
+21 error npm  v4.0.3
+22 error code ENOSYS
+23 error errno ENOSYS
+24 error syscall kill
+25 error kill ENOSYS
+26 error If you need help, you may report this error at:
+26 error     <https://github.com/npm/npm/issues>
+27 verbose exit [ 1, true ]
